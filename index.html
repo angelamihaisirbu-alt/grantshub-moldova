@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrantsHub Moldova — Apeluri deschise pentru granturi</title>
+    <meta name="description" content="Apeluri de granturi DESCHISE acum în Republica Moldova: ONG, IMM, instituții publice, APL. Deadline-uri, criterii de eligibilitate, link-uri oficiale, export calendar.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">
+                <div class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 40 40" width="40" height="40">
+                        <rect x="2" y="2" width="36" height="36" rx="6" fill="#003DA5"/>
+                        <path d="M10 28 L20 12 L30 28 Z" fill="#FFD200"/>
+                        <circle cx="20" cy="24" r="3" fill="#CE1126"/>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <div class="brand-name">GrantsHub <span>Moldova</span></div>
+                    <div class="brand-tag">Apeluri DESCHISE · Verificat 22 mai 2026</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="#beneficiari">Beneficiari</a>
+                <a href="#domenii">Domenii</a>
+                <a href="#catalog">Apeluri</a>
+                <a href="#ghid">Ghid</a>
+                <a href="admin.html" class="nav-admin">⚙ Admin</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge"><span class="pulse-dot"></span> <span id="badge-text">Se încarcă…</span></div>
+            <h1>Granturi cu termen activ,<br>cu deadline transparent.</h1>
+            <p class="hero-lead">Doar apeluri DESCHISE acum în Republica Moldova. Filtrează pe tip de beneficiar, domeniu și urgență; descarcă deadline-urile direct în calendarul tău.</p>
+            <div class="hero-actions">
+                <a href="#catalog" class="btn btn-primary">Vezi apelurile deschise</a>
+                <button class="btn btn-ghost" id="download-all-ics">📅 Toate deadline-urile în calendar (.ics)</button>
+            </div>
+            <div class="hero-stats">
+                <div><strong id="stat-open">—</strong><span>apeluri deschise</span></div>
+                <div><strong id="stat-soon">—</strong><span>se închid &lt; 14 zile</span></div>
+                <div><strong id="stat-rolling">—</strong><span>rolling/permanente</span></div>
+                <div><strong id="stat-funders">—</strong><span>finanțatori implicați</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="audience" id="beneficiari">
+        <div class="container">
+            <h2 class="section-title">Pentru cine?</h2>
+            <p class="section-sub">Apăsați o categorie pentru a filtra apelurile.</p>
+            <div class="audience-grid">
+                <button class="audience-card" data-filter-aud="ONG">
+                    <div class="aud-icon ong">ONG</div>
+                    <h3>Organizații neguvernamentale</h3>
+                    <p>Asociații obștești, fundații, mass-media, think-tank-uri.</p>
+                    <span class="aud-link" data-aud-count="ONG">— apeluri →</span>
+                </button>
+                <button class="audience-card" data-filter-aud="IMM">
+                    <div class="aud-icon imm">IMM</div>
+                    <h3>IMM &amp; întreprinderi private</h3>
+                    <p>Microîntreprinderi, IMM, startup-uri, fermieri, antreprenori.</p>
+                    <span class="aud-link" data-aud-count="IMM">— apeluri →</span>
+                </button>
+                <button class="audience-card" data-filter-aud="Public">
+                    <div class="aud-icon pub">PUB</div>
+                    <h3>Instituții publice</h3>
+                    <p>Ministere, agenții, universități, școli, spitale, institute.</p>
+                    <span class="aud-link" data-aud-count="Public">— apeluri →</span>
+                </button>
+                <button class="audience-card" data-filter-aud="APL">
+                    <div class="aud-icon apl">APL</div>
+                    <h3>Administrația publică locală</h3>
+                    <p>Primării, consilii raionale, ADI, GAL-uri LEADER.</p>
+                    <span class="aud-link" data-aud-count="APL">— apeluri →</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="topics" id="domenii">
+        <div class="container">
+            <h2 class="section-title">Apeluri pe domenii</h2>
+            <p class="section-sub">Filtrează rapid pe domeniile relevante.</p>
+            <div class="topic-chips" id="topic-chips"></div>
+        </div>
+    </section>
+
+    <section class="catalog" id="catalog">
+        <div class="container">
+            <div class="catalog-head">
+                <div>
+                    <h2 class="section-title">Apeluri deschise acum</h2>
+                    <p class="section-sub" id="result-count">Se încarcă…</p>
+                </div>
+                <div class="search-wrap">
+                    <input type="search" id="search" placeholder="Caută după titlu, finanțator, domeniu…" aria-label="Caută în catalog">
+                </div>
+            </div>
+
+            <div class="filters">
+                <div class="filter-group">
+                    <label>Beneficiar</label>
+                    <div class="chip-row" id="filter-audience">
+                        <button class="chip chip-active" data-aud="all">Toți</button>
+                        <button class="chip" data-aud="ONG">ONG</button>
+                        <button class="chip" data-aud="IMM">IMM</button>
+                        <button class="chip" data-aud="Public">Public</button>
+                        <button class="chip" data-aud="APL">APL</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label>Urgență</label>
+                    <div class="chip-row" id="filter-urgency">
+                        <button class="chip chip-active" data-urgency="all">Toate</button>
+                        <button class="chip" data-urgency="closing-soon">🔥 Se închide &lt; 14 zile</button>
+                        <button class="chip" data-urgency="open">Deschise</button>
+                        <button class="chip" data-urgency="rolling">Rolling/permanent</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label>Tip suport</label>
+                    <div class="chip-row" id="filter-type">
+                        <button class="chip chip-active" data-type="all">Toate</button>
+                        <button class="chip" data-type="Grant">Grant nerambursabil</button>
+                        <button class="chip" data-type="Cofinantare">Cofinanțare</button>
+                        <button class="chip" data-type="Subventie">Subvenție</button>
+                        <button class="chip" data-type="Credit">Credit preferențial</button>
+                        <button class="chip" data-type="AT">Asistență tehnică</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cards" id="cards-container"></div>
+            <div class="empty-state" id="empty-state" hidden>
+                <p>Nu s-au găsit apeluri care să corespundă filtrelor selectate.</p>
+                <button class="btn btn-ghost" id="reset-filters">Resetează filtrele</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="guide" id="ghid">
+        <div class="container">
+            <h2 class="section-title">Ghid rapid: de la apel la aplicație</h2>
+            <ol class="guide-steps">
+                <li>
+                    <h4>1. Verifică eligibilitatea în detaliu</h4>
+                    <p>Citește criteriile cu atenție. Adesea sunt restricții pe vârsta organizației, cifra de afaceri, zonă geografică, sector de activitate.</p>
+                </li>
+                <li>
+                    <h4>2. Accesează ghidul oficial</h4>
+                    <p>Pe site-ul finanțatorului vei găsi ghidul aplicantului, template-uri, FAQ, înregistrarea sesiunilor de informare.</p>
+                </li>
+                <li>
+                    <h4>3. Pregătește documentele standard</h4>
+                    <p>Statut/certificat înregistrare, CIF, situații financiare ultimi 2 ani, CV-urile echipei, scrisori de parteneriat (dacă e cazul).</p>
+                </li>
+                <li>
+                    <h4>4. Construiește logframe-ul</h4>
+                    <p>Obiectiv → rezultate → activități → indicatori (SMART). Buget detaliat cu cofinanțare clar marcată.</p>
+                </li>
+                <li>
+                    <h4>5. Aplică cu margine de timp</h4>
+                    <p>Portalele cer înregistrare prealabilă (EU Login, UN Partner Portal, e-CGAB). Începe procesul cu 2–4 săptămâni înainte de deadline.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <strong>GrantsHub Moldova</strong>
+                <p>Datele apelurilor sunt verificate manual. Confirmă întotdeauna pe site-ul oficial înainte de aplicare.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#catalog">Apeluri</a>
+                <a href="#ghid">Ghid</a>
+                <a href="admin.html">Admin</a>
+            </div>
+            <div class="footer-meta">© 2026 GrantsHub Moldova · Ultima verificare: 22 mai 2026</div>
+        </div>
+    </footer>
+
+    <!-- Modal detalii apel -->
+    <div class="modal" id="modal" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-panel" role="dialog" aria-modal="true">
+            <button class="modal-close" data-close aria-label="Închide">×</button>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

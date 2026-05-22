@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin — GrantsHub Moldova</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">
+                <div class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 40 40" width="40" height="40">
+                        <rect x="2" y="2" width="36" height="36" rx="6" fill="#003DA5"/>
+                        <path d="M10 28 L20 12 L30 28 Z" fill="#FFD200"/>
+                        <circle cx="20" cy="24" r="3" fill="#CE1126"/>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <div class="brand-name">GrantsHub <span>Admin</span></div>
+                    <div class="brand-tag">Panel administrare apeluri</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="index.html">← Înapoi la site</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="admin-hero">
+        <div class="container">
+            <h1>Administrare apeluri</h1>
+            <p>Adaugă, editează sau șterge apeluri. Modificările se salvează automat în browser (localStorage). Folosește Export/Import JSON pentru backup sau publicare permanentă în <code>data.js</code>.</p>
+
+            <div class="admin-toolbar">
+                <button class="btn btn-primary" id="btn-new">+ Apel nou</button>
+                <button class="btn btn-ghost" id="btn-export">⇣ Export JSON</button>
+                <label class="btn btn-ghost">
+                    ⇡ Import JSON
+                    <input type="file" id="file-import" accept="application/json" hidden>
+                </label>
+                <button class="btn btn-ghost" id="btn-reset">↺ Restaurează din data.js</button>
+                <button class="btn btn-ghost" id="btn-download-ics">📅 Export calendar (.ics)</button>
+                <div class="admin-status" id="status"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="admin-list-wrap">
+        <div class="container">
+            <h2 class="section-title" style="font-size:22px;">Apeluri în catalog (<span id="count">0</span>)</h2>
+            <div class="admin-table-wrap">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>Titlu</th>
+                            <th>Finanțator</th>
+                            <th>Deadline</th>
+                            <th>Beneficiari</th>
+                            <th>Acțiuni</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rows"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Edit modal -->
+    <div class="modal" id="edit-modal" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-panel admin-modal" role="dialog" aria-modal="true">
+            <button class="modal-close" data-close>×</button>
+            <h2 id="form-title">Editează apel</h2>
+
+            <form id="call-form">
+                <div class="form-grid">
+                    <label class="form-row full">
+                        <span>ID unic (slug)</span>
+                        <input type="text" name="id" required pattern="[a-z0-9-]+" placeholder="ex. oda-crestem-imm-2026">
+                    </label>
+                    <label class="form-row full">
+                        <span>Titlu apel</span>
+                        <input type="text" name="title" required>
+                    </label>
+                    <label class="form-row">
+                        <span>Finanțator (ID)</span>
+                        <select name="funderId" required id="funder-select"></select>
+                    </label>
+                    <label class="form-row">
+                        <span>Tip suport</span>
+                        <select name="type" required>
+                            <option value="Grant">Grant nerambursabil</option>
+                            <option value="Cofinantare">Cofinanțare</option>
+                            <option value="Subventie">Subvenție</option>
+                            <option value="Credit">Credit preferențial</option>
+                            <option value="AT">Asistență tehnică</option>
+                        </select>
+                    </label>
+                    <label class="form-row">
+                        <span>Data deschidere</span>
+                        <input type="date" name="opensOn" required>
+                    </label>
+                    <label class="form-row">
+                        <span>Deadline</span>
+                        <input type="date" name="deadline" required>
+                    </label>
+                    <label class="form-row">
+                        <span>Tip deadline</span>
+                        <select name="deadlineType" required>
+                            <option value="fixed">Fix (dată exactă)</option>
+                            <option value="rolling">Rolling / permanent</option>
+                            <option value="expected">Așteptat / recurent</option>
+                        </select>
+                    </label>
+                    <label class="form-row">
+                        <span>Notă deadline</span>
+                        <input type="text" name="deadlineNote" placeholder="ex. „Termen final: 29 mai 2026, ora 17:00"">
+                    </label>
+                    <label class="form-row full">
+                        <span>URL site oficial / aplicare</span>
+                        <input type="url" name="url" required placeholder="https://...">
+                    </label>
+                    <label class="form-row full">
+                        <span>Descriere scurtă</span>
+                        <textarea name="description" rows="2" required></textarea>
+                    </label>
+                    <label class="form-row">
+                        <span>Buget total</span>
+                        <input type="text" name="budgetTotal" placeholder="ex. 300 mil MDL">
+                    </label>
+                    <label class="form-row">
+                        <span>Mărime grant (per proiect)</span>
+                        <input type="text" name="budgetPerProject" placeholder="ex. Până la 165.000 MDL">
+                    </label>
+                    <fieldset class="form-row full">
+                        <legend>Beneficiari (selectează unul sau mai mulți)</legend>
+                        <label class="check"><input type="checkbox" name="audiences" value="ONG"> ONG</label>
+                        <label class="check"><input type="checkbox" name="audiences" value="IMM"> IMM</label>
+                        <label class="check"><input type="checkbox" name="audiences" value="Public"> Public</label>
+                        <label class="check"><input type="checkbox" name="audiences" value="APL"> APL</label>
+                    </fieldset>
+                    <fieldset class="form-row full">
+                        <legend>Domenii</legend>
+                        <div id="topic-checks" class="topic-checks"></div>
+                    </fieldset>
+                    <label class="form-row full">
+                        <span>Criterii de eligibilitate (un criteriu pe linie)</span>
+                        <textarea name="eligibility" rows="6" required></textarea>
+                    </label>
+                    <label class="form-row">
+                        <span>Data verificării</span>
+                        <input type="date" name="verified" placeholder="2026-05-22">
+                    </label>
+                    <label class="form-row">
+                        <span>Sursă verificare</span>
+                        <input type="text" name="verifiedSource" placeholder="ex. oda.md comunicat 2026">
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Salvează apel</button>
+                    <button type="button" class="btn btn-ghost" data-close>Anulează</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Logs and runtime artifacts
+scripts/run.log
+scripts/last_report.txt
+scripts/server_test.log
+scripts/server_test.log.err
+scripts/pending_calls/*.json
+!scripts/pending_calls/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
