@@ -40,7 +40,8 @@
 
     function init() {
         // Filter out auto-detected entries (visible only in admin until reviewed)
-        CALLS = CALLS.filter(c => !c.autoDetected);
+        // Also filter out "expected" entries — these are predicted future openings, not currently open
+        CALLS = CALLS.filter(c => !c.autoDetected && c.deadlineType !== 'expected');
 
         // Compute status & days remaining for each call
         CALLS = CALLS.map(c => {
@@ -60,7 +61,7 @@
             else status = 'open';
 
             return { ...c, computedStatus: status, daysToDeadline };
-        }).filter(c => c.computedStatus !== 'closed'); // Hide closed
+        }).filter(c => c.computedStatus !== 'closed' && c.computedStatus !== 'upcoming'); // Hide closed AND not-yet-opened
 
         renderStats();
         renderTopicChips();
@@ -133,7 +134,7 @@
             if (state.topic && !c.topics.includes(state.topic)) return false;
             if (state.urgency !== 'all') {
                 if (state.urgency === 'closing-soon' && c.computedStatus !== 'closing-soon') return false;
-                if (state.urgency === 'open' && !['open', 'expected'].includes(c.computedStatus)) return false;
+                if (state.urgency === 'open' && c.computedStatus !== 'open') return false;
                 if (state.urgency === 'rolling' && c.computedStatus !== 'rolling') return false;
             }
             if (state.search) {
@@ -145,11 +146,11 @@
             return true;
         });
 
-        // Sort: closing-soon first, then open by deadline, then rolling/expected last
-        const order = { 'closing-soon': 0, 'open': 1, 'expected': 2, 'rolling': 3 };
+        // Sort: closing-soon first, then open by deadline, then rolling last
+        const order = { 'closing-soon': 0, 'open': 1, 'rolling': 2 };
         filtered.sort((a, b) => {
-            const oa = order[a.computedStatus] ?? 4;
-            const ob = order[b.computedStatus] ?? 4;
+            const oa = order[a.computedStatus] ?? 3;
+            const ob = order[b.computedStatus] ?? 3;
             if (oa !== ob) return oa - ob;
             return a.daysToDeadline - b.daysToDeadline;
         });
