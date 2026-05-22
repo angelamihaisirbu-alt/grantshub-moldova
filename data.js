@@ -477,6 +477,251 @@ const CALLS = [
         url: "https://aee.gov.md",
         verified: "2026-05-22",
         verifiedSource: "Apel anual recurent AEE"
+    },
+
+    // ============ OIM / IOM Moldova ============
+    {
+        id: "iom-csos-rolling-2026",
+        title: "OIM Moldova – Granturi pentru OSC (migrație, anti-trafic, reforme MAI, integrare UE)",
+        funderId: "iom",
+        opensOn: "2026-01-01",
+        deadline: "2026-12-31",
+        deadlineType: "rolling",
+        deadlineNote: "Apeluri publicate periodic pe moldova.iom.int/grants (ciclu multiplu/an)",
+        audiences: ["ONG", "APL", "Public"],
+        topics: ["Diaspora", "Refugiați", "Integrare europeană", "Drepturile omului", "Gen"],
+        type: "Grant",
+        budgetTotal: "Variabil per apel",
+        budgetPerProject: "5.000 – 300.000 USD",
+        eligibility: [
+            "ONG-uri locale și internaționale înregistrate în Moldova",
+            "APL pentru servicii pentru migranți reveniți / refugiați",
+            "Diaspora pentru proiecte comunitare",
+            "Recipienți pentru sub-grants pe componente specifice (anti-trafic, integrare UE, reforme MAI)",
+            "Aplicare prin portalul UN Partner Portal sau direct la moldova.iom.int/grants"
+        ],
+        description: "OIM/IOM Moldova publică multiple apeluri pe an: reintegrarea migranților reveniți, răspuns refugiați Ucraina, anti-trafic de persoane, sprijin reforme MAI, diaspora engagement. Apelurile pentru 2026: CGA-MD10-2025-001 (jan), CEI-MD10-2025-005 (mar) — închise; așteptăm runde noi.",
+        url: "https://moldova.iom.int/grants",
+        verified: "2026-05-22",
+        verifiedSource: "moldova.iom.int (apeluri recurente verificate)"
+    },
+
+    // ============ GIZ Moldova ============
+    {
+        id: "giz-eu4business-2026",
+        title: "GIZ Moldova – Cofinanțare prin EU4Business (Innovative SMEs) și SBC",
+        funderId: "giz",
+        opensOn: "2026-01-01",
+        deadline: "2026-12-31",
+        deadlineType: "rolling",
+        deadlineNote: "Apeluri implementate prin ODA, EU4Business — verifică oda.md și eu4business.md",
+        audiences: ["IMM", "APL", "Public"],
+        topics: ["Antreprenoriat", "Eficiență energetică", "Dezvoltare regională", "Educație", "Digitalizare"],
+        type: "Cofinantare",
+        budgetTotal: "Componente multiple BMZ + UE",
+        budgetPerProject: "Variabil per program",
+        eligibility: [
+            "IMM-uri prin programele EU4Business (acces via ODA: CREȘTEM IMM, Eficiență Energetică)",
+            "APL implicate în MSPL – Modernizarea Serviciilor Publice Locale (apă, deșeuri, eficiență energetică)",
+            "Instituții publice și școli profesionale (VET in Moldova)",
+            "Proiecte sub umbrela FACE (Facilitating EU Accession through Coordination and Engagement)"
+        ],
+        description: "Agenția germană GIZ implementează în Moldova programe ample finanțate de BMZ și UE: EU4Business: Innovative SMEs (cofinanțare prin ODA), Strong Enterprises & Communities (SBC), MSPL pentru APL, VET in Moldova, FACE pentru aderarea la UE. Aplicările concrete trec prin parteneri implementatori (ODA, ADR-uri, instituții publice).",
+        url: "https://www.giz.de/en/worldwide/304.html",
+        verified: "2026-05-22",
+        verifiedSource: "giz.de + eu4business.md (programe în implementare 2026)"
+    },
+
+    // ============ Ambasada Norvegiei ============
+    {
+        id: "norway-small-project-2026",
+        title: "Ambasada Norvegiei – Small Project Funding + Nansen Programme",
+        funderId: "norway",
+        opensOn: "2026-01-01",
+        deadline: "2026-12-31",
+        deadlineType: "rolling",
+        deadlineNote: "Apeluri deschise prin ambasadă pe parcursul anului — contactați ambasada",
+        audiences: ["ONG", "Public", "APL"],
+        topics: ["Democrație", "Mass-media", "Drepturile omului", "Integrare europeană", "Energie", "Educație"],
+        type: "Grant",
+        budgetTotal: "NOK 350 milioane pentru Moldova în 2026",
+        budgetPerProject: "Small grants: 10.000 – 200.000 NOK; programe mari prin parteneri",
+        eligibility: [
+            "ONG-uri locale active în democrație, mass-media, integrare europeană",
+            "Organizații care combat dezinformarea",
+            "Inițiative pentru consolidarea societății civile",
+            "Proiecte pentru securitate energetică și bună guvernare",
+            "Aplicare directă la ambasadă (din toamna 2026 – ambasadă completă cu rezident)"
+        ],
+        description: "Norvegia a alocat NOK 350 milioane (~30 mil EUR) pentru Moldova în 2026 prin Programul Nansen extins. Focus: stabilitate, democrație, integrare UE, combaterea dezinformării, securitate energetică, mass-media independentă. Ambasada Norvegiei la Chișinău operează din 2024 și devine ambasadă completă în toamna 2026.",
+        url: "https://www.norway.no/en/moldova/",
+        verified: "2026-05-22",
+        verifiedSource: "regjeringen.no + norway.no/moldova (anunț alocare 2026)"
+    },
+
+    // ============ CFLI – Canada ============
+    {
+        id: "canada-cfli-2027",
+        title: "Canada Fund for Local Initiatives (CFLI) – Apel 2027 așteptat",
+        funderId: "canada",
+        opensOn: "2027-02-01",
+        deadline: "2027-04-15",
+        deadlineType: "expected",
+        deadlineNote: "Apelul 2026 (deadline 17 aprilie) s-a închis. Următorul apel 2027 așteptat: ianuarie-aprilie 2027.",
+        audiences: ["ONG", "Public"],
+        topics: ["Democrație", "Drepturile omului", "Gen", "Coeziune socială"],
+        type: "Grant",
+        budgetTotal: "CAD ~600.000 alocare anuală pentru Moldova",
+        budgetPerProject: "CAD 30.000 – 60.000 (până la 100.000 excepțional)",
+        eligibility: [
+            "ONG-uri locale și internaționale care lucrează în Moldova",
+            "Instituții academice non-profit",
+            "Autorități locale (pentru proiecte specifice)",
+            "Trei priorități tematice: Democratic Governance & Human Rights, Peace & Security, Inclusive Growth",
+            "Cross-cutting: egalitatea de gen și împuternicirea femeilor",
+            "Aplicații în engleză sau franceză",
+            "Proiecte preferate în afara Chișinăului sau pe ambele maluri ale Nistrului"
+        ],
+        description: "Canada Fund for Local Initiatives — program anual al Global Affairs Canada. Proiecte mici-scale, high-impact. Apelul 2026 a fost CAD 30.000–60.000 cu deadline 17 aprilie 2026 (CLOSED). Următorul ciclu: început 2027. Contact: cflimoldova@gmail.com.",
+        url: "https://www.international.gc.ca/world-monde/funding-financement/cfli-fcil/moldova.aspx",
+        verified: "2026-05-22",
+        verifiedSource: "international.gc.ca (anunț anual recurent)"
+    },
+
+    // ============ INTERREG Black Sea Basin ============
+    {
+        id: "interreg-bsb-2026",
+        title: "INTERREG NEXT Bazinul Mării Negre (BSB) – Apel 2",
+        funderId: "interreg-bsb",
+        opensOn: "2026-03-01",
+        deadline: "2026-09-30",
+        deadlineType: "expected",
+        deadlineNote: "Programul 2021–2027. Apelul 2 așteptat în 2026 — verifică blacksea-cbc.net",
+        audiences: ["APL", "Public", "ONG", "IMM"],
+        topics: ["Mediu", "Dezvoltare regională", "Climă", "Antreprenoriat", "Apă & Sanitație"],
+        type: "Cofinantare",
+        budgetTotal: "~239 mil EUR pentru 2021–2027",
+        budgetPerProject: "200.000 – 1.500.000 EUR",
+        eligibility: [
+            "Moldova e țară parteneră în BSB 2021–2027",
+            "APL, instituții publice, ONG-uri, IMM-uri, universități din Moldova",
+            "Parteneriate cu țări din bazinul Mării Negre (Bulgaria, România, Grecia, Turcia, Ucraina, Georgia, Armenia)",
+            "Minim 2 țări partenere obligatoriu",
+            "Cofinanțare 8% pentru beneficiari din Moldova"
+        ],
+        description: "Cooperare transfrontalieră în bazinul Mării Negre — comerț, antreprenoriat, mediu, biodiversitate, gestionarea deșeurilor marine, turism. Moldova este țară parteneră eligibilă (nu doar partener tehnic).",
+        url: "https://blacksea-cbc.net",
+        verified: "2026-05-22",
+        verifiedSource: "blacksea-cbc.net (program activ)"
+    },
+
+    // ============ Horizon Europe ============
+    {
+        id: "horizon-europe-2026",
+        title: "Horizon Europe – Cercetare & Inovare (Moldova țară asociată)",
+        funderId: "horizon",
+        opensOn: "2026-01-01",
+        deadline: "2026-12-31",
+        deadlineType: "rolling",
+        deadlineNote: "Apeluri publicate continuu pe EU Funding & Tenders Portal — calendar 2026 disponibil",
+        audiences: ["Public", "ONG", "IMM"],
+        topics: ["Cercetare", "Inovare", "Digitalizare", "Climă", "Sănătate", "Energie"],
+        type: "Grant",
+        budgetTotal: "95.5 mld EUR (programul total 2021–2027)",
+        budgetPerProject: "150.000 – 10.000.000 EUR per proiect",
+        eligibility: [
+            "Moldova e țară asociată din 2022 — entitățile aplică în aceleași condiții ca statele membre UE",
+            "Universități, institute publice și private de cercetare",
+            "IMM-uri inovative (cluster EIC Accelerator)",
+            "ONG-uri în consorții (anumite pilare)",
+            "Cercetători individuali — Marie Skłodowska-Curie Actions",
+            "Înregistrare PIC obligatorie pe portal"
+        ],
+        description: "Cel mai mare program de cercetare al UE. Moldova are acces complet ca țară asociată. 3 pilari: Excellent Science (ERC, MSCA), Global Challenges (clustere tematice), Innovative Europe (EIC, EIT). Punct contact național: ANCD.",
+        url: "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home",
+        verified: "2026-05-22",
+        verifiedSource: "ancd.gov.md + EU Funding & Tenders Portal"
+    },
+
+    // ============ Erasmus+ ============
+    {
+        id: "erasmus-plus-2026",
+        title: "Erasmus+ – Educație, formare, tineret, sport",
+        funderId: "erasmus",
+        opensOn: "2026-01-01",
+        deadline: "2026-12-31",
+        deadlineType: "rolling",
+        deadlineNote: "Apeluri anuale cu termene multiple (CBHE, Youth, Jean Monnet, KA1/KA2) — vezi erasmusplus.md",
+        audiences: ["Public", "ONG", "APL"],
+        topics: ["Educație", "Tineret", "Cercetare", "Cultură"],
+        type: "Grant",
+        budgetTotal: "26.2 mld EUR (programul total 2021–2027)",
+        budgetPerProject: "30.000 – 1.000.000 EUR per proiect",
+        eligibility: [
+            "Moldova e țară parteneră în Erasmus+",
+            "Universități și școli (CBHE, KA1 mobilități, KA2 parteneriate)",
+            "Organizații de tineret și ONG-uri educaționale",
+            "Instituții de formare profesională (VET)",
+            "Autorități publice cu competențe în educație",
+            "Voluntariat ESC (European Solidarity Corps)"
+        ],
+        description: "Programul UE pentru educație, formare, tineret și sport. Moldova participă activ: Capacity Building in Higher Education (CBHE), Youth in Action, Jean Monnet, parteneriate strategice. Punct contact național: erasmusplus.md.",
+        url: "https://erasmusplus.md",
+        verified: "2026-05-22",
+        verifiedSource: "erasmusplus.md (NEO Moldova activ)"
+    },
+
+    // ============ Creative Europe ============
+    {
+        id: "creative-europe-2026",
+        title: "Creative Europe – Cultură & Audiovizual (Moldova țară participantă)",
+        funderId: "creative",
+        opensOn: "2026-01-01",
+        deadline: "2026-12-31",
+        deadlineType: "rolling",
+        deadlineNote: "Apeluri pe CULTURE, MEDIA și CROSS-SECTORAL pe parcursul anului — verifică EU Funding & Tenders",
+        audiences: ["ONG", "IMM", "Public"],
+        topics: ["Cultură", "Patrimoniu", "Mass-media"],
+        type: "Grant",
+        budgetTotal: "2.44 mld EUR (program total 2021–2027)",
+        budgetPerProject: "60.000 – 2.000.000 EUR per proiect",
+        eligibility: [
+            "Moldova e țară participantă din 2022",
+            "Operatori culturali (ONG, SRL din sector cultural, instituții publice)",
+            "Edituri pentru traduceri literare",
+            "Producători de film, festivaluri, distribuitori",
+            "Consortii cu minim 3 țări participante (pentru Cooperation Projects)"
+        ],
+        description: "Programul UE pentru sectoarele culturale și creative. 3 componente: Culture (cooperation, networks, platforms), MEDIA (audiovizual, festivaluri, training), Cross-sectoral (innovation, media literacy).",
+        url: "https://culture.ec.europa.eu/creative-europe",
+        verified: "2026-05-22",
+        verifiedSource: "Creative Europe Desk Moldova"
+    },
+
+    // ============ US Embassy – Democracy Commission ============
+    {
+        id: "us-embassy-democracy-2026",
+        title: "Ambasada SUA – Democracy Commission Small Grants (anual recurent)",
+        funderId: "usembassy",
+        opensOn: "2026-09-01",
+        deadline: "2026-11-30",
+        deadlineType: "expected",
+        deadlineNote: "Apel anual recurent — așteptat toamnă 2026, verifică md.usembassy.gov",
+        audiences: ["ONG"],
+        topics: ["Democrație", "Drepturile omului", "Tineret", "Gen", "Mass-media"],
+        type: "Grant",
+        budgetTotal: "Variabil anual",
+        budgetPerProject: "10.000 – 50.000 USD",
+        eligibility: [
+            "ONG-uri și organizații non-profit înregistrate în Moldova (inclusiv think-tanks)",
+            "Trei priorități anuale: drepturi muncă/protecția copilului, participare politică echitabilă, drepturile LGBTQI+",
+            "Statement of Interest la primul pas, apoi propunere completă",
+            "Aplicare prin grants.gov + email direct la ambasadă"
+        ],
+        description: "U.S. Embassy Chișinău operează Democracy Commission Small Grants Program — un mecanism flexibil pentru proiecte durabile care dezvoltă societatea civilă. Implementat în trecut cu deadline-uri martie-mai. Continuat în 2026.",
+        url: "https://md.usembassy.gov/democracy-commission-small-grants-program/",
+        verified: "2026-05-22",
+        verifiedSource: "md.usembassy.gov (program continuat anual)"
     }
 ];
 
@@ -601,6 +846,96 @@ const FUNDERS = {
         originLabel: "UE · Delegația UE",
         description: "Apeluri ample pentru societatea civilă, reforme, drepturile omului — și sub-granturi prin parteneri implementatori.",
         website: "https://www.eeas.europa.eu/delegations/moldova"
+    },
+    iom: {
+        id: "iom",
+        name: "OIM / IOM Moldova",
+        short: "OIM",
+        logoColor: "blue",
+        origin: "ONU",
+        originLabel: "ONU · Migrație",
+        description: "Organizația Internațională pentru Migrație. Apeluri multiple/an pentru ONG-uri și APL: anti-trafic, integrare migranți reveniți, răspuns refugiați, reforme MAI, integrare UE.",
+        website: "https://moldova.iom.int/grants"
+    },
+    giz: {
+        id: "giz",
+        name: "GIZ Moldova",
+        short: "GIZ",
+        logoColor: "red",
+        origin: "Bilateral",
+        originLabel: "Bilateral · Germania (BMZ)",
+        description: "Agenția germană de dezvoltare. Implementează în Moldova EU4Business, MSPL, VET, FACE — finanțare BMZ + UE. Aplicarea trece prin parteneri implementatori (ODA, ADR-uri).",
+        website: "https://www.giz.de/en/worldwide/304.html"
+    },
+    norway: {
+        id: "norway",
+        name: "Ambasada Norvegiei la Chișinău",
+        short: "NOR",
+        logoColor: "red",
+        origin: "Bilateral",
+        originLabel: "Bilateral · Norvegia",
+        description: "Ambasada Norvegiei (devine ambasadă completă în toamna 2026). NOK 350 mil pentru Moldova în 2026 prin Nansen Programme: democrație, mass-media, securitate energetică, anti-dezinformare.",
+        website: "https://www.norway.no/en/moldova/"
+    },
+    canada: {
+        id: "canada",
+        name: "Ambasada Canadei – CFLI",
+        short: "CAN",
+        logoColor: "red",
+        origin: "Bilateral",
+        originLabel: "Bilateral · Canada (Global Affairs)",
+        description: "Canada Fund for Local Initiatives. Apel anual prin Global Affairs Canada — proiecte mici-scale pentru ONG-uri pe democrație, pace/securitate, creștere incluzivă + gender integrat.",
+        website: "https://www.international.gc.ca/world-monde/funding-financement/cfli-fcil/moldova.aspx"
+    },
+    usembassy: {
+        id: "usembassy",
+        name: "Ambasada SUA la Chișinău",
+        short: "USA",
+        logoColor: "navy",
+        origin: "Bilateral",
+        originLabel: "Bilateral · SUA (Ambasadă)",
+        description: "Embassy Chișinău operează Democracy Commission Small Grants Program — granturi mici pentru ONG-uri pe democrație, drepturile omului, mass-media. Apel anual recurent.",
+        website: "https://md.usembassy.gov/education-culture/local-programs/grants/"
+    },
+    "interreg-bsb": {
+        id: "interreg-bsb",
+        name: "INTERREG NEXT Bazinul Mării Negre",
+        short: "BSB",
+        logoColor: "blue",
+        origin: "UE",
+        originLabel: "UE · Cooperare BSB",
+        description: "Program de cooperare transfrontalieră în bazinul Mării Negre 2021–2027. Moldova e țară parteneră.",
+        website: "https://blacksea-cbc.net"
+    },
+    horizon: {
+        id: "horizon",
+        name: "Horizon Europe",
+        short: "HEU",
+        logoColor: "blue",
+        origin: "UE",
+        originLabel: "UE · Cercetare & Inovare",
+        description: "Cel mai mare program de cercetare al UE (95.5 mld €). Moldova e țară asociată din 2022.",
+        website: "https://ec.europa.eu/info/funding-tenders/"
+    },
+    erasmus: {
+        id: "erasmus",
+        name: "Erasmus+",
+        short: "E+",
+        logoColor: "blue",
+        origin: "UE",
+        originLabel: "UE · Educație & Tineret",
+        description: "Programul UE pentru educație, formare, tineret și sport. Moldova țară parteneră.",
+        website: "https://erasmusplus.md"
+    },
+    creative: {
+        id: "creative",
+        name: "Creative Europe",
+        short: "CE",
+        logoColor: "blue",
+        origin: "UE",
+        originLabel: "UE · Cultură & Audiovizual",
+        description: "Program UE pentru sectoarele culturale și creative. Moldova țară participantă din 2022.",
+        website: "https://culture.ec.europa.eu/creative-europe"
     }
 };
 
