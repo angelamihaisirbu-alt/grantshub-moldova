@@ -55,7 +55,7 @@ const CALLS = [
             "50 aplicații disponibile în 2026"
         ],
         description: "Granturi nerambursabile pentru afaceri conduse de femei: startup, scalare, achiziție echipamente. Una dintre cele mai populare scheme ODA.",
-        url: "https://oda.md/ro/programe/femei-in-afaceri",
+        url: "https://www.oda.md/ro/antreprenoriat-feminin",
         verified: "2026-05-22",
         verifiedSource: "oda.md comunicat oficial 2026"
     },
@@ -78,7 +78,7 @@ const CALLS = [
             "Instruire antreprenorială obligatorie ca parte a programului"
         ],
         description: "Suport pentru tineri antreprenori: instruire + grant pentru lansarea afacerii. Apel anual recurent.",
-        url: "https://oda.md/ro/programe/start-pentru-tineri",
+        url: "https://www.oda.md/ro/granturi",
         verified: "2026-05-22",
         verifiedSource: "oda.md comunicat oficial 2026"
     },
@@ -101,7 +101,7 @@ const CALLS = [
             "Investiție în Moldova: fiecare 1 leu propriu este dublat cu 1 leu grant"
         ],
         description: "Programul flagship de diasporă al ODA. Bani din străinătate dublati cu grant ODA pentru afaceri lansate în Moldova.",
-        url: "https://oda.md/ro/programe/pare",
+        url: "https://www.oda.md/ro/granturi",
         verified: "2026-05-22",
         verifiedSource: "oda.md comunicat oficial 2026"
     },
@@ -124,7 +124,7 @@ const CALLS = [
             "35 aplicații disponibile în 2026"
         ],
         description: "Sprijin pentru producători mici de bunuri – echipamente, materii prime, dezvoltare capacitate de producție.",
-        url: "https://oda.md/ro/programe",
+        url: "https://www.oda.md/ro/granturi",
         verified: "2026-05-22",
         verifiedSource: "oda.md comunicat oficial 2026"
     },
@@ -147,7 +147,7 @@ const CALLS = [
             "70 aplicații disponibile"
         ],
         description: "Susținere pentru startup-uri tech și soluții digitale inovative. Implementat cu suportul UE și GIZ.",
-        url: "https://oda.md/ro/programe",
+        url: "https://www.oda.md/ro/granturi",
         verified: "2026-05-22",
         verifiedSource: "oda.md comunicat oficial 2026"
     },
@@ -344,7 +344,7 @@ const CALLS = [
             "Focus pe cooperare societate civilă, dialog politic, jurnalism"
         ],
         description: "Black Sea Trust (German Marshall Fund). Apel deschis permanent — aplicații evaluate în lotul lunar următor.",
-        url: "https://www.gmfus.org/black-sea-trust",
+        url: "https://www.gmfus.org/black-sea-trust-regional-cooperation",
         verified: "2026-05-22",
         verifiedSource: "gmfus.org/black-sea-trust"
     },
@@ -944,85 +944,32 @@ const CALLS = [
         verifiedSource: "tineret.gov.md + balti.md (program 2026 activ)"
     },
 
-    // ============ US Embassy – Democracy Commission ============
+    // ============ Soros Foundation Moldova ============
     {
-        id: "us-embassy-democracy-2026",
-        title: "Ambasada SUA – Democracy Commission Small Grants (anual recurent)",
-        funderId: "usembassy",
-        opensOn: "2026-09-01",
-        deadline: "2026-11-30",
-        deadlineType: "expected",
-        deadlineNote: "Apel anual recurent — așteptat toamnă 2026, verifică md.usembassy.gov",
-        audiences: ["ONG"],
-        topics: ["Democrație", "Drepturile omului", "Tineret", "Gen", "Mass-media"],
-        type: "Grant",
-        budgetTotal: "Variabil anual",
-        budgetPerProject: "10.000 – 50.000 USD",
-        eligibility: [
-            "ONG-uri și organizații non-profit înregistrate în Moldova (inclusiv think-tanks)",
-            "Trei priorități anuale: drepturi muncă/protecția copilului, participare politică echitabilă, drepturile LGBTQI+",
-            "Statement of Interest la primul pas, apoi propunere completă",
-            "Aplicare prin grants.gov + email direct la ambasadă"
-        ],
-        description: "U.S. Embassy Chișinău operează Democracy Commission Small Grants Program — un mecanism flexibil pentru proiecte durabile care dezvoltă societatea civilă. Implementat în trecut cu deadline-uri martie-mai. Continuat în 2026.",
-        url: "https://md.usembassy.gov/democracy-commission-small-grants-program/",
-        verified: "2026-05-22",
-        verifiedSource: "md.usembassy.gov (program continuat anual)"
-    },
-
-    // ============ US Embassy – Freedom 250 AFCP ============
-    {
-        id: "us-embassy-freedom250-afcp-2026",
-        title: "Ambasada SUA – Freedom 250 / AFCP (patrimoniu cultural)",
-        funderId: "usembassy",
+        id: "soros-moldova-rolling-2026",
+        title: "Fundația Soros Moldova – Granturi & Call for Expressions of Interest",
+        funderId: "soros",
         opensOn: "2026-01-01",
         deadline: "2026-12-31",
         deadlineType: "rolling",
-        deadlineNote: "Programul 250 (aniversarea 250 ani SUA) — apel principal a închis 15 aprilie; sesiuni suplimentare posibile pe parcursul anului",
-        audiences: ["ONG", "Public", "APL"],
-        topics: ["Cultură", "Patrimoniu", "Educație"],
-        type: "Grant",
-        budgetTotal: "$6.000.000 (program total)",
-        budgetPerProject: "25.000 – 250.000 USD",
-        eligibility: [
-            "Instituții și organizații care promovează patrimoniul cultural",
-            "ONG-uri, instituții academice, autorități publice",
-            "Proiecte cu durată 1–5 ani",
-            "Focus pe cooperare internațională și educație istorică",
-            "Aplicare online prin bit.ly/AFCP250 sau grants.gov"
-        ],
-        description: "Programul Freedom 250 marchează 250 de ani de independență a SUA. Suport pentru proiecte care evidențiază contribuțiile istorice/culturale ale SUA în lume, inclusiv în Moldova. Componentă a Ambassadors Fund for Cultural Preservation (AFCP).",
-        url: "https://md.usembassy.gov/education-culture/local-programs/grants/",
-        verified: "2026-05-22",
-        verifiedSource: "moldpres.md + md.usembassy.gov (anunț oficial 2026)"
-    },
-
-    // ============ UK Embassy – Bilateral Programme Fund ============
-    {
-        id: "uk-embassy-bilateral-2026",
-        title: "Ambasada Marii Britanii – Bilateral Programme Fund / Good Governance Fund",
-        funderId: "uk-embassy",
-        opensOn: "2026-01-01",
-        deadline: "2026-12-31",
-        deadlineType: "rolling",
-        deadlineNote: "Apeluri prin email pentru priorități anuale — contact: projects.chisinau@fcdo.gov.uk",
+        deadlineNote: "Apeluri publicate periodic pe soros.md + Facebook fsorosmoldova — verifică ambele canale",
         audiences: ["ONG", "Public"],
-        topics: ["Democrație", "Justiție", "Mass-media", "Combaterea corupției", "Guvernare"],
+        topics: ["Democrație", "Justiție", "Sănătate", "Educație", "Mass-media", "Drepturile omului", "Gen"],
         type: "Grant",
-        budgetTotal: "Buget anual FCDO pentru Moldova",
-        budgetPerProject: "10.000 – 100.000 GBP",
+        budgetTotal: "Buget anual al fundației",
+        budgetPerProject: "5.000 – 100.000 USD (variabil per program)",
         eligibility: [
-            "ONG-uri cu istoric demonstrabil de implementare",
-            "Instituții publice pentru reforme",
-            "Mass-media independentă (jurnalism investigativ, alfabetizare media)",
-            "Priorități anuale: buna guvernare, anti-corupție, justiție, libertatea presei, securitate",
-            "Aplicații prin email proiecte la ambasadă, evaluare în trance-uri trimestriale",
-            "Cofinanțare opțională, parteneriate UK-MD apreciate"
+            "ONG-uri locale înregistrate în Republica Moldova",
+            "Mass-media independentă, jurnalism de investigație",
+            "Universități și institute de cercetare (pentru programe selective)",
+            "Inițiative civice cu impact public demonstrabil",
+            "Programe tematice: Bună Guvernare · Justiție și Drepturile Omului · Mass-media · Sănătate Publică",
+            "Aplicare prin formulare publice + Call for Expressions of Interest pe soros.md"
         ],
-        description: "Ambasada Marii Britanii la Chișinău administrează Bilateral Programme Fund + Good Governance Fund Moldova (FCDO). Suport pentru reforme în guvernare, justiție, anti-corupție și mass-media independentă. Contact direct: projects.chisinau@fcdo.gov.uk.",
-        url: "https://www.gov.uk/world/organisations/british-embassy-chisinau",
+        description: "Fundația Soros Moldova (înființată 1992) — una dintre cele mai vechi și mai mari fundații private active în țară. Granturi pentru bună guvernare, anti-corupție, drepturile omului, mass-media, sănătate publică, educație. Programe operaționale și granturi anuale.",
+        url: "https://soros.md/",
         verified: "2026-05-22",
-        verifiedSource: "gov.uk/world/organisations/british-embassy-chisinau"
+        verifiedSource: "soros.md + Facebook fsorosmoldova (activ permanent)"
     },
 
     // ============ Germany Embassy – Micro Grants ============
@@ -1171,7 +1118,7 @@ const FUNDERS = {
         origin: "Fundatie",
         originLabel: "Fundație · German Marshall Fund",
         description: "Granturi pentru cooperare regională în bazinul Mării Negre.",
-        website: "https://www.gmfus.org/black-sea-trust"
+        website: "https://www.gmfus.org/black-sea-trust-regional-cooperation"
     },
     interreg: {
         id: "interreg",
@@ -1243,15 +1190,15 @@ const FUNDERS = {
         description: "Canada Fund for Local Initiatives. Apel anual prin Global Affairs Canada — proiecte mici-scale pentru ONG-uri pe democrație, pace/securitate, creștere incluzivă + gender integrat.",
         website: "https://www.international.gc.ca/world-monde/funding-financement/cfli-fcil/moldova.aspx"
     },
-    usembassy: {
-        id: "usembassy",
-        name: "Ambasada SUA la Chișinău",
-        short: "USA",
-        logoColor: "navy",
-        origin: "Bilateral",
-        originLabel: "Bilateral · SUA (Ambasadă)",
-        description: "Embassy Chișinău operează Democracy Commission Small Grants Program — granturi mici pentru ONG-uri pe democrație, drepturile omului, mass-media. Apel anual recurent.",
-        website: "https://md.usembassy.gov/education-culture/local-programs/grants/"
+    soros: {
+        id: "soros",
+        name: "Fundația Soros Moldova",
+        short: "Soros",
+        logoColor: "red",
+        origin: "Fundatie",
+        originLabel: "Fundație · Open Society",
+        description: "Fundația Soros Moldova (din 1992). Granturi pentru ONG-uri pe bună guvernare, justiție, drepturile omului, mass-media, sănătate, educație.",
+        website: "https://soros.md/"
     },
     "interreg-bsb": {
         id: "interreg-bsb",
@@ -1342,16 +1289,6 @@ const FUNDERS = {
         originLabel: "Bilateral · Suedia",
         description: "Sida sprijină Moldova prin Strategia 2021–2027. Pentru OSC: re-granting prin Civil Rights Defenders, FEE, Soros. Următorul apel direct mare așteptat 2027.",
         website: "https://www.sida.se"
-    },
-    "uk-embassy": {
-        id: "uk-embassy",
-        name: "Ambasada Marii Britanii (FCDO)",
-        short: "UK",
-        logoColor: "navy",
-        origin: "Bilateral",
-        originLabel: "Bilateral · Marea Britanie",
-        description: "Ambasada UK administrează Bilateral Programme Fund + Good Governance Fund Moldova. Granturi pe reforme, anti-corupție, mass-media. Contact: projects.chisinau@fcdo.gov.uk.",
-        website: "https://www.gov.uk/world/organisations/british-embassy-chisinau"
     },
     "germany-embassy": {
         id: "germany-embassy",

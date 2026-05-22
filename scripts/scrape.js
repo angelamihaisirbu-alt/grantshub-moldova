@@ -22,21 +22,12 @@ const SOURCES = [
         keywordFilter: null
     },
     {
-        name: 'md.usembassy.gov',
-        url: 'https://md.usembassy.gov/education-culture/local-programs/grants/',
-        funderId: 'usembassy',
-        anchorRe: /<a[^>]+href="(https?:\/\/md\.usembassy\.gov\/[^"#?]+\/?)"[^>]*>\s*([^<]+?)\s*<\/a>/gi,
+        name: 'soros.md',
+        url: 'https://soros.md/',
+        funderId: 'soros',
+        anchorRe: /<a[^>]+href="(https?:\/\/(?:www\.)?soros\.md\/[^"#?]+\/?)"[^>]*>\s*([^<]+?)\s*<\/a>/gi,
         absolute: u => u,
-        keywordFilter: /grant|funding|program|call|proposal/i
-    },
-    {
-        name: 'gov.uk/british-embassy-chisinau',
-        url: 'https://www.gov.uk/world/organisations/british-embassy-chisinau',
-        funderId: 'uk-embassy',
-        anchorRe: /<a[^>]+href="(\/government\/(news|publications)\/[^"#?]+)"[^>]*>\s*([^<]+?)\s*<\/a>/gi,
-        absolute: rel => `https://www.gov.uk${rel}`,
-        keywordFilter: /grant|fund|call|moldova/i,
-        titleIdx: 3 // titlul e în grupul 3 (există 2 grupuri în URL)
+        keywordFilter: /grant|finanț|call|apel|proiect|program|concurs/i
     },
     {
         name: 'chisinau.diplo.de',
