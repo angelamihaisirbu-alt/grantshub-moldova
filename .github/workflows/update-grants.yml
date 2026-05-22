@@ -11,17 +11,22 @@ permissions:
   contents: write
   pull-requests: write
 
+env:
+  # Opt into Node.js 24 runtime for all JavaScript actions
+  # (default becomes Node 24 on 2026-06-02; setting now avoids deprecation warnings)
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
 jobs:
   scrape-and-pr:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Run scraper
         id: scrape
@@ -38,7 +43,7 @@ jobs:
 
       - name: Create Pull Request
         if: steps.scrape.outputs.count != '0' && steps.scrape.outputs.count != ''
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: auto-update/civic-md
