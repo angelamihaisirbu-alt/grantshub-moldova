@@ -11,9 +11,12 @@ const ROOT = path.resolve(__dirname, '..');
 const DATA_FILE = path.join(ROOT, 'data.js');
 const REPORT_FILE = path.join(__dirname, 'eproc_report.md');
 
-// CoE e-procurement
+// LIMITATION: eproc.coe.int is a Single Page Application — HTML returns only app shell.
+// The /api/callfortenders/{id} endpoint exists but returns 401 (auth required).
+// Without headless browser or auth token, we can only catch tenders that appear
+// in static <a> tags with "moldova" in title/href (rare on listing page).
+// Specific tenders should be added manually to data.js (see coe-eproc-11339).
 const EPROC_HOME = 'https://eproc.coe.int/home';
-// Try the public tenders listing pages (the home redirects, but tenders are public)
 const EPROC_TENDERS = [
     'https://eproc.coe.int/home',
     'https://eproc.coe.int/tenders'

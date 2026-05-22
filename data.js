@@ -781,6 +781,32 @@ const CALLS = [
         verifiedSource: "sida.se (program pe organizații umbrelă, fără call direct deschis)"
     },
 
+    // ============ Council of Europe – call 11339 (eProc) ============
+    {
+        id: "coe-eproc-11339",
+        title: "Council of Europe – Call for Tenders #11339 (eProc — vezi detalii pe portal)",
+        funderId: "coe",
+        opensOn: "2026-05-01",
+        deadline: "2026-12-31",
+        deadlineType: "rolling",
+        deadlineNote: "Verifică deadline-ul exact pe pagina eProc CoE (necesită cont gratuit pentru detalii complete)",
+        audiences: ["ONG", "Public", "IMM"],
+        topics: ["Justiție", "Drepturile omului", "Democrație", "Guvernare"],
+        type: "AT",
+        budgetTotal: "Variabil per lot",
+        budgetPerProject: "Conform anunțului de pe portal",
+        eligibility: [
+            "Procedură de procurare publică Council of Europe — eligibilitate detaliată în documentele de tender",
+            "ONG-uri, instituții de cercetare, companii de consultanță",
+            "Necesită înregistrare ca furnizor pe eproc.coe.int (gratuit) pentru acces la documente",
+            "Pentru cetățeni/entități din Republica Moldova: verifică dacă lot-ul specific permite participare din afara statelor membre CoE"
+        ],
+        description: "Anunț de procurare #11339 pe platforma eProc a Consiliului Europei, adăugat manual (scraper-ul actual nu detectează SPA-urile JavaScript). Verifică pagina sursei pentru titlu exact, deadline, valoare estimată și criterii eligibilitate.",
+        url: "https://eproc.coe.int/callfortenders/11339#lots",
+        verified: "2026-05-22",
+        verifiedSource: "eproc.coe.int (adăugat manual la cererea utilizatorului)"
+    },
+
     // ============ Solidarity Fund PL Moldova ============
     {
         id: "solidarityfund-pl-rolling-2026",
@@ -1021,35 +1047,37 @@ const CALLS = [
             "Aplicații direct la Ambasada Germaniei"
         ],
         description: "Ambasada Germaniei la Chișinău administrează micro-granturi și sprijin cultural anual. Programele mari de cooperare (MSPL, EU4Business, VET, FACE) sunt implementate prin GIZ. Pentru proiecte mici culturale/educaționale, contactați direct ambasada.",
-        url: "https://chisinau.diplo.de/md-ro",
+        url: "https://chisinau.diplo.de/md-de/willkommen/1341814-1341814",
         verified: "2026-05-22",
         verifiedSource: "chisinau.diplo.de"
     },
 
-    // ============ Denmark Embassy ============
+    // ============ Denmark Embassy in Chișinău ============
     {
         id: "denmark-embassy-2026",
-        title: "Danemarca – Sprijin pentru Moldova (prin multilaterale)",
+        title: "Ambasada Danemarcei la Chișinău – Sprijin bilateral pentru Moldova",
         funderId: "denmark",
         opensOn: "2026-01-01",
         deadline: "2026-12-31",
         deadlineType: "rolling",
-        deadlineNote: "Danemarca finanțează Moldova prin contribuții UE/ONU + parteneriate strategice — fără call direct deschis pentru aplicații individuale",
-        audiences: ["ONG", "Public"],
-        topics: ["Democrație", "Drepturile omului", "Gen", "Climă"],
-        type: "AT",
-        budgetTotal: "Contribuții multilaterale prin UE, UN Women, UNDP, OSCE",
-        budgetPerProject: "Variabil prin implementatori",
+        deadlineNote: "Apeluri tematice prin Ambasadă pe parcursul anului — contact direct la 73/1 bd. Ștefan cel Mare, Chișinău",
+        audiences: ["ONG", "Public", "APL"],
+        topics: ["Democrație", "Drepturile omului", "Gen", "Climă", "Integrare europeană", "Mass-media"],
+        type: "Grant",
+        budgetTotal: "Buget anual al Ambasadei Danemarcei + contribuții la Neighbourhood Programme",
+        budgetPerProject: "Variabil per program (granturi mici directe + cofinanțare prin UE/UN)",
         eligibility: [
-            "Acces indirect prin organizații multilaterale finanțate parțial de Danemarca",
-            "ONG-uri care aplică la UN Women, UNDP, OSCE — toate primesc fonduri daneze",
-            "Inițiative pe drepturile omului, gen, climă, transformare democratică",
-            "Pentru proiecte mari: contact diplomatic direct (Ambasada Danemarcei nu are reprezentanță permanentă la Chișinău)"
+            "ONG-uri active în democrație, drepturile omului, integrare europeană",
+            "Mass-media independentă și jurnalism investigativ",
+            "Inițiative pentru egalitatea de gen și împuternicirea femeilor",
+            "Proiecte pe schimbări climatice și tranziție verde",
+            "Acces direct la ambasadă (deschisă din ianuarie 2024) + acces indirect prin parteneri multilaterali finanțați parțial de Danemarca (UN Women, UNDP, OSCE)",
+            "Contact diplomatic: 73/1 bd. Ștefan cel Mare, Chișinău · moldova.um.dk"
         ],
-        description: "Danemarca nu are ambasadă deschisă la Chișinău și nu publică apeluri directe pentru ONG-uri locale. Sprijinul vine prin: contribuții la UE (NDICI), UN Women, UNDP, OSCE, programe regionale Eastern Partnership. Pentru detalii: Ambasada Daneză la București cu acreditare și pentru Moldova.",
-        url: "https://rumaenien.um.dk/en",
+        description: "Ambasada Danemarcei la Chișinău (deschisă oficial ianuarie 2024) susține Moldova pe drumul european. Apeluri tematice prin ambasadă + canale multilaterale (UE, UN Women, UNDP, OSCE). Singura reprezentanță daneză în Moldova.",
+        url: "https://moldova.um.dk/en",
         verified: "2026-05-22",
-        verifiedSource: "um.dk (Ministerul Afacerilor Externe Danemarca)"
+        verifiedSource: "moldova.um.dk + ipn.md (ambasadă deschisă oficial ian 2024)"
     }
 ];
 
@@ -1335,6 +1363,16 @@ const FUNDERS = {
         description: "Ambasada Germaniei administrează micro-granturi și sprijin cultural. Programele mari de cooperare prin GIZ (vezi separat). Contact direct la ambasadă.",
         website: "https://chisinau.diplo.de/md-ro"
     },
+    coe: {
+        id: "coe",
+        name: "Council of Europe – eProcurement",
+        short: "CoE",
+        logoColor: "blue",
+        origin: "Bilateral",
+        originLabel: "Org. internațională · CoE",
+        description: "Consiliul Europei publică pe eproc.coe.int anunțuri de procurare/cooperare tehnică. Apelurile vizează implementarea Planului de Acțiune CoE pentru Moldova.",
+        website: "https://eproc.coe.int/home"
+    },
     solidarityfund: {
         id: "solidarityfund",
         name: "Solidarity Fund PL Moldova",
@@ -1367,13 +1405,13 @@ const FUNDERS = {
     },
     denmark: {
         id: "denmark",
-        name: "Danemarca (prin multilaterale)",
+        name: "Ambasada Danemarcei la Chișinău",
         short: "DK",
         logoColor: "red",
         origin: "Bilateral",
         originLabel: "Bilateral · Danemarca",
-        description: "Danemarca contribuie pentru Moldova prin UE, UN Women, UNDP, OSCE. Nu are ambasadă deschisă la Chișinău. Acces indirect prin parteneri multilaterali.",
-        website: "https://rumaenien.um.dk/en"
+        description: "Ambasada Danemarcei (deschisă ian 2024, bd. Ștefan cel Mare 73/1, Chișinău). Apeluri tematice prin ambasadă + canale multilaterale UE/UN. Suport pentru drumul european al Moldovei.",
+        website: "https://moldova.um.dk/en"
     }
 };
 
