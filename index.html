@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GrantsHub Moldova — Apeluri deschise pentru granturi</title>
     <meta name="description" content="Apeluri de granturi DESCHISE acum în Republica Moldova: ONG, IMM, instituții publice, APL. Deadline-uri, criterii de eligibilitate, link-uri oficiale, export calendar.">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=3">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
@@ -191,8 +191,8 @@
         </div>
     </footer>
 
-    <!-- Modal detalii apel -->
-    <div class="modal" id="modal" hidden>
+    <!-- Modal detalii apel: ascuns prin inline style + CSS + class .is-open la deschidere -->
+    <div class="modal" id="modal" aria-hidden="true" style="display:none">
         <div class="modal-backdrop" data-close></div>
         <div class="modal-panel" role="dialog" aria-modal="true">
             <button class="modal-close" data-close aria-label="Închide">×</button>
@@ -200,7 +200,7 @@
         </div>
     </div>
 
-    <script src="data.js"></script>
-    <script src="app.js"></script>
+    <script src="data.js?v=3"></script>
+    <script src="app.js?v=3"></script>
 </body>
 </html>

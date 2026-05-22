@@ -516,15 +516,15 @@ section { padding: 80px 0; }
 
 /* ---------- Modal ---------- */
 .modal {
+    display: none;
     position: fixed;
     inset: 0;
     z-index: 100;
-    display: grid;
     place-items: center;
     padding: 20px;
 }
-.modal[hidden] {
-    display: none !important;
+.modal.is-open {
+    display: grid;
 }
 .modal-backdrop {
     position: absolute;

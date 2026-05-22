@@ -170,7 +170,11 @@
         // disable id field on edit
         form.elements.id.disabled = !isNew;
 
-        $('#edit-modal').hidden = false;
+        const modal = $('#edit-modal');
+        modal.classList.add('is-open');
+        modal.removeAttribute('hidden');
+        modal.style.display = '';
+        modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
     }
 
@@ -197,7 +201,11 @@
     }
 
     function closeForm() {
-        $('#edit-modal').hidden = true;
+        const modal = $('#edit-modal');
+        modal.classList.remove('is-open');
+        modal.setAttribute('hidden', '');
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
     }
 

@@ -288,12 +288,19 @@
 
         $('#modal-ics').addEventListener('click', () => downloadICS([c]));
 
-        modal.hidden = false;
+        modal.classList.add('is-open');
+        modal.removeAttribute('hidden');
+        modal.style.display = ''; // clear inline display:none
+        modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
     }
 
     function closeModal() {
-        $('#modal').hidden = true;
+        const modal = $('#modal');
+        modal.classList.remove('is-open');
+        modal.setAttribute('hidden', '');
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
     }
 
