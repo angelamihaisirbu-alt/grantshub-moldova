@@ -236,6 +236,7 @@
 
         if (editingId) {
             const i = CALLS.findIndex(c => c.id === editingId);
+            // On save, clear autoDetected flag — entry becomes visible to public
             CALLS[i] = call;
         } else {
             CALLS.push(call);

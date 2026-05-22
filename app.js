@@ -39,6 +39,9 @@
     const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
     function init() {
+        // Filter out auto-detected entries (visible only in admin until reviewed)
+        CALLS = CALLS.filter(c => !c.autoDetected);
+
         // Compute status & days remaining for each call
         CALLS = CALLS.map(c => {
             const deadline = new Date(c.deadline);

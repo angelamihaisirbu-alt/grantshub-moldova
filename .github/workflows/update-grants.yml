@@ -1,0 +1,66 @@
+name: Auto-update grants from civic.md
+
+on:
+  schedule:
+    # Daily at 06:00 UTC (~09:00 in Chișinău EEST / 08:00 EET)
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+    # Allow manual trigger from Actions UI
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  scrape-and-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run scraper
+        id: scrape
+        run: node scripts/scrape.js
+
+      - name: Show report
+        if: always()
+        run: |
+          if [ -f scripts/last_report.md ]; then
+            echo "===== REPORT ====="
+            cat scripts/last_report.md
+            echo "=================="
+          fi
+
+      - name: Create Pull Request
+        if: steps.scrape.outputs.count != '0' && steps.scrape.outputs.count != ''
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: auto-update/civic-md
+          delete-branch: true
+          commit-message: |
+            auto: ${{ steps.scrape.outputs.count }} apel(uri) noi detectat(e) pe civic.md
+
+            Adăugate cu autoDetected: true (ascunse din public până la review în admin).
+          title: "🤖 ${{ steps.scrape.outputs.count }} apel(uri) noi pe civic.md"
+          body-path: scripts/last_report.md
+          labels: |
+            auto-update
+            needs-review
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Auto-update result" >> $GITHUB_STEP_SUMMARY
+          if [ -n "${{ steps.scrape.outputs.count }}" ] && [ "${{ steps.scrape.outputs.count }}" != "0" ]; then
+            echo "✅ **${{ steps.scrape.outputs.count }} candidate calls** added to PR for review." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "ℹ️ No new calls detected today." >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "[civic.md source](https://civic.md/anunturi/granturi.html)" >> $GITHUB_STEP_SUMMARY
