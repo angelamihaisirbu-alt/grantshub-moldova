@@ -781,6 +781,34 @@ const CALLS = [
         verifiedSource: "sida.se (program pe organizații umbrelă, fără call direct deschis)"
     },
 
+    // ============ Solidarity Fund PL Moldova ============
+    {
+        id: "solidarityfund-pl-rolling-2026",
+        title: "Solidarity Fund PL Moldova – Granturi pentru APL, antreprenoriat social, refugiați",
+        funderId: "solidarityfund",
+        opensOn: "2026-01-01",
+        deadline: "2026-12-31",
+        deadlineType: "rolling",
+        deadlineNote: "Apeluri tematice publicate pe parcursul anului — verifică moldova.solidarityfund.pl",
+        audiences: ["APL", "ONG", "IMM"],
+        topics: ["Dezvoltare regională", "Antreprenoriat", "Refugiați", "Tineret", "Coeziune socială"],
+        type: "Grant",
+        budgetTotal: "Buget anual Polish Aid prin Solidarity Fund PL",
+        budgetPerProject: "5.000 – 100.000 EUR",
+        eligibility: [
+            "Autorități publice locale (primării, consilii raionale) cu proiecte de dezvoltare incluzivă",
+            "ONG-uri active în antreprenoriat social și dezvoltare locală",
+            "Inițiative pentru integrarea refugiaților ucraineni",
+            "Programe pentru tineret și coeziune socială",
+            "Aplicare prin apeluri publice tematice anunțate pe moldova.solidarityfund.pl",
+            "Implementator: reprezentanța Solidarity Fund PL pentru Polish Aid"
+        ],
+        description: "Solidarity Fund PL implementează în Moldova programul Polish Aid (asistență oficială pentru dezvoltare a Poloniei). Domenii prioritare: dezvoltare locală, antreprenoriat social, sprijin pentru refugiați, tineret, coeziune.",
+        url: "https://moldova.solidarityfund.pl",
+        verified: "2026-05-22",
+        verifiedSource: "moldova.solidarityfund.pl (implementator Polish Aid în Moldova)"
+    },
+
     // ============ Guvernul României – DRP (Diaspora) ============
     {
         id: "drp-romania-2026",
@@ -1306,6 +1334,16 @@ const FUNDERS = {
         originLabel: "Bilateral · Germania (Ambasadă)",
         description: "Ambasada Germaniei administrează micro-granturi și sprijin cultural. Programele mari de cooperare prin GIZ (vezi separat). Contact direct la ambasadă.",
         website: "https://chisinau.diplo.de/md-ro"
+    },
+    solidarityfund: {
+        id: "solidarityfund",
+        name: "Solidarity Fund PL Moldova",
+        short: "SFPL",
+        logoColor: "red",
+        origin: "Bilateral",
+        originLabel: "Bilateral · Polonia (Polish Aid)",
+        description: "Reprezentanța Solidarity Fund PL implementează Polish Aid în Moldova. Granturi pentru APL, antreprenoriat social, dezvoltare locală, refugiați.",
+        website: "https://moldova.solidarityfund.pl"
     },
     drp: {
         id: "drp",

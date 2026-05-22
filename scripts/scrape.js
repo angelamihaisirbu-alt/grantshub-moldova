@@ -53,6 +53,14 @@ const SOURCES = [
         anchorRe: /<a[^>]+href="(https?:\/\/(?:www\.)?md\.emb-japan\.go\.jp\/[^"#?]+\/?)"[^>]*>\s*([^<]+?)\s*<\/a>/gi,
         absolute: u => u,
         keywordFilter: /grant|kusanone|grassroots|program|apel/i
+    },
+    {
+        name: 'moldova.solidarityfund.pl',
+        url: 'https://moldova.solidarityfund.pl',
+        funderId: 'solidarityfund',
+        anchorRe: /<a[^>]+href="(https?:\/\/moldova\.solidarityfund\.pl\/[^"#?]+\/?)"[^>]*>\s*([^<]+?)\s*<\/a>/gi,
+        absolute: u => u,
+        keywordFilter: /grant|finan[țt]|call|apel|proiect|program|comp[ée]tition/i
     }
 ];
 
