@@ -523,6 +523,9 @@ section { padding: 80px 0; }
     place-items: center;
     padding: 20px;
 }
+.modal[hidden] {
+    display: none !important;
+}
 .modal-backdrop {
     position: absolute;
     inset: 0;
