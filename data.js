@@ -698,6 +698,58 @@ const CALLS = [
         verifiedSource: "Creative Europe Desk Moldova"
     },
 
+    // ============ Primării municipale ============
+    {
+        id: "primaria-chisinau-buget-civil-2027",
+        title: "Buget Civil Chișinău – Ediția 2027 (apel așteptat ianuarie–februarie 2027)",
+        funderId: "primaria-chisinau",
+        opensOn: "2027-01-01",
+        deadline: "2027-02-28",
+        deadlineType: "expected",
+        deadlineNote: "Apel anual recurent. Ediția 2026 s-a închis 28 februarie 2026. Următorul apel: ianuarie–februarie 2027.",
+        audiences: ["ONG", "Public", "IMM"],
+        topics: ["Cultură", "Educație", "Eficiență energetică", "Infrastructură", "Coeziune socială", "Tineret"],
+        type: "Grant",
+        budgetTotal: "Buget anual municipal Chișinău",
+        budgetPerProject: "Proiecte mici: până la 100.000 MDL · Proiecte mari: până la 300.000 MDL",
+        eligibility: [
+            "Cetățeni rezidenți în Chișinău (peste 18 ani)",
+            "Persoane juridice (ONG-uri, asociații, întreprinderi) cu sediul în Chișinău",
+            "Cofinanțare: 1% pentru persoane fizice, 20% pentru persoane juridice",
+            "100 semnături minim pentru proiecte mici, 200 pentru proiecte mari",
+            "Domenii: amenajare spații publice, mobilitate urbană, infrastructură culturală/socială, tehnologii inovative, eficiență energetică, educație, cultură, artă, sport"
+        ],
+        description: "Mecanism de buget participativ al Primăriei Chișinău: cetățenii propun proiecte → comunitatea votează → primăria implementează. Din 2021, peste 50 proiecte realizate. Email aplicare: bugetcivil@pmc.md.",
+        url: "https://www.chisinau.md/ro/buget-civil-chisinau-20860.html",
+        verified: "2026-05-22",
+        verifiedSource: "chisinau.md (program anual recurent)"
+    },
+    {
+        id: "balti-capitala-tineretului-2026",
+        title: "Bălți – Capitala Tineretului 2026 (Programul Granturi pentru Tineri)",
+        funderId: "primaria-balti",
+        opensOn: "2026-05-18",
+        deadline: "2026-12-31",
+        deadlineType: "rolling",
+        deadlineNote: "Înregistrare program: 14 mai 2026 (închis). Granturile concrete se finanțează pe parcursul anului — verifică balti.md / tineret.gov.md",
+        audiences: ["ONG"],
+        topics: ["Tineret", "Educație", "Cultură", "Coeziune socială", "Dezvoltare regională"],
+        type: "Grant",
+        budgetTotal: "4.000.000 MDL pentru programul anual",
+        budgetPerProject: "Variabil (minim 10 inițiative locale finanțate)",
+        eligibility: [
+            "Tineri (18–35 ani) din mun. Bălți și nordul țării (11 raioane)",
+            "ONG-uri de tineret și grupuri de inițiativă",
+            "60 participanți formați în redactarea proiectelor",
+            "Minim 10 inițiative locale finanțate și implementate",
+            "Program în parteneriat cu Agenția Națională pentru Tineret + MEC"
+        ],
+        description: "Bălți a fost desemnat Capitala Tineretului Moldovei pentru 2026. 4 milioane MDL alocate pentru sprijinirea inițiativelor de tineret prin instruire + granturi + evenimente. Implementator local: DITS Bălți + Agenția Națională pentru Tineret.",
+        url: "https://balti.md",
+        verified: "2026-05-22",
+        verifiedSource: "tineret.gov.md + balti.md (program 2026 activ)"
+    },
+
     // ============ US Embassy – Democracy Commission ============
     {
         id: "us-embassy-democracy-2026",
@@ -936,6 +988,26 @@ const FUNDERS = {
         originLabel: "UE · Cultură & Audiovizual",
         description: "Program UE pentru sectoarele culturale și creative. Moldova țară participantă din 2022.",
         website: "https://culture.ec.europa.eu/creative-europe"
+    },
+    "primaria-chisinau": {
+        id: "primaria-chisinau",
+        name: "Primăria Municipiului Chișinău",
+        short: "PMC",
+        logoColor: "navy",
+        origin: "National",
+        originLabel: "Municipal · APL Chișinău",
+        description: "Mecanism de buget participativ + finanțare proiecte comunitare prin Direcția Relații Publice. Apeluri anuale recurente.",
+        website: "https://www.chisinau.md/ro/buget-civil-chisinau-20860.html"
+    },
+    "primaria-balti": {
+        id: "primaria-balti",
+        name: "Primăria Municipiului Bălți",
+        short: "PMB",
+        logoColor: "red",
+        origin: "National",
+        originLabel: "Municipal · APL Bălți",
+        description: "Capitala Tineretului 2026. 4 mil MDL alocate pentru sprijinirea inițiativelor de tineret prin DITS Bălți + Agenția Națională pentru Tineret.",
+        website: "https://balti.md"
     }
 };
 
