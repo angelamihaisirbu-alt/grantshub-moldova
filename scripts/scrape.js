@@ -43,6 +43,17 @@ function slugify(s) {
         .replace(/-+$/, '');
 }
 
+function decodeHtmlEntities(s) {
+    const named = {
+        '&amp;': '&', '&lt;': '<', '&gt;': '>', '&quot;': '"', '&apos;': "'",
+        '&nbsp;': ' ', '&#039;': "'", '&#39;': "'", '&#34;': '"'
+    };
+    return s
+        .replace(/&[a-z]+;|&#0?39;|&#0?34;/gi, m => named[m.toLowerCase()] || m)
+        .replace(/&#(\d+);/g, (_, code) => String.fromCharCode(parseInt(code, 10)))
+        .replace(/&#x([0-9a-f]+);/gi, (_, code) => String.fromCharCode(parseInt(code, 16)));
+}
+
 function todayISO() {
     return new Date().toISOString().slice(0, 10);
 }
@@ -88,9 +99,12 @@ async function main() {
 
     while ((m = entryRe.exec(html)) !== null) {
         const relUrl = m[1];
-        const title = m[2].replace(/\s+/g, ' ').trim();
+        const title = decodeHtmlEntities(m[2]).replace(/\s+/g, ' ').trim();
         if (title.length < 12) continue;
-        if (/^(Granturi|Anunturi|Acasa|Mai mult)/.test(title)) continue;
+        // Skip navigation, pagination, category labels (case-insensitive)
+        if (/^(Granturi|Anun[țt]uri|Acas[ăa]|Mai mult|Vezi tot|Citește|Citeste|Pagina|Înapoi|Inapoi|\d+ \w+ \d{4})/i.test(title)) continue;
+        // Skip if title is just URL slug fragments (no proper words)
+        if (!/[a-z]{4,}/i.test(title)) continue;
         const fullUrl = `https://civic.md${relUrl}`;
         const key = fullUrl.toLowerCase();
         if (seen.has(key)) continue;

@@ -269,14 +269,30 @@
         reader.onload = ev => {
             try {
                 const parsed = JSON.parse(ev.target.result);
-                if (!parsed.CALLS || !parsed.FUNDERS) throw new Error('Format invalid (lipsă CALLS sau FUNDERS)');
-                if (!confirm(`Înlocuiesc datele actuale cu ${parsed.CALLS.length} apeluri din fișier?`)) return;
-                CALLS = parsed.CALLS;
-                FUNDERS = parsed.FUNDERS;
-                TOPICS = parsed.TOPICS || DEFAULTS.TOPICS;
+                if (!parsed.CALLS) throw new Error('Format invalid (lipsă CALLS)');
+
+                // Merge strategy: add new calls (skip duplicates by ID), add new funders (skip existing keys)
+                const existingIds = new Set(CALLS.map(c => c.id));
+                const newCalls = parsed.CALLS.filter(c => !existingIds.has(c.id));
+                const duplicates = parsed.CALLS.length - newCalls.length;
+
+                let newFunders = 0;
+                if (parsed.FUNDERS) {
+                    for (const [k, v] of Object.entries(parsed.FUNDERS)) {
+                        if (!FUNDERS[k]) { FUNDERS[k] = v; newFunders++; }
+                    }
+                }
+
+                const msg = `Importez ${newCalls.length} apel(uri) noi` +
+                    (duplicates > 0 ? ` (${duplicates} duplicat(e) ignorat(e))` : '') +
+                    (newFunders > 0 ? ` + ${newFunders} finanțator(i) nou(i)` : '') +
+                    `. Apelurile existente sunt păstrate. OK?`;
+                if (!confirm(msg)) return;
+
+                CALLS = CALLS.concat(newCalls);
                 saveData();
                 renderTable();
-                status(`✓ Importat: ${CALLS.length} apeluri`, false);
+                status(`✓ +${newCalls.length} apeluri, +${newFunders} finanțatori. ${duplicates} duplicat(e) ignorat(e).`, false);
             } catch (err) {
                 status('✗ Import eșuat: ' + err.message, true);
             }

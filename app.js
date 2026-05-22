@@ -53,9 +53,9 @@
 
             let status;
             if (deadline < TODAY) status = 'closed';
-            else if (opens > TODAY) status = 'upcoming';
             else if (c.deadlineType === 'rolling') status = 'rolling';
             else if (c.deadlineType === 'expected') status = 'expected';
+            else if (opens > TODAY) status = 'upcoming';
             else if (daysToDeadline <= CLOSING_SOON_DAYS) status = 'closing-soon';
             else status = 'open';
 
@@ -70,16 +70,16 @@
 
     // ---------- Stats ----------
     function renderStats() {
-        const open = CALLS.filter(c => ['open', 'closing-soon', 'expected'].includes(c.computedStatus)).length;
+        // Every visible call (CALLS already filters autoDetected and closed)
+        const total = CALLS.length;
         const soon = CALLS.filter(c => c.computedStatus === 'closing-soon').length;
         const rolling = CALLS.filter(c => c.computedStatus === 'rolling').length;
         const funderIds = new Set(CALLS.map(c => c.funderId));
-        $('#stat-open').textContent = open + rolling;
+        $('#stat-open').textContent = total;
         $('#stat-soon').textContent = soon;
         $('#stat-rolling').textContent = rolling;
         $('#stat-funders').textContent = funderIds.size;
 
-        const total = CALLS.length;
         $('#badge-text').textContent = `${total} apeluri active · ${soon} se închid în mai puțin de 14 zile`;
 
         // Update audience card counts
