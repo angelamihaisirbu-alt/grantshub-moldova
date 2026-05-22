@@ -698,6 +698,89 @@ const CALLS = [
         verifiedSource: "Creative Europe Desk Moldova"
     },
 
+    // ============ Helvetas (proiectul OPTIM) ============
+    {
+        id: "helvetas-optim-rolling-2026",
+        title: "Helvetas / OPTIM – Sub-contracte și parteneriate (agricultură & ICT)",
+        funderId: "helvetas",
+        opensOn: "2026-01-01",
+        deadline: "2026-12-31",
+        deadlineType: "rolling",
+        deadlineNote: "Oportunități de parteneriat pe parcursul anului — verifică optimproject.md / helvetas.org/moldova",
+        audiences: ["IMM", "ONG", "Public"],
+        topics: ["Antreprenoriat", "Agricultură", "Digitalizare", "Dezvoltare regională"],
+        type: "Cofinantare",
+        budgetTotal: "Buget OPTIM finanțat de Confederația Elvețiană (SDC)",
+        budgetPerProject: "Variabil per parteneriat (sub-contract sau cofinanțare directă)",
+        eligibility: [
+            "IMM-uri și producători din sectorul agricol și ICT",
+            "ONG-uri ce promovează dezvoltarea sistemelor de piață",
+            "Instituții publice (ODA, AGEPI etc.) prin acorduri de parteneriat",
+            "Furnizori de servicii business development (BDS)",
+            "Aplicare prin call-uri specifice publicate pe optimproject.md sau direct prin contact cu Helvetas Moldova"
+        ],
+        description: "Helvetas implementează în Moldova proiectul OPTIM (Oportunități prin Tehnologii și Inovație) finanțat de Guvernul Elveției — focus pe agricultură și ICT. Acorduri de parteneriat semnate cu ODA, AGEPI și alte instituții pentru digitalizarea serviciilor. Apeluri de sub-contractare publicate periodic.",
+        url: "https://www.optimproject.md/ro/about",
+        verified: "2026-05-22",
+        verifiedSource: "optimproject.md + helvetas.org/moldova (proiect activ 2018–prezent)"
+    },
+
+    // ============ Embassy of Japan – Kusanone 2026 ============
+    {
+        id: "japan-kusanone-2026",
+        title: "Ambasada Japoniei – Programul Kusanone 2026 (Grassroots Human Security)",
+        funderId: "japan",
+        opensOn: "2025-10-29",
+        deadline: "2026-12-31",
+        deadlineType: "rolling",
+        deadlineNote: "Apel anual deschis — aplicațiile se primesc pe parcursul anului fiscal japonez (apr–mar)",
+        audiences: ["ONG", "Public", "APL"],
+        topics: ["Sănătate", "Educație", "Coeziune socială", "Mediu", "Apă & Sanitație", "Infrastructură"],
+        type: "Grant",
+        budgetTotal: "ODA Japonia – buget anual",
+        budgetPerProject: "Până la 10.000.000 ¥ (~2.300.000 MDL / ~120.000 USD) per proiect",
+        eligibility: [
+            "Spitale și instituții medicale publice",
+            "Autorități locale (primării, consilii raionale)",
+            "Instituții de învățământ (școli, grădinițe, universități)",
+            "Organizații neguvernamentale înregistrate în Moldova",
+            "Alte entități non-comerciale (asociații de coproprietari, cooperative)",
+            "Domenii prioritare: educație, sănătate, asistență socială, mediu, grupuri vulnerabile",
+            "Proiectul trebuie finalizat în termen de 1 an de la semnarea contractului",
+            "Aplicare în engleză, română sau rusă"
+        ],
+        description: "Kusanone (în japoneză \"la rădăcină\") este programul Ambasadei Japoniei pentru proiecte de securitate umană la nivel comunitar (ODA Grassroots). 2026 anunțat oficial în octombrie 2025. Sumă maximă ~$120k per proiect. Implementare în maxim 1 an.",
+        url: "https://www.md.emb-japan.go.jp/itpr_en/information.html",
+        verified: "2026-05-22",
+        verifiedSource: "md.emb-japan.go.jp + ipn.md (anunț oficial lansare 2026)"
+    },
+
+    // ============ Ambasada Suediei / Sida ============
+    {
+        id: "sida-csos-2027",
+        title: "Ambasada Suediei / Sida – Strategia Moldova 2021–2027 (apel mare 2027)",
+        funderId: "sweden",
+        opensOn: "2027-01-01",
+        deadline: "2027-06-30",
+        deadlineType: "expected",
+        deadlineNote: "Sida nu are call deschis acum. Următorul apel mare pentru OSC așteptat 2027. Până atunci: finanțare prin EEF, Soros, CRD.",
+        audiences: ["ONG", "Public"],
+        topics: ["Drepturile omului", "Gen", "Democrație", "Mediu", "Mass-media"],
+        type: "Grant",
+        budgetTotal: "Componentă a strategiei Sida pentru Moldova 2021–2027",
+        budgetPerProject: "Granturi mari (peste 500.000 SEK) prin organizații umbrelă",
+        eligibility: [
+            "ONG-uri moldovenești prin re-granting de la Civil Rights Defenders, FEE, Soros Foundation",
+            "Organizații suedeze cu parteneri locali",
+            "Instituții publice prin parteneriate strategice",
+            "Pentru 2026, fără apel direct deschis — accesul se face prin parteneri implementatori"
+        ],
+        description: "Suedia (Sida) sprijină Moldova prin Strategia 2021–2027. Pentru societate civilă: re-granting prin 3 organizații umbrelă (Civil Rights Defenders, Fundația Est-Europeană, Soros). Următorul apel direct pentru proiecte mari de OSC așteptat în 2027 (similar celui din 2024).",
+        url: "https://www.sida.se/en/about-sida/publications/evaluation-of-the-cso-core-support-programme-in-moldova",
+        verified: "2026-05-22",
+        verifiedSource: "sida.se (program pe organizații umbrelă, fără call direct deschis)"
+    },
+
     // ============ Primării municipale ============
     {
         id: "primaria-chisinau-buget-civil-2027",
@@ -1008,6 +1091,36 @@ const FUNDERS = {
         originLabel: "Municipal · APL Bălți",
         description: "Capitala Tineretului 2026. 4 mil MDL alocate pentru sprijinirea inițiativelor de tineret prin DITS Bălți + Agenția Națională pentru Tineret.",
         website: "https://balti.md"
+    },
+    helvetas: {
+        id: "helvetas",
+        name: "Helvetas Moldova (OPTIM)",
+        short: "HEL",
+        logoColor: "red",
+        origin: "Fundatie",
+        originLabel: "ONG internațional · Elveția",
+        description: "Helvetas implementează în Moldova proiectul OPTIM (Oportunități prin Tehnologii și Inovație în Moldova), finanțat de Guvernul Elveției. Focus: dezvoltare economică prin agricultură și ICT.",
+        website: "https://www.helvetas.org/en/switzerland/what-we-do/where-we-work/partner-countries/moldova"
+    },
+    japan: {
+        id: "japan",
+        name: "Ambasada Japoniei – Kusanone",
+        short: "JPN",
+        logoColor: "red",
+        origin: "Bilateral",
+        originLabel: "Bilateral · Japonia",
+        description: "Ambasada Japoniei la Chișinău administrează Programul Kusanone (ODA Grassroots Human Security). Apel anual pentru spitale, școli, APL, ONG-uri — max ~$120k per proiect.",
+        website: "https://www.md.emb-japan.go.jp/itpr_en/information.html"
+    },
+    sweden: {
+        id: "sweden",
+        name: "Ambasada Suediei / Sida",
+        short: "SWE",
+        logoColor: "yellow",
+        origin: "Bilateral",
+        originLabel: "Bilateral · Suedia",
+        description: "Sida sprijină Moldova prin Strategia 2021–2027. Pentru OSC: re-granting prin Civil Rights Defenders, FEE, Soros. Următorul apel direct mare așteptat 2027.",
+        website: "https://www.sida.se"
     }
 };
 
