@@ -1,0 +1,68 @@
+name: Auto-update from eProc CoE (Moldova)
+
+on:
+  schedule:
+    # Every 2 days at 07:00 UTC (~10:00 Chișinău EEST)
+    - cron: '0 7 */2 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
+jobs:
+  scrape-coe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+
+      - name: Run eProc CoE scraper
+        id: scrape
+        run: node scripts/scrape_eproc.js
+
+      - name: Show report
+        if: always()
+        run: |
+          if [ -f scripts/eproc_report.md ]; then
+            echo "===== eProc REPORT ====="
+            cat scripts/eproc_report.md
+            echo "======================="
+          fi
+
+      - name: Create Pull Request
+        if: steps.scrape.outputs.count != '0' && steps.scrape.outputs.count != ''
+        uses: peter-evans/create-pull-request@v8
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: auto-update/eproc-coe
+          delete-branch: true
+          commit-message: |
+            auto: ${{ steps.scrape.outputs.count }} anunț(uri) CoE pentru Moldova
+            Detectate pe eproc.coe.int — adăugate cu autoDetected: true.
+          title: "🏛 ${{ steps.scrape.outputs.count }} anunț(uri) noi CoE (Moldova)"
+          body-path: scripts/eproc_report.md
+          labels: |
+            auto-update
+            source:eproc-coe
+            needs-review
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## eProc CoE result" >> $GITHUB_STEP_SUMMARY
+          if [ -n "${{ steps.scrape.outputs.count }}" ] && [ "${{ steps.scrape.outputs.count }}" != "0" ]; then
+            echo "🏛 **${{ steps.scrape.outputs.count }} new Moldova-related CoE tenders** added to PR." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "ℹ️ No new Moldova-related tenders on eProc CoE." >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "[eProc CoE](https://eproc.coe.int/home)" >> $GITHUB_STEP_SUMMARY

@@ -39,9 +39,11 @@
     const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
     function init() {
-        // Filter out auto-detected entries (visible only in admin until reviewed)
-        // Also filter out "expected" entries — these are predicted future openings, not currently open
-        CALLS = CALLS.filter(c => !c.autoDetected && c.deadlineType !== 'expected');
+        // Filter out:
+        //  - autoDetected (visible only in admin until reviewed)
+        //  - deadlineType="expected" (predicted future openings, not currently open)
+        //  - manuallyClosed (marked closed by the verifier script)
+        CALLS = CALLS.filter(c => !c.autoDetected && c.deadlineType !== 'expected' && !c.manuallyClosed);
 
         // Compute status & days remaining for each call
         CALLS = CALLS.map(c => {

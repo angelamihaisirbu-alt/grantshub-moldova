@@ -1,0 +1,65 @@
+name: Verify call status (auto-mark closed)
+
+on:
+  schedule:
+    # Weekly on Monday at 08:00 UTC
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+
+      - name: Run verifier
+        id: verify
+        run: node scripts/verify_calls.js
+
+      - name: Show report
+        if: always()
+        run: |
+          if [ -f scripts/verify_report.md ]; then
+            echo "===== VERIFY REPORT ====="
+            cat scripts/verify_report.md
+            echo "========================="
+          fi
+
+      - name: Create Pull Request
+        if: steps.verify.outputs.closures != '0' && steps.verify.outputs.closures != ''
+        uses: peter-evans/create-pull-request@v8
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: auto-update/verify-closures
+          delete-branch: true
+          commit-message: |
+            auto: marchez ${{ steps.verify.outputs.closures }} apel(uri) ca închis(e)
+            Detectat de scripts/verify_calls.js (404 sau cuvinte-cheie de închidere).
+          title: "🚫 ${{ steps.verify.outputs.closures }} apel(uri) detectate ca închise"
+          body-path: scripts/verify_report.md
+          labels: |
+            auto-update
+            source:verify
+            closures
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Verify result" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- Closures: ${{ steps.verify.outputs.closures }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Suspected: ${{ steps.verify.outputs.suspected }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Errors: ${{ steps.verify.outputs.errors }}" >> $GITHUB_STEP_SUMMARY

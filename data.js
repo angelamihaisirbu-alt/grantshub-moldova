@@ -262,7 +262,7 @@ const CALLS = [
         audiences: ["ONG"],
         topics: ["Democrație", "Dezvoltare regională", "Coeziune socială"],
         type: "Grant",
-        budgetTotal: "Componentă a programului FEE/USAID",
+        budgetTotal: "Componentă a programului FEE",
         budgetPerProject: "Până la 20.000 EUR",
         eligibility: [
             "OSC-uri locale și regionale înregistrate în RM",
@@ -270,7 +270,7 @@ const CALLS = [
             "Proiecte de 18–24 luni (start iulie 2026)",
             "Focus pe dezvoltarea organizațională și reziliență"
         ],
-        description: "Grant Competition de la Centrul CONTACT pentru consolidarea capacităților OSC. Implementat în cadrul Comunitatea Mea (USAID/FEE).",
+        description: "Grant Competition de la Centrul CONTACT pentru consolidarea capacităților OSC. Implementat de Fundația Est-Europeană cu suport Sida/UE (după închiderea oficiului USAID Moldova).",
         url: "https://civic.md/anunturi/granturi/88490-apel-de-propuneri-pentru-organizatiile-societatii-civile-din-republica-moldova-2026.html",
         verified: "2026-05-22",
         verifiedSource: "civic.md anunț 2026"
@@ -439,7 +439,7 @@ const CALLS = [
         audiences: ["IMM"],
         topics: ["Antreprenoriat", "Digitalizare", "Tineret", "Inovare"],
         type: "Grant",
-        budgetTotal: "Fond rotativ USAID/Sida + ATIC",
+        budgetTotal: "Fond rotativ Sida + UE + ATIC (după închiderea oficiului USAID Moldova)",
         budgetPerProject: "5.000 – 100.000 USD",
         eligibility: [
             "Startup-uri tech înregistrate în Moldova",
@@ -825,8 +825,8 @@ const FUNDERS = {
         short: "FEE",
         logoColor: "blue",
         origin: "Fundatie",
-        originLabel: "Re-granting · USAID/Sida/EU",
-        description: "Implementator-cheie de re-granting în Moldova (USAID Comunitatea Mea, Media Enabling Democracy, EU4Civil Society).",
+        originLabel: "Re-granting · Sida / UE",
+        description: "Implementator-cheie de re-granting în Moldova (Media Enabling Democracy, EU4Civil Society, continuă programele anterior co-finanțate de USAID în Moldova).",
         website: "https://eef.md"
     },
     undp: {
@@ -885,7 +885,7 @@ const FUNDERS = {
         short: "TKW",
         logoColor: "blue",
         origin: "Bilateral",
-        originLabel: "USAID/Sida + ATIC",
+        originLabel: "Sida + UE + ATIC",
         description: "Hub de inovare ICT din Chișinău. Granturi pentru startup-uri tech.",
         website: "https://tekwill.md"
     },
