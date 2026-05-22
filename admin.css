@@ -1,3 +1,103 @@
+/* ============ AUTH GATE ============ */
+#auth-gate {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #0B2545 0%, #003DA5 100%);
+}
+.auth-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 440px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0,0,0,.3);
+    text-align: center;
+}
+.auth-brand svg { margin-bottom: 14px; }
+.auth-brand h1 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    color: var(--navy);
+    font-size: 24px;
+    margin: 0 0 8px;
+    font-weight: 700;
+}
+.auth-brand p {
+    color: var(--ink-2);
+    margin: 0 0 24px;
+    font-size: 14px;
+}
+#auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+#auth-form input {
+    padding: 14px 16px;
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: inherit;
+    background: var(--bg);
+}
+#auth-form input:focus {
+    outline: none;
+    border-color: var(--blue);
+    background: #fff;
+    box-shadow: 0 0 0 4px var(--blue-soft);
+}
+#auth-form button {
+    padding: 14px 24px;
+    background: var(--navy);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .15s;
+    font-family: inherit;
+}
+#auth-form button:hover { background: var(--blue); }
+#auth-error {
+    color: var(--red);
+    background: #FCE7E9;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    text-align: left;
+}
+.auth-hint {
+    margin: 20px 0 0;
+    font-size: 13px;
+    color: var(--ink-3);
+}
+.auth-hint a {
+    color: var(--blue);
+    text-decoration: none;
+}
+.auth-hint a:hover { text-decoration: underline; }
+
+.nav-logout {
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--ink-2);
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 500;
+}
+.nav-logout:hover {
+    background: var(--red);
+    color: #fff;
+    border-color: var(--red);
+}
+
 /* Admin-specific styles */
 .admin-hero {
     background: linear-gradient(180deg, var(--blue-soft) 0%, #fff 100%);
