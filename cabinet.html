@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabinet personal — GrantsHub Moldova</title>
+    <meta name="description" content="Cabinet personal beneficiar: dashboard consultații, mesagerie cu echipa, profil avatar.">
+    <link rel="stylesheet" href="styles.css?v=5">
+    <link rel="stylesheet" href="services.css?v=5">
+    <link rel="stylesheet" href="cabinet.css?v=5">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- DEMO banner -->
+    <div class="demo-banner">
+        ⚠️ <strong>Versiune DEMO</strong> — datele se salvează doar în browser-ul tău (localStorage). Pentru cabinet real cross-device cu email codes și messaging live e necesar backend (Supabase / Firebase).
+        <button id="demo-banner-close" aria-label="Închide">×</button>
+    </div>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">
+                <div class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 40 40" width="40" height="40">
+                        <rect x="2" y="2" width="36" height="36" rx="6" fill="#003DA5"/>
+                        <path d="M10 28 L20 12 L30 28 Z" fill="#FFD200"/>
+                        <circle cx="20" cy="24" r="3" fill="#CE1126"/>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <div class="brand-name">GrantsHub <span>Cabinet</span></div>
+                    <div class="brand-tag">Beneficiar — acces personal</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="index.html">Catalog</a>
+                <a href="servicii.html">Servicii</a>
+                <a href="consultatii.html">Consultație</a>
+                <button type="button" id="logout-cabinet" class="nav-logout" hidden>🔒 Ieși</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============ AUTH SCREEN (Welcome / Login / Register / OTP) ============ -->
+    <section id="screen-auth" class="cabinet-screen">
+        <div class="container auth-container">
+
+            <!-- Welcome -->
+            <div id="auth-welcome" class="auth-panel">
+                <h1>Bine ai venit la cabinetul tău</h1>
+                <p class="lead">Aici poți urmări consultațiile tale, comunica cu echipa AO Centrul de Excelență Proiecte și Strategii, și personaliza profilul.</p>
+                <div class="cta-pair">
+                    <button class="btn btn-primary btn-lg" data-goto="register">Creează cont nou</button>
+                    <button class="btn btn-ghost btn-lg" data-goto="login">Am deja cont</button>
+                </div>
+            </div>
+
+            <!-- Register: email -->
+            <div id="auth-register" class="auth-panel" hidden>
+                <h1>Înregistrare</h1>
+                <p>Introdu adresa de email. Vei primi un cod de acces de 6 cifre.</p>
+                <form id="form-register">
+                    <label class="form-row full">
+                        <span>Email</span>
+                        <input type="email" name="email" required autofocus placeholder="numele.tau@example.com">
+                    </label>
+                    <label class="form-row full">
+                        <span>Nume complet</span>
+                        <input type="text" name="name" required placeholder="ex. Ion Popescu">
+                    </label>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Continuă →</button>
+                        <button type="button" class="btn btn-ghost" data-goto="welcome">← Înapoi</button>
+                    </div>
+                </form>
+                <p class="demo-note">📌 <strong>DEMO:</strong> codul afișat aici simulează un email real. Cu Supabase, codul ar fi trimis automat la adresa ta.</p>
+            </div>
+
+            <!-- Login: email -->
+            <div id="auth-login" class="auth-panel" hidden>
+                <h1>Autentificare</h1>
+                <p>Introdu emailul cu care te-ai înregistrat.</p>
+                <form id="form-login">
+                    <label class="form-row full">
+                        <span>Email</span>
+                        <input type="email" name="email" required autofocus placeholder="numele.tau@example.com">
+                    </label>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Trimite cod →</button>
+                        <button type="button" class="btn btn-ghost" data-goto="welcome">← Înapoi</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- OTP code entry -->
+            <div id="auth-otp" class="auth-panel" hidden>
+                <h1>Cod de acces</h1>
+                <p>Introdu codul de 6 cifre. <strong id="otp-target-email"></strong></p>
+                <div class="otp-mockbox" id="otp-mockbox">
+                    📧 <strong>DEMO email simulat:</strong><br>
+                    Către: <span id="otp-mock-to">—</span><br>
+                    Subiect: Cod de acces GrantsHub Cabinet<br>
+                    Cod: <strong class="otp-code-display" id="otp-display">— — — — — —</strong>
+                </div>
+                <form id="form-otp">
+                    <label class="form-row full">
+                        <span>Cod de 6 cifre</span>
+                        <input type="text" name="code" required maxlength="6" pattern="\d{6}" inputmode="numeric" autofocus placeholder="123456">
+                    </label>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">🔓 Verifică și intră</button>
+                        <button type="button" class="btn btn-ghost" data-goto="welcome">Anulează</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============ APP (Dashboard + Messages + Profile) ============ -->
+    <section id="screen-app" class="cabinet-screen" hidden>
+        <div class="container">
+
+            <!-- Top bar with greeting + tabs -->
+            <div class="cabinet-top">
+                <div class="cabinet-greeting">
+                    <div class="avatar-display" id="top-avatar">👤</div>
+                    <div>
+                        <h1>Bună, <span id="user-name">utilizator</span>!</h1>
+                        <p id="user-email-display">—</p>
+                    </div>
+                </div>
+                <nav class="cabinet-tabs">
+                    <button class="tab tab-active" data-tab="dashboard">📊 Dashboard</button>
+                    <button class="tab" data-tab="messages">💬 Mesaje <span class="badge" id="msg-badge" hidden>0</span></button>
+                    <button class="tab" data-tab="profile">👤 Profil</button>
+                </nav>
+            </div>
+
+            <!-- Dashboard tab -->
+            <div class="tab-panel" id="panel-dashboard">
+                <div class="dashboard-grid">
+                    <div class="dash-card">
+                        <h3>📋 Consultațiile mele</h3>
+                        <div id="consultations-list">
+                            <p class="dash-empty">Nu ai consultații. <a href="consultatii.html">Solicită una →</a></p>
+                        </div>
+                    </div>
+                    <div class="dash-card">
+                        <h3>📬 Mesaje recente</h3>
+                        <div id="messages-preview">
+                            <p class="dash-empty">Niciun mesaj încă.</p>
+                        </div>
+                    </div>
+                    <div class="dash-card">
+                        <h3>🎯 Apeluri recomandate</h3>
+                        <div id="recommended-calls">
+                            <p class="dash-empty">Configurează profilul pentru recomandări personalizate.</p>
+                        </div>
+                    </div>
+                    <div class="dash-card">
+                        <h3>📚 Resurse utile</h3>
+                        <ul class="dash-links">
+                            <li><a href="index.html">📂 Catalog complet apeluri (32 active)</a></li>
+                            <li><a href="servicii.html">🛠 Vezi serviciile AO Centrul de Excelență</a></li>
+                            <li><a href="consultatii.html">📝 Solicită consultație nouă</a></li>
+                            <li><a href="mailto:proiecte.strategii@gmail.com">📧 Email direct echipă</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Messages tab -->
+            <div class="tab-panel" id="panel-messages" hidden>
+                <div class="messages-layout">
+                    <div class="messages-list">
+                        <h3>💬 Conversație cu echipa</h3>
+                        <p class="msg-info">Mesajele apar în timp real. Echipa răspunde în max. 2 zile lucrătoare.</p>
+                        <div id="chat-thread" class="chat-thread">
+                            <div class="msg msg-team">
+                                <div class="msg-avatar">🛡</div>
+                                <div class="msg-bubble">
+                                    <div class="msg-from">Echipa AO Centrul de Excelență</div>
+                                    <div class="msg-body">Salut! Mă bucur să te văd în cabinet. Spune-mi dacă vrei să discutăm despre o linie de finanțare specifică sau dacă ai întrebări pe procesul de aplicare. 👋</div>
+                                    <div class="msg-time">Acum</div>
+                                </div>
+                            </div>
+                        </div>
+                        <form id="form-message" class="chat-input">
+                            <textarea name="body" required rows="2" placeholder="Scrie un mesaj…"></textarea>
+                            <button type="submit" class="btn btn-primary">Trimite →</button>
+                        </form>
+                        <p class="demo-note">📌 <strong>DEMO:</strong> mesajele se salvează doar în browser-ul tău. Cu Supabase Realtime, echipa le-ar vedea instant pe cealaltă parte și ar putea răspunde live.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile tab -->
+            <div class="tab-panel" id="panel-profile" hidden>
+                <h2>Profilul tău</h2>
+                <form id="form-profile">
+                    <div class="profile-grid">
+                        <div>
+                            <h3>Detalii cont</h3>
+                            <label class="form-row full">
+                                <span>Nume complet</span>
+                                <input type="text" name="name" required>
+                            </label>
+                            <label class="form-row full">
+                                <span>Email <small>(nu se poate schimba)</small></span>
+                                <input type="email" name="email" disabled>
+                            </label>
+                            <label class="form-row full">
+                                <span>Organizație (opțional)</span>
+                                <input type="text" name="organization" placeholder="ex. ONG Verde Moldova">
+                            </label>
+                            <label class="form-row full">
+                                <span>Telefon (opțional)</span>
+                                <input type="tel" name="phone" placeholder="+373 ...">
+                            </label>
+                            <label class="form-row full">
+                                <span>Tip beneficiar</span>
+                                <select name="audience">
+                                    <option value="">— alege —</option>
+                                    <option value="ONG">ONG / Societate civilă</option>
+                                    <option value="IMM">IMM / Companie privată</option>
+                                    <option value="Public">Instituție publică</option>
+                                    <option value="APL">APL (primărie, consiliu raional)</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div>
+                            <h3>Avatar</h3>
+                            <p class="profile-hint">Alege un avatar din galeria de mai jos:</p>
+                            <div class="avatar-grid" id="avatar-grid">
+                                <!-- populat dinamic -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">💾 Salvează profilul</button>
+                        <span class="profile-saved" id="profile-saved" hidden>✓ Salvat!</span>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <strong>GrantsHub Moldova — Cabinet beneficiar</strong>
+                <p>AO Centrul de Excelență Proiecte și Strategii · proiecte.strategii@gmail.com</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Catalog</a>
+                <a href="servicii.html">Servicii</a>
+                <a href="consultatii.html">Consultație</a>
+            </div>
+            <div class="footer-meta">© 2026 · DEMO mode — backend Supabase pending</div>
+        </div>
+    </footer>
+
+    <script src="cabinet.js?v=5"></script>
+</body>
+</html>
