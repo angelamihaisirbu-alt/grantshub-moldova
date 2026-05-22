@@ -11,7 +11,50 @@ const ROOT = path.resolve(__dirname, '..');
 const DATA_FILE = path.join(ROOT, 'data.js');
 const REPORT_FILE = path.join(__dirname, 'last_report.md');
 
-const CIVIC_URL = 'https://civic.md/anunturi/granturi.html';
+// Sources to scrape. Each has: url, name, anchor regex, link-prefix for absolute URL.
+const SOURCES = [
+    {
+        name: 'civic.md',
+        url: 'https://civic.md/anunturi/granturi.html',
+        funderId: 'auto',
+        anchorRe: /<a[^>]+href="(\/anunturi\/granturi\/[^"#?]+\.html)"[^>]*>\s*([^<]+?)\s*<\/a>/g,
+        absolute: rel => `https://civic.md${rel}`,
+        keywordFilter: null
+    },
+    {
+        name: 'md.usembassy.gov',
+        url: 'https://md.usembassy.gov/education-culture/local-programs/grants/',
+        funderId: 'usembassy',
+        anchorRe: /<a[^>]+href="(https?:\/\/md\.usembassy\.gov\/[^"#?]+\/?)"[^>]*>\s*([^<]+?)\s*<\/a>/gi,
+        absolute: u => u,
+        keywordFilter: /grant|funding|program|call|proposal/i
+    },
+    {
+        name: 'gov.uk/british-embassy-chisinau',
+        url: 'https://www.gov.uk/world/organisations/british-embassy-chisinau',
+        funderId: 'uk-embassy',
+        anchorRe: /<a[^>]+href="(\/government\/(news|publications)\/[^"#?]+)"[^>]*>\s*([^<]+?)\s*<\/a>/gi,
+        absolute: rel => `https://www.gov.uk${rel}`,
+        keywordFilter: /grant|fund|call|moldova/i,
+        titleIdx: 3 // titlul e în grupul 3 (există 2 grupuri în URL)
+    },
+    {
+        name: 'chisinau.diplo.de',
+        url: 'https://chisinau.diplo.de/md-ro',
+        funderId: 'germany-embassy',
+        anchorRe: /<a[^>]+href="(https?:\/\/chisinau\.diplo\.de\/[^"#?]+\/?)"[^>]*>\s*([^<]+?)\s*<\/a>/gi,
+        absolute: u => u,
+        keywordFilter: /grant|finanț|program|cultur|apel/i
+    },
+    {
+        name: 'md.emb-japan.go.jp',
+        url: 'https://www.md.emb-japan.go.jp/itpr_en/information.html',
+        funderId: 'japan',
+        anchorRe: /<a[^>]+href="(https?:\/\/(?:www\.)?md\.emb-japan\.go\.jp\/[^"#?]+\/?)"[^>]*>\s*([^<]+?)\s*<\/a>/gi,
+        absolute: u => u,
+        keywordFilter: /grant|kusanone|grassroots|program|apel/i
+    }
+];
 
 function fetch(url, redirects = 5) {
     return new Promise((resolve, reject) => {
@@ -87,53 +130,67 @@ async function main() {
     // Check whether "auto" funder is already defined
     const hasAutoFunder = /^\s{4}auto:\s*\{/m.test(dataContent);
 
-    // Step 2: fetch civic.md
-    console.log(`[scrape] Fetching ${CIVIC_URL}`);
-    const html = await fetch(CIVIC_URL);
-    console.log(`[scrape] Fetched ${html.length} bytes`);
-
-    // Step 3: parse entries
-    const entryRe = /<a[^>]+href="(\/anunturi\/granturi\/[^"#?]+\.html)"[^>]*>\s*([^<]+?)\s*<\/a>/g;
+    // Step 2+3: fetch each source and parse entries
     const newCalls = [];
     const seen = new Set();
 
-    while ((m = entryRe.exec(html)) !== null) {
-        const relUrl = m[1];
-        const title = decodeHtmlEntities(m[2]).replace(/\s+/g, ' ').trim();
-        if (title.length < 12) continue;
-        // Skip navigation, pagination, category labels (case-insensitive)
-        if (/^(Granturi|Anun[țt]uri|Acas[ăa]|Mai mult|Vezi tot|Citește|Citeste|Pagina|Înapoi|Inapoi|\d+ \w+ \d{4})/i.test(title)) continue;
-        // Skip if title is just URL slug fragments (no proper words)
-        if (!/[a-z]{4,}/i.test(title)) continue;
-        const fullUrl = `https://civic.md${relUrl}`;
-        const key = fullUrl.toLowerCase();
-        if (seen.has(key)) continue;
-        seen.add(key);
-        if (existingUrls.has(key)) continue;
+    for (const source of SOURCES) {
+        console.log(`[scrape] Fetching ${source.name} — ${source.url}`);
+        let html;
+        try {
+            html = await fetch(source.url);
+            console.log(`[scrape] ${source.name}: ${html.length} bytes`);
+        } catch (err) {
+            console.warn(`[scrape] ${source.name} FAILED: ${err.message}`);
+            continue;
+        }
 
-        newCalls.push({
-            id: `auto-${slugify(title)}-${today}`,
-            title,
-            funderId: 'auto',
-            type: 'Grant',
-            opensOn: today,
-            deadline: plusDays(30),
-            deadlineType: 'expected',
-            deadlineNote: 'AUTO-DETECTAT — deadline neconfirmat, verifică pagina sursei',
-            audiences: ['ONG'],
-            topics: [],
-            url: fullUrl,
-            description: `Auto-detectat de pe civic.md la ${today}. Necesită revizuire manuală în admin.`,
-            budgetTotal: '',
-            budgetPerProject: '',
-            eligibility: ['AUTO-DETECTAT — necesită completare manuală din pagina sursei'],
-            verified: today,
-            verifiedSource: '.github/workflows/update-grants.yml (civic.md)',
-            autoDetected: true
-        });
+        const titleIdx = source.titleIdx || 2;
+        const re = new RegExp(source.anchorRe.source, source.anchorRe.flags);
+        let m;
+        let foundInSource = 0;
+        while ((m = re.exec(html)) !== null) {
+            const relUrl = m[1];
+            const title = decodeHtmlEntities(m[titleIdx]).replace(/\s+/g, ' ').trim();
+            if (title.length < 12) continue;
+            // Skip navigation, pagination, category labels
+            if (/^(Granturi|Anun[țt]uri|Acas[ăa]|Mai mult|Vezi tot|Cite[șs]te|Pagina|[ÎI]napoi|Read more|Home|Contact|About|Login|\d+ \w+ \d{4})/i.test(title)) continue;
+            if (!/[a-zA-Z]{4,}/i.test(title)) continue;
+            // Apply source-specific keyword filter (if any)
+            if (source.keywordFilter && !source.keywordFilter.test(title) && !source.keywordFilter.test(relUrl)) continue;
+
+            const fullUrl = source.absolute(relUrl);
+            const key = fullUrl.toLowerCase();
+            if (seen.has(key)) continue;
+            seen.add(key);
+            if (existingUrls.has(key)) continue;
+
+            newCalls.push({
+                id: `auto-${source.funderId}-${slugify(title)}-${today}`,
+                title: source.funderId === 'auto' ? title : `[${source.name}] ${title}`,
+                funderId: source.funderId,
+                type: 'Grant',
+                opensOn: today,
+                deadline: plusDays(30),
+                deadlineType: 'expected',
+                deadlineNote: `AUTO-DETECTAT din ${source.name} — verifică deadline-ul real pe pagina sursei`,
+                audiences: ['ONG'],
+                topics: [],
+                url: fullUrl,
+                description: `Auto-detectat de pe ${source.name} la ${today}. Necesită revizuire manuală în admin (deadline real, eligibilitate, beneficiari).`,
+                budgetTotal: '',
+                budgetPerProject: '',
+                eligibility: [`AUTO-DETECTAT din ${source.name} — completează criteriile din pagina sursei`],
+                verified: today,
+                verifiedSource: `.github/workflows/update-grants.yml (${source.name})`,
+                autoDetected: true
+            });
+            foundInSource++;
+        }
+        console.log(`[scrape] ${source.name}: ${foundInSource} new candidates`);
     }
 
-    console.log(`[scrape] Candidates detected: ${newCalls.length}`);
+    console.log(`[scrape] Total candidates from all sources: ${newCalls.length}`);
 
     // Step 4: write report
     const reportLines = [

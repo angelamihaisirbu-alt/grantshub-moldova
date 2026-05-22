@@ -857,6 +857,114 @@ const CALLS = [
         url: "https://md.usembassy.gov/democracy-commission-small-grants-program/",
         verified: "2026-05-22",
         verifiedSource: "md.usembassy.gov (program continuat anual)"
+    },
+
+    // ============ US Embassy – Freedom 250 AFCP ============
+    {
+        id: "us-embassy-freedom250-afcp-2026",
+        title: "Ambasada SUA – Freedom 250 / AFCP (patrimoniu cultural)",
+        funderId: "usembassy",
+        opensOn: "2026-01-01",
+        deadline: "2026-12-31",
+        deadlineType: "rolling",
+        deadlineNote: "Programul 250 (aniversarea 250 ani SUA) — apel principal a închis 15 aprilie; sesiuni suplimentare posibile pe parcursul anului",
+        audiences: ["ONG", "Public", "APL"],
+        topics: ["Cultură", "Patrimoniu", "Educație"],
+        type: "Grant",
+        budgetTotal: "$6.000.000 (program total)",
+        budgetPerProject: "25.000 – 250.000 USD",
+        eligibility: [
+            "Instituții și organizații care promovează patrimoniul cultural",
+            "ONG-uri, instituții academice, autorități publice",
+            "Proiecte cu durată 1–5 ani",
+            "Focus pe cooperare internațională și educație istorică",
+            "Aplicare online prin bit.ly/AFCP250 sau grants.gov"
+        ],
+        description: "Programul Freedom 250 marchează 250 de ani de independență a SUA. Suport pentru proiecte care evidențiază contribuțiile istorice/culturale ale SUA în lume, inclusiv în Moldova. Componentă a Ambassadors Fund for Cultural Preservation (AFCP).",
+        url: "https://md.usembassy.gov/education-culture/local-programs/grants/",
+        verified: "2026-05-22",
+        verifiedSource: "moldpres.md + md.usembassy.gov (anunț oficial 2026)"
+    },
+
+    // ============ UK Embassy – Bilateral Programme Fund ============
+    {
+        id: "uk-embassy-bilateral-2026",
+        title: "Ambasada Marii Britanii – Bilateral Programme Fund / Good Governance Fund",
+        funderId: "uk-embassy",
+        opensOn: "2026-01-01",
+        deadline: "2026-12-31",
+        deadlineType: "rolling",
+        deadlineNote: "Apeluri prin email pentru priorități anuale — contact: projects.chisinau@fcdo.gov.uk",
+        audiences: ["ONG", "Public"],
+        topics: ["Democrație", "Justiție", "Mass-media", "Combaterea corupției", "Guvernare"],
+        type: "Grant",
+        budgetTotal: "Buget anual FCDO pentru Moldova",
+        budgetPerProject: "10.000 – 100.000 GBP",
+        eligibility: [
+            "ONG-uri cu istoric demonstrabil de implementare",
+            "Instituții publice pentru reforme",
+            "Mass-media independentă (jurnalism investigativ, alfabetizare media)",
+            "Priorități anuale: buna guvernare, anti-corupție, justiție, libertatea presei, securitate",
+            "Aplicații prin email proiecte la ambasadă, evaluare în trance-uri trimestriale",
+            "Cofinanțare opțională, parteneriate UK-MD apreciate"
+        ],
+        description: "Ambasada Marii Britanii la Chișinău administrează Bilateral Programme Fund + Good Governance Fund Moldova (FCDO). Suport pentru reforme în guvernare, justiție, anti-corupție și mass-media independentă. Contact direct: projects.chisinau@fcdo.gov.uk.",
+        url: "https://www.gov.uk/world/organisations/british-embassy-chisinau",
+        verified: "2026-05-22",
+        verifiedSource: "gov.uk/world/organisations/british-embassy-chisinau"
+    },
+
+    // ============ Germany Embassy – Micro Grants ============
+    {
+        id: "germany-embassy-micro-2026",
+        title: "Ambasada Germaniei – Micro-granturi & sprijin cultural",
+        funderId: "germany-embassy",
+        opensOn: "2026-01-01",
+        deadline: "2026-12-31",
+        deadlineType: "rolling",
+        deadlineNote: "Apeluri pe priorități anuale prin Ambasadă — contact direct: info@chis.diplo.de",
+        audiences: ["ONG", "Public"],
+        topics: ["Cultură", "Educație", "Democrație", "Integrare europeană"],
+        type: "Grant",
+        budgetTotal: "Buget anual al Ambasadei Germaniei",
+        budgetPerProject: "1.000 – 25.000 EUR (micro) / suport major prin GIZ separat",
+        eligibility: [
+            "ONG-uri active în cultură, educație civică, integrare europeană",
+            "Instituții publice / școli pentru proiecte culturale germano-moldovenești",
+            "Proiecte mass-media, parteneriate educaționale",
+            "Programe mari implementate prin GIZ — vezi entry GIZ separat (MSPL, EU4Business, VET, FACE)",
+            "Aplicații direct la Ambasada Germaniei"
+        ],
+        description: "Ambasada Germaniei la Chișinău administrează micro-granturi și sprijin cultural anual. Programele mari de cooperare (MSPL, EU4Business, VET, FACE) sunt implementate prin GIZ. Pentru proiecte mici culturale/educaționale, contactați direct ambasada.",
+        url: "https://chisinau.diplo.de/md-ro",
+        verified: "2026-05-22",
+        verifiedSource: "chisinau.diplo.de"
+    },
+
+    // ============ Denmark Embassy ============
+    {
+        id: "denmark-embassy-2026",
+        title: "Danemarca – Sprijin pentru Moldova (prin multilaterale)",
+        funderId: "denmark",
+        opensOn: "2026-01-01",
+        deadline: "2026-12-31",
+        deadlineType: "rolling",
+        deadlineNote: "Danemarca finanțează Moldova prin contribuții UE/ONU + parteneriate strategice — fără call direct deschis pentru aplicații individuale",
+        audiences: ["ONG", "Public"],
+        topics: ["Democrație", "Drepturile omului", "Gen", "Climă"],
+        type: "AT",
+        budgetTotal: "Contribuții multilaterale prin UE, UN Women, UNDP, OSCE",
+        budgetPerProject: "Variabil prin implementatori",
+        eligibility: [
+            "Acces indirect prin organizații multilaterale finanțate parțial de Danemarca",
+            "ONG-uri care aplică la UN Women, UNDP, OSCE — toate primesc fonduri daneze",
+            "Inițiative pe drepturile omului, gen, climă, transformare democratică",
+            "Pentru proiecte mari: contact diplomatic direct (Ambasada Danemarcei nu are reprezentanță permanentă la Chișinău)"
+        ],
+        description: "Danemarca nu are ambasadă deschisă la Chișinău și nu publică apeluri directe pentru ONG-uri locale. Sprijinul vine prin: contribuții la UE (NDICI), UN Women, UNDP, OSCE, programe regionale Eastern Partnership. Pentru detalii: Ambasada Daneză la București cu acreditare și pentru Moldova.",
+        url: "https://rumaenien.um.dk/en",
+        verified: "2026-05-22",
+        verifiedSource: "um.dk (Ministerul Afacerilor Externe Danemarca)"
     }
 ];
 
@@ -1121,6 +1229,36 @@ const FUNDERS = {
         originLabel: "Bilateral · Suedia",
         description: "Sida sprijină Moldova prin Strategia 2021–2027. Pentru OSC: re-granting prin Civil Rights Defenders, FEE, Soros. Următorul apel direct mare așteptat 2027.",
         website: "https://www.sida.se"
+    },
+    "uk-embassy": {
+        id: "uk-embassy",
+        name: "Ambasada Marii Britanii (FCDO)",
+        short: "UK",
+        logoColor: "navy",
+        origin: "Bilateral",
+        originLabel: "Bilateral · Marea Britanie",
+        description: "Ambasada UK administrează Bilateral Programme Fund + Good Governance Fund Moldova. Granturi pe reforme, anti-corupție, mass-media. Contact: projects.chisinau@fcdo.gov.uk.",
+        website: "https://www.gov.uk/world/organisations/british-embassy-chisinau"
+    },
+    "germany-embassy": {
+        id: "germany-embassy",
+        name: "Ambasada Germaniei la Chișinău",
+        short: "DE",
+        logoColor: "red",
+        origin: "Bilateral",
+        originLabel: "Bilateral · Germania (Ambasadă)",
+        description: "Ambasada Germaniei administrează micro-granturi și sprijin cultural. Programele mari de cooperare prin GIZ (vezi separat). Contact direct la ambasadă.",
+        website: "https://chisinau.diplo.de/md-ro"
+    },
+    denmark: {
+        id: "denmark",
+        name: "Danemarca (prin multilaterale)",
+        short: "DK",
+        logoColor: "red",
+        origin: "Bilateral",
+        originLabel: "Bilateral · Danemarca",
+        description: "Danemarca contribuie pentru Moldova prin UE, UN Women, UNDP, OSCE. Nu are ambasadă deschisă la Chișinău. Acces indirect prin parteneri multilaterali.",
+        website: "https://rumaenien.um.dk/en"
     }
 };
 
