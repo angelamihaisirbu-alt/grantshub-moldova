@@ -61,8 +61,8 @@
                         <input type="email" name="email" required placeholder="numele.tau@example.com">
                     </label>
                     <label class="form-row">
-                        <span>Telefon (opțional)</span>
-                        <input type="tel" name="telefon" placeholder="+373 ...">
+                        <span>Telefon <em>*</em></span>
+                        <input type="tel" name="telefon" required pattern="[\d\s\+\-\(\)]{7,}" placeholder="+373 ..." title="Introdu un număr de telefon valid (minim 7 cifre)">
                     </label>
                 </div>
 
@@ -275,7 +275,7 @@
             const fd = new FormData(form);
 
             // Validate basic fields
-            if (!fd.get('nume') || !fd.get('email') || !fd.get('descriere') || !fd.get('tipBeneficiar') || !fd.get('titluProiect') || !fd.get('acordContact')) {
+            if (!fd.get('nume') || !fd.get('email') || !fd.get('telefon') || !fd.get('descriere') || !fd.get('tipBeneficiar') || !fd.get('titluProiect') || !fd.get('acordContact')) {
                 alert('Te rugăm să completezi toate câmpurile obligatorii (marcate cu *).');
                 return;
             }
@@ -293,7 +293,7 @@
                 `Nume: ${fd.get('nume')}`,
                 `Organizație: ${fd.get('organizatie') || '—'}`,
                 `Email: ${fd.get('email')}`,
-                `Telefon: ${fd.get('telefon') || '—'}`,
+                `Telefon: ${fd.get('telefon')}`,
                 '',
                 '— PROIECT —',
                 `Titlu / domeniu: ${fd.get('titluProiect')}`,
