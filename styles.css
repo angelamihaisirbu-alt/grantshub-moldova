@@ -83,6 +83,14 @@ body {
     background: var(--bg);
 }
 .nav-admin:hover { background: var(--navy); color: #fff !important; border-color: var(--navy); }
+.nav-cta {
+    padding: 6px 14px;
+    border-radius: 8px;
+    background: var(--navy);
+    color: #fff !important;
+    font-weight: 600;
+}
+.nav-cta:hover { background: var(--blue); color: #fff !important; }
 
 .pulse-dot {
     display: inline-block;
