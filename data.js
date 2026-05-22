@@ -781,6 +781,63 @@ const CALLS = [
         verifiedSource: "sida.se (program pe organizații umbrelă, fără call direct deschis)"
     },
 
+    // ============ Guvernul României – DRP (Diaspora) ============
+    {
+        id: "drp-romania-2026",
+        title: "DRP România – Sesiunea de finanțare nerambursabilă 2026 (7 programe pentru românii de pretutindeni)",
+        funderId: "drp",
+        opensOn: "2026-04-01",
+        deadline: "2026-12-31",
+        deadlineType: "rolling",
+        deadlineNote: "Sesiunea 2026 e deschisă din 1 aprilie. Evaluare periodică pe parcursul anului — verifică dprp.gov.ro",
+        audiences: ["ONG", "Public"],
+        topics: ["Educație", "Cultură", "Mass-media", "Patrimoniu", "Tineret", "Coeziune socială", "Diaspora"],
+        type: "Grant",
+        budgetTotal: "Buget DRP – sesiunea 2026 (alocare anuală Guvernul României)",
+        budgetPerProject: "Variabil per program și complexitate proiect",
+        eligibility: [
+            "Asociații, fundații, unități religioase (parohii, mănăstiri)",
+            "ONG-uri ale românilor din afara granițelor României (inclusiv Republica Moldova)",
+            "Persoane fizice autorizate (PFA)",
+            "Entități juridice din România sau din afara granițelor",
+            "Maxim 2 proiecte per aplicant — dar în programe diferite",
+            "Cele 7 programe: Educație · Cultură · Societate civilă · Media · Spiritualitate și Tradiție · Comunitate · Sport (nou în 2026)",
+            "Aplicații + Ghid pe dprp.gov.ro; întrebări la proiecte@dprp.gov.ro"
+        ],
+        description: "Departamentul pentru Românii de Pretutindeni (Guvernul României) finanțează proiecte ale comunităților românești din străinătate — inclusiv din Republica Moldova. 7 programe tematice pentru 2026 (Sport e nou). Suport pentru identitatea culturală, limba română, viața comunității.",
+        url: "https://dprp.gov.ro/ro/finantare/departamentul-pentru-romanii-de-pretutindeni-lanseaza-sesiunea-de-finantare-nerambursabila-2026/",
+        verified: "2026-05-22",
+        verifiedSource: "dprp.gov.ro (lansat oficial 1 aprilie 2026)"
+    },
+
+    // ============ Guvernul României – RoAid ============
+    {
+        id: "roaid-romania-2026",
+        title: "RoAid – Agenția României pentru Cooperare Internațională (proiecte pentru Moldova)",
+        funderId: "roaid",
+        opensOn: "2026-01-01",
+        deadline: "2026-12-31",
+        deadlineType: "rolling",
+        deadlineNote: "Apeluri tematice publicate pe parcursul anului — verifică roaid.ro și contact: granturi@roaid.ro",
+        audiences: ["ONG", "Public", "APL"],
+        topics: ["Drepturile omului", "Coeziune socială", "Sănătate", "Integrare europeană", "Infrastructură", "Educație"],
+        type: "Grant",
+        budgetTotal: "Buget anual România – cooperare internațională",
+        budgetPerProject: "Variabil per apel (de la 10.000 EUR la 500.000+ EUR)",
+        eligibility: [
+            "ONG-uri din România cu parteneri în Moldova (consorții obligatorii pentru proiecte mari)",
+            "ONG-uri moldovenești pentru programe specifice de re-granting",
+            "Instituții publice din ambele țări (Twinning, schimburi)",
+            "Domenii prioritare: drepturile omului, societate civilă, incluziune socială, infrastructură, sănătate, protecția copilului",
+            "Moldova e una din 6 țări prioritare RoAid (Bazinul Mării Negre Extins)",
+            "Aplicare prin granturi@roaid.ro sau call-uri publice anuale"
+        ],
+        description: "RoAid (Agenția de Cooperare Internațională pentru Dezvoltare) — programul guvernamental al României pentru cooperare cu țări în dezvoltare. Moldova e prioritate strategică. Finanțează proiecte pe drepturile omului, societate civilă, incluziune, infrastructură, sănătate.",
+        url: "https://roaid.ro/category/republica-moldova/",
+        verified: "2026-05-22",
+        verifiedSource: "roaid.ro (program activ pentru Moldova)"
+    },
+
     // ============ Primării municipale ============
     {
         id: "primaria-chisinau-buget-civil-2027",
@@ -1249,6 +1306,26 @@ const FUNDERS = {
         originLabel: "Bilateral · Germania (Ambasadă)",
         description: "Ambasada Germaniei administrează micro-granturi și sprijin cultural. Programele mari de cooperare prin GIZ (vezi separat). Contact direct la ambasadă.",
         website: "https://chisinau.diplo.de/md-ro"
+    },
+    drp: {
+        id: "drp",
+        name: "DRP România – Românii de Pretutindeni",
+        short: "DRP",
+        logoColor: "yellow",
+        origin: "Bilateral",
+        originLabel: "Bilateral · România (Guvern)",
+        description: "Departamentul pentru Românii de Pretutindeni (Guvernul României). Sesiunea anuală pentru proiecte ale comunităților românești — incl. Moldova. 7 programe: educație, cultură, societate civilă, media, spiritualitate, comunitate, sport.",
+        website: "https://dprp.gov.ro"
+    },
+    roaid: {
+        id: "roaid",
+        name: "RoAid – Agenția României pentru Cooperare Internațională",
+        short: "RoAid",
+        logoColor: "red",
+        origin: "Bilateral",
+        originLabel: "Bilateral · România (Cooperare)",
+        description: "Programul guvernamental al României pentru cooperare cu țări în dezvoltare. Moldova e prioritate strategică. Granturi pe drepturile omului, infrastructură, sănătate, societate civilă.",
+        website: "https://roaid.ro"
     },
     denmark: {
         id: "denmark",
