@@ -830,7 +830,7 @@ const CALLS = [
             "Implementator: reprezentanța Solidarity Fund PL pentru Polish Aid"
         ],
         description: "Solidarity Fund PL implementează în Moldova programul Polish Aid (asistență oficială pentru dezvoltare a Poloniei). Domenii prioritare: dezvoltare locală, antreprenoriat social, sprijin pentru refugiați, tineret, coeziune.",
-        url: "https://moldova.solidarityfund.pl",
+        url: "https://solidarityfund.md/en/",
         verified: "2026-05-22",
         verifiedSource: "moldova.solidarityfund.pl (implementator Polish Aid în Moldova)"
     },
@@ -1318,7 +1318,7 @@ const FUNDERS = {
         origin: "Bilateral",
         originLabel: "Bilateral · Polonia (Polish Aid)",
         description: "Reprezentanța Solidarity Fund PL implementează Polish Aid în Moldova. Granturi pentru APL, antreprenoriat social, dezvoltare locală, refugiați.",
-        website: "https://moldova.solidarityfund.pl"
+        website: "https://solidarityfund.md/en/"
     },
     drp: {
         id: "drp",

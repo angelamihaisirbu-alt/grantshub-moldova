@@ -46,19 +46,24 @@ const SOURCES = [
         keywordFilter: /grant|kusanone|grassroots|program|apel/i
     },
     {
-        name: 'moldova.solidarityfund.pl',
-        url: 'https://moldova.solidarityfund.pl',
+        name: 'solidarityfund.md',
+        url: 'https://solidarityfund.md/en/',
         funderId: 'solidarityfund',
-        anchorRe: /<a[^>]+href="(https?:\/\/moldova\.solidarityfund\.pl\/[^"#?]+\/?)"[^>]*>\s*([^<]+?)\s*<\/a>/gi,
+        anchorRe: /<a[^>]+href="(https?:\/\/(?:www\.)?solidarityfund\.md\/[^"#?]+\/?)"[^>]*>\s*([^<]+?)\s*<\/a>/gi,
         absolute: u => u,
-        keywordFilter: /grant|finan[țt]|call|apel|proiect|program|comp[ée]tition/i
+        keywordFilter: /grant|finan[țt]|call|apel|proiect|program|comp[ée]tition|achiziti|tender/i
     }
 ];
 
 function fetch(url, redirects = 5) {
     return new Promise((resolve, reject) => {
         const req = https.get(url, {
-            headers: { 'User-Agent': 'GrantsHubMoldova/1.0 (+github-actions)' }
+            headers: {
+                // Realistic UA — some sites (Japan embassy etc.) reject obvious bot UAs with 403
+                'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                'Accept-Language': 'ro,en-US;q=0.9,en;q=0.8'
+            }
         }, res => {
             if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location && redirects > 0) {
                 return fetch(res.headers.location, redirects - 1).then(resolve, reject);
