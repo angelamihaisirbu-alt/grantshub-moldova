@@ -42,27 +42,30 @@
         };
     }
 
-    // ── Injectare butoane pe call cards din dashboard ──────────────────────
-    // Cabinet-dashboard.js renderizează lista de apeluri. Adăugăm un buton
-    // delegat (event listener pe wrap) care e robust la re-render.
+    // ── Injectare butoane pe call cards (bulletproof: observer + interval) ──
     function injectCallFlowButtons() {
-        // Adăugăm butonul pe fiecare dash-call-item EXISTENT
-        $$('#recommended-calls .dash-call-item').forEach(item => {
-            if (item.querySelector('.call-flow-btn')) return;  // deja injectat
+        const items = document.querySelectorAll('#recommended-calls .dash-call-item');
+        if (items.length === 0) return 0;
+        let added = 0;
+        items.forEach(item => {
+            if (item.querySelector('.call-flow-btn')) return;
             const title = item.querySelector('.dash-call-title')?.textContent?.trim() || '';
-            // Extract call ID din attribut data sau prin matching titlu
-            // Backend nu emite call_id în DOM. Folosim matching pe URL.
             const linkAnchor = item.querySelector('a[href*="://"]');
             const url = linkAnchor?.getAttribute('href') || '';
             const btn = document.createElement('button');
             btn.type = 'button';
-            btn.className = 'call-flow-btn btn btn-ghost';
-            btn.innerHTML = '💡 Generează idei pentru acest apel';
-            btn.dataset.callTitle = title;
-            btn.dataset.callUrl = url;
-            btn.addEventListener('click', () => openIdeasFlow(title, url));
+            btn.className = 'call-flow-btn';
+            btn.innerHTML = '💡 <strong>Generează 5 idei + fișa de proiect</strong>';
+            btn.title = 'Click pentru a primi 5 idei tailored la acest apel, apoi alegi una și se generează fișa completă';
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                openIdeasFlow(title, url);
+            });
             item.appendChild(btn);
+            added++;
         });
+        return added;
     }
 
     // ── Ideas modal ─────────────────────────────────────────────────────────
@@ -413,22 +416,34 @@
         body.querySelector('.cf-save-btn')?.addEventListener('click', () => saveSheetToAccount(sheet));
     }
 
-    // ── Boot ───────────────────────────────────────────────────────────────
+    // ── Boot — bulletproof: observer on body + interval failsafe + events ──
     function init() {
-        // Injectare la load + după re-render dashboard
-        const observer = new MutationObserver(() => injectCallFlowButtons());
-        const rec = document.querySelector('#recommended-calls');
-        if (rec) {
-            observer.observe(rec, { childList: true, subtree: true });
+        // 1. MutationObserver pe ÎNTREG body (catch any rendering change)
+        const observer = new MutationObserver(() => {
+            // throttle: skip if no change in count
             injectCallFlowButtons();
-        }
-        // Inject la profile-updated event
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
+
+        // 2. Interval failsafe — re-check every 2 sec (insurance against missed mutations)
+        setInterval(() => injectCallFlowButtons(), 2000);
+
+        // 3. Immediate scan
+        injectCallFlowButtons();
+
+        // 4. Events
         document.addEventListener('grantio:profile-updated', () => setTimeout(injectCallFlowButtons, 300));
+        document.querySelectorAll('[data-tab="dashboard"]').forEach(b => {
+            b.addEventListener('click', () => setTimeout(injectCallFlowButtons, 200));
+        });
+
+        // 5. Expose manual trigger (debug)
+        window.grantioInjectCallButtons = injectCallFlowButtons;
     }
 
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {
-        setTimeout(init, 500);  // wait for dashboard to render first
+        init();
     }
 })();

@@ -63,8 +63,8 @@
       "estimated_budget_min_mdl": 800000,
       "estimated_budget_max_mdl": 1500000,
       "key_innovation": {
-        "ro": "Modelul „paralegal comunitar" depășește bariera lipsei avocaților în zone rurale. Femeile rămân în comunitate după proiect = sustenabilitate intrinsecă.",
-        "ru": "Модель «общинного параюриста» преодолевает нехватку адвокатов в сельской местности. Женщины остаются в общине после проекта = врождённая устойчивость."
+        "ro": "Modelul paralegal comunitar depășește bariera lipsei avocaților în zone rurale. Femeile rămân în comunitate după proiect = sustenabilitate intrinsecă.",
+        "ru": "Модель общинного параюриста преодолевает нехватку адвокатов в сельской местности. Женщины остаются в общине после проекта = врождённая устойчивость."
       },
       "why_fits_call": {
         "ro": "EU4M cere proiecte cu impact măsurabil pentru comunități vulnerabile + dimensiune de gen. Acest model bifează ambele.",
@@ -87,16 +87,16 @@
         "ru": "Обучение + менторство для 8 местных редакций по переходу с 90% грантовой зависимости к моделям подписки/членства."
       },
       "target_beneficiaries": {
-        "ro": "8 redacții locale (online + print + radio) din raioanele cu „deșerturi mediatice". Indirect: 200.000 cititori/ascultători.",
-        "ru": "8 местных редакций (онлайн + печать + радио) из районов с «медийными пустынями». Косвенно: 200.000 читателей/слушателей."
+        "ro": "8 redacții locale (online + print + radio) din raioanele cu deșerturi mediatice. Indirect: 200.000 cititori/ascultători.",
+        "ru": "8 местных редакций (онлайн + печать + радио) из районов с медийными пустынями. Косвенно: 200.000 читателей/слушателей."
       },
       "estimated_beneficiaries": 200000,
       "duration_months": 18,
       "estimated_budget_min_mdl": 600000,
       "estimated_budget_max_mdl": 1200000,
       "key_innovation": {
-        "ro": "Primul program în MD care tratează jurnalismul local ca business — nu doar training „cum scrii articole bune".",
-        "ru": "Первая программа в Молдове, рассматривающая местную журналистику как бизнес — не просто «как писать статьи»."
+        "ro": "Primul program în MD care tratează jurnalismul local ca business — nu doar training cum scrii articole bune.",
+        "ru": "Первая программа в Молдове, рассматривающая местную журналистику как бизнес — не просто как писать статьи."
       },
       "why_fits_call": {
         "ro": "EU4M CSO prioritizează mass-media independentă + sustenabilitate organizațională CSO. Răspuns direct la criza fondurilor media post-2025.",
