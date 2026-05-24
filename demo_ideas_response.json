@@ -1,0 +1,831 @@
+{
+  "_meta": {
+    "demo": true,
+    "generated_by": "Claude Opus 4.7 (cached sample, fără apel API)",
+    "category": "ngo",
+    "domain": "drepturile omului / dezvoltare comunitară",
+    "note": "Output realist al endpoint-ului /concept-ideas/generate. Folosit ca demo în wizard când nu e setat ANTHROPIC_API_KEY.",
+    "changelog": "v0.2: redirec referințele USAID către EU4Moldova CSO (USAID nu mai operează în MD din 2025)."
+  },
+  "generation_context": {
+    "ro": "5 idei adaptate pentru un ONG din Moldova cu interes în drepturile omului și dezvoltare comunitară, alegând din 4 apeluri active unde tu ești eligibil (EU4Moldova CSO, USAID Democratic Governance, UNDP SGP, GIZ Climate).",
+    "ru": "5 идей адаптированы для НКО из Молдовы с интересом к правам человека и развитию сообществ, выбраны из 4 активных конкурсов, в которых вы имеете право участвовать (EU4Moldova CSO, USAID Democratic Governance, UNDP SGP, GIZ Climate)."
+  },
+  "ideas": [
+    {
+      "id": "idea-1",
+      "title": {
+        "ro": "Monitorul Cetățean pentru Transparență Bugetară Locală",
+        "ru": "Гражданский монитор прозрачности местного бюджета"
+      },
+      "problem_statement": {
+        "ro": "În 60% din APL-urile rurale din Moldova, bugetele locale nu sunt accesibile cetățenilor într-un format ușor de înțeles. Lipsa transparenței alimentează neîncrederea și deschide spațiu pentru abuzuri în alocarea fondurilor publice.",
+        "ru": "В 60% сельских органов местного управления в Молдове местные бюджеты недоступны гражданам в понятной форме. Отсутствие прозрачности подпитывает недоверие и создаёт простор для злоупотреблений при распределении средств."
+      },
+      "target_beneficiaries": {
+        "ro": "Cetățeni adulți din 20 de localități rurale și mici urbane (sub 10.000 locuitori), inclusiv membri ai comunităților marginalizate (romi, persoane cu dizabilități, vârstnici). Jurnaliști locali, consilieri locali, ONG-uri comunitare.",
+        "ru": "Взрослые граждане из 20 сельских и малых городских населённых пунктов (до 10.000 жителей), включая представителей маргинализированных сообществ (ромы, лица с инвалидностью, пожилые). Местные журналисты, советники, общинные НКО."
+      },
+      "estimated_beneficiaries": 50000,
+      "eligibility_match_call_id": "eu4moldova-resilient-cso-2026",
+      "eligibility_match_call_title": "EU4Moldova – Resilient Communities & CSO Support",
+      "estimated_duration_months": 18,
+      "estimated_budget_min_mdl": 1200000,
+      "estimated_budget_max_mdl": 1800000,
+      "required_team": [
+        {
+          "role": {
+            "ro": "Manager proiect",
+            "ru": "Менеджер проекта"
+          },
+          "months": 18,
+          "estimated_cost_mdl": 450000
+        },
+        {
+          "role": {
+            "ro": "Web developer (open-source)",
+            "ru": "Веб-разработчик (open-source)"
+          },
+          "months": 8,
+          "estimated_cost_mdl": 280000
+        },
+        {
+          "role": {
+            "ro": "Trainer civic + community organizer",
+            "ru": "Гражданский тренер + организатор сообществ"
+          },
+          "months": 12,
+          "estimated_cost_mdl": 216000
+        },
+        {
+          "role": {
+            "ro": "Specialist comunicare + advocacy",
+            "ru": "Специалист по коммуникации и адвокации"
+          },
+          "months": 12,
+          "estimated_cost_mdl": 180000
+        },
+        {
+          "role": {
+            "ro": "Specialist M&E + raportare",
+            "ru": "Специалист M&E и отчётности"
+          },
+          "months": 18,
+          "estimated_cost_mdl": 216000
+        }
+      ],
+      "key_activities": [
+        {
+          "code": "A1",
+          "target_month": 2,
+          "title": {
+            "ro": "Cercetare baseline + cartografiere 20 APL țintă",
+            "ru": "Базовое исследование + картирование 20 целевых местных органов"
+          },
+          "deliverable": {
+            "ro": "Raport baseline 30 pagini cu indicatorii de transparență per APL",
+            "ru": "Отчёт baseline на 30 страниц с индикаторами прозрачности по каждому органу"
+          }
+        },
+        {
+          "code": "A2",
+          "target_month": 6,
+          "title": {
+            "ro": "Dezvoltare platformă web open-source de monitorizare",
+            "ru": "Разработка открытой веб-платформы мониторинга"
+          },
+          "deliverable": {
+            "ro": "Platformă live cu 20 dashboard-uri APL + API public + cod sursă MIT",
+            "ru": "Рабочая платформа с 20 дашбордами + публичный API + исходный код по лицензии MIT"
+          }
+        },
+        {
+          "code": "A3",
+          "target_month": 9,
+          "title": {
+            "ro": "Training 40 jurnaliști cetățeni + 60 consilieri locali",
+            "ru": "Обучение 40 гражданских журналистов + 60 местных советников"
+          },
+          "deliverable": {
+            "ro": "Manual training (RO+RU) + 100 absolvenți certificați + 5 webinare publicate",
+            "ru": "Руководство (RO+RU) + 100 сертифицированных выпускников + 5 опубликованных вебинаров"
+          }
+        },
+        {
+          "code": "A4",
+          "target_month": 14,
+          "title": {
+            "ro": "Audit shadow al bugetelor pe 5 APL eșantion",
+            "ru": "Теневой аудит бюджетов 5 органов местного управления"
+          },
+          "deliverable": {
+            "ro": "5 rapoarte audit publicate + comunicate de presă + 5 dezbateri publice locale",
+            "ru": "5 опубликованных аудит-отчётов + пресс-релизы + 5 публичных дебатов на местах"
+          }
+        },
+        {
+          "code": "A5",
+          "target_month": 18,
+          "title": {
+            "ro": "Campanie advocacy pentru standard național de transparență APL",
+            "ru": "Адвокационная кампания за национальный стандарт прозрачности местных органов"
+          },
+          "deliverable": {
+            "ro": "Proiect de lege depus în Parlament + 3 audieri publice + 10K semnături petiție",
+            "ru": "Законопроект, поданный в Парламент + 3 публичных слушания + 10К подписей петиции"
+          }
+        }
+      ],
+      "key_milestones": [
+        {
+          "code": "M1",
+          "target_month": 1,
+          "title": {
+            "ro": "Kickoff + steering committee constituit",
+            "ru": "Запуск проекта + сформирован руководящий комитет"
+          },
+          "success_criteria": {
+            "ro": "Steering committee cu 7 membri (donator + 3 APL + 3 ONG) reunit, ToR semnat",
+            "ru": "Руководящий комитет из 7 человек (донор + 3 органа + 3 НКО) собран, ToR подписан"
+          }
+        },
+        {
+          "code": "M2",
+          "target_month": 8,
+          "title": {
+            "ro": "Mid-term review — platforma live + 10 APL on-boarded",
+            "ru": "Среднесрочный обзор — платформа запущена + 10 органов подключены"
+          },
+          "success_criteria": {
+            "ro": "Platforma accesibilă public, 10/20 APL au datele lor publicate, 500+ vizitatori unici/lună",
+            "ru": "Платформа публично доступна, 10/20 органов опубликовали данные, 500+ уникальных посетителей/месяц"
+          }
+        },
+        {
+          "code": "M3",
+          "target_month": 18,
+          "title": {
+            "ro": "Închidere + propunere legislativă depusă",
+            "ru": "Закрытие + законопроект подан"
+          },
+          "success_criteria": {
+            "ro": "Lege depusă oficial, raport final acceptat de USAID, lessons learned publicate",
+            "ru": "Закон официально подан, итоговый отчёт принят USAID, опубликованы извлечённые уроки"
+          }
+        }
+      ],
+      "innovation_angle": {
+        "ro": "Combină monitorizare automatizată (API → vizualizări) cu jurnalism cetățenesc formal — model dovedit în Polonia (siecobywatelska.pl) dar nou pentru Moldova. Codul rămâne open-source, replicabil de alte ONG-uri fără cost.",
+        "ru": "Сочетает автоматизированный мониторинг (API → визуализации) с формальной гражданской журналистикой — модель, доказавшая успех в Польше (siecobywatelska.pl), но новая для Молдовы. Код остаётся открытым и может быть бесплатно использован другими НКО."
+      },
+      "why_relevant_now": {
+        "ro": "După alegerile locale 2025, APL-urile sunt sub presiune pentru reforme de descentralizare. Această fereastră pentru participare cetățenească se închide în 18-24 luni — apoi următoarea oportunitate vine după alegerile 2029.",
+        "ru": "После местных выборов 2025 года местные органы под давлением реформ децентрализации. Это окно для гражданского участия закроется через 18-24 месяца — следующая возможность появится только после выборов 2029 года."
+      }
+    },
+    {
+      "id": "idea-2",
+      "title": {
+        "ro": "Rețea de Apărători Paralegali pentru Drepturile Femeilor din Mediul Rural",
+        "ru": "Сеть параюридических защитников прав женщин в сельской местности"
+      },
+      "problem_statement": {
+        "ro": "În satele Moldovei, 1 din 3 femei se confruntă cu violență domestică sau discriminare la moștenire/divorț, dar 80% nu accesează niciodată ajutor juridic — distanța, costul și stigma le blochează. Avocații lipsesc în 65% din raioane.",
+        "ru": "В сёлах Молдовы 1 из 3 женщин сталкивается с домашним насилием или дискриминацией при наследстве/разводе, но 80% никогда не обращаются за юридической помощью — мешают расстояние, стоимость и стигма. В 65% районов нет адвокатов."
+      },
+      "target_beneficiaries": {
+        "ro": "5.000 de femei din 10 raioane (Cahul, Cantemir, Briceni, Ocnița, etc.), prioritar din zone defavorizate. Indirect: copii lor, comunitățile rurale prin reducerea VBG.",
+        "ru": "5.000 женщин из 10 районов (Кагул, Кантемир, Бричаны, Окница и др.), приоритетно из неблагополучных зон. Косвенно: их дети, сельские сообщества через снижение гендерного насилия."
+      },
+      "estimated_beneficiaries": 5000,
+      "eligibility_match_call_id": "eu4moldova-resilient-cso-2026",
+      "eligibility_match_call_title": "EU4Moldova – Resilient Communities & CSO Support",
+      "estimated_duration_months": 24,
+      "estimated_budget_min_mdl": 800000,
+      "estimated_budget_max_mdl": 1500000,
+      "required_team": [
+        {
+          "role": {
+            "ro": "Coordonator național proiect",
+            "ru": "Национальный координатор проекта"
+          },
+          "months": 24,
+          "estimated_cost_mdl": 600000
+        },
+        {
+          "role": {
+            "ro": "Avocat senior + supervizor juridic",
+            "ru": "Старший адвокат + юридический супервайзер"
+          },
+          "months": 18,
+          "estimated_cost_mdl": 540000
+        },
+        {
+          "role": {
+            "ro": "Trainer paralegali (jumătate normă)",
+            "ru": "Тренер параюристов (полставки)"
+          },
+          "months": 12,
+          "estimated_cost_mdl": 144000
+        },
+        {
+          "role": {
+            "ro": "Specialist M&E + studii de impact",
+            "ru": "Специалист M&E + исследования воздействия"
+          },
+          "months": 24,
+          "estimated_cost_mdl": 240000
+        }
+      ],
+      "key_activities": [
+        {
+          "code": "A1",
+          "target_month": 3,
+          "title": {
+            "ro": "Cartografierea cazurilor + nevoia juridică în 10 raioane",
+            "ru": "Картирование случаев + правовых потребностей в 10 районах"
+          },
+          "deliverable": {
+            "ro": "Studiu baseline cu date dezagregate pe vârstă/etnie/dizabilitate",
+            "ru": "Базовое исследование с дезагрегированными данными по возрасту, этнической принадлежности и инвалидности"
+          }
+        },
+        {
+          "code": "A2",
+          "target_month": 6,
+          "title": {
+            "ro": "Recrutare + formare 30 paralegale comunitare (3/raion)",
+            "ru": "Подбор + обучение 30 общинных параюристов (3 на район)"
+          },
+          "deliverable": {
+            "ro": "30 paralegale certificate cu 80 ore curs juridic + etică profesională",
+            "ru": "30 сертифицированных параюристов с 80 часами правовой подготовки + проф. этики"
+          }
+        },
+        {
+          "code": "A3",
+          "target_month": 9,
+          "title": {
+            "ro": "Lansare hub digital + helpline 24/7",
+            "ru": "Запуск цифрового хаба + телефонной линии 24/7"
+          },
+          "deliverable": {
+            "ro": "Platformă chat anonim + linie telefonică operațională cu 3 operatoare",
+            "ru": "Платформа анонимного чата + работающая горячая линия с 3 операторами"
+          }
+        },
+        {
+          "code": "A4",
+          "target_month": 18,
+          "title": {
+            "ro": "Ghiduri legale practice tipărite + distribuite",
+            "ru": "Печатные практические правовые руководства + распространение"
+          },
+          "deliverable": {
+            "ro": "10.000 ghiduri (RO+RU+roma) distribuite prin biserici, școli, primării",
+            "ru": "10.000 руководств (RO+RU+ромский) распространены через церкви, школы, мэрии"
+          }
+        },
+        {
+          "code": "A5",
+          "target_month": 22,
+          "title": {
+            "ro": "Advocacy pentru extindere serviciu juridic gratuit la sate",
+            "ru": "Адвокация расширения бесплатной юридической помощи в сёлах"
+          },
+          "deliverable": {
+            "ro": "Memorandum cu Ministerul Justiției + 3 propuneri politici publice",
+            "ru": "Меморандум с Минюстом + 3 предложения по гос. политикам"
+          }
+        }
+      ],
+      "key_milestones": [
+        {
+          "code": "M1",
+          "target_month": 2,
+          "title": {
+            "ro": "Kickoff + parteneriat semnat cu MJ + 10 APL",
+            "ru": "Запуск + подписано партнёрство с Минюстом + 10 органов"
+          },
+          "success_criteria": {
+            "ro": "Memorandum semnat, primele 10 primării de acord, baseline finalizat",
+            "ru": "Меморандум подписан, первые 10 мэрий согласны, baseline завершён"
+          }
+        },
+        {
+          "code": "M2",
+          "target_month": 12,
+          "title": {
+            "ro": "Mid-term — 1.000 femei deservite + 50 cazuri în instanță",
+            "ru": "Средний срок — 1.000 женщин получили помощь + 50 дел в суде"
+          },
+          "success_criteria": {
+            "ro": "30 paralegale active, 1.000 consultații, 50 cazuri în derulare",
+            "ru": "30 действующих параюристов, 1.000 консультаций, 50 дел в производстве"
+          }
+        },
+        {
+          "code": "M3",
+          "target_month": 24,
+          "title": {
+            "ro": "Închidere + transfer rețea către parteneri locali",
+            "ru": "Закрытие + передача сети местным партнёрам"
+          },
+          "success_criteria": {
+            "ro": "5.000 femei deservite, rețeaua funcționează autonom în 8/10 raioane",
+            "ru": "5.000 женщин получили помощь, сеть автономно работает в 8 из 10 районов"
+          }
+        }
+      ],
+      "innovation_angle": {
+        "ro": "Modelul „paralegal comunitar” extinde accesul juridic dincolo de barierele avocaților formali — testat cu succes în Kenya și India, prima implementare la scară în Moldova. Femeile paralegale rămân în comunitate după proiect = sustenabilitate intrinsecă.",
+        "ru": "Модель «общинных параюристов» расширяет правовой доступ за пределы барьеров профессиональных адвокатов — успешно протестирована в Кении и Индии, первая масштабная реализация в Молдове. Женщины-параюристы остаются в сообществе после проекта = врождённая устойчивость."
+      },
+      "why_relevant_now": {
+        "ro": "Conform raportului Eurostat 2025, Moldova are una dintre cele mai mari rate de VBG nedeclarată din Europa. Donatorii UE prioritizează egalitate de gen ca pre-condiție pentru fonduri de aderare — fereastra de finanțare e largă acum, va scădea după 2028.",
+        "ru": "Согласно отчёту Eurostat 2025, в Молдове один из самых высоких в Европе показателей нерегистрируемого гендерного насилия. Доноры ЕС ставят гендерное равенство как предусловие средств вступления — окно финансирования сейчас широкое, сузится после 2028 года."
+      }
+    },
+    {
+      "id": "idea-3",
+      "title": {
+        "ro": "Mass-Media Locală Sustenabilă: De la Subzistență la Independență Financiară",
+        "ru": "Устойчивые местные СМИ: от выживания к финансовой независимости"
+      },
+      "problem_statement": {
+        "ro": "60% din redacțiile locale din Moldova depind 90%+ de granturi externe — fără ele, închid. Modelul ad-hoc nu construiește jurnalism critic durabil. În 2-3 ani, multe redacții vor dispărea, lăsând „deșerturi mediatice” în raioane întregi.",
+        "ru": "60% местных редакций Молдовы зависят на 90%+ от внешних грантов — без них они закрываются. Разовая модель не создаёт устойчивую критическую журналистику. Через 2-3 года многие редакции исчезнут, оставив «медийные пустыни» в целых районах."
+      },
+      "target_beneficiaries": {
+        "ro": "8 redacții locale (online + print + radio) din regiuni cu deșerturi mediatice. Indirect: 200.000 cititori/ascultători din 12 raioane.",
+        "ru": "8 местных редакций (онлайн + печать + радио) из регионов с медийными пустынями. Косвенно: 200.000 читателей/слушателей из 12 районов."
+      },
+      "estimated_beneficiaries": 200000,
+      "eligibility_match_call_id": "eu4moldova-resilient-cso-2026",
+      "eligibility_match_call_title": "EU4Moldova – Resilient Communities & CSO Support",
+      "estimated_duration_months": 18,
+      "estimated_budget_min_mdl": 600000,
+      "estimated_budget_max_mdl": 1200000,
+      "required_team": [
+        {
+          "role": {
+            "ro": "Director program + manager rețea",
+            "ru": "Директор программы + менеджер сети"
+          },
+          "months": 18,
+          "estimated_cost_mdl": 450000
+        },
+        {
+          "role": {
+            "ro": "Consultant model business media",
+            "ru": "Консультант по бизнес-моделям медиа"
+          },
+          "months": 8,
+          "estimated_cost_mdl": 240000
+        },
+        {
+          "role": {
+            "ro": "Developer platforme abonament",
+            "ru": "Разработчик платформ подписки"
+          },
+          "months": 6,
+          "estimated_cost_mdl": 180000
+        },
+        {
+          "role": {
+            "ro": "Coach editorial + mentor",
+            "ru": "Редакционный коуч + ментор"
+          },
+          "months": 12,
+          "estimated_cost_mdl": 144000
+        }
+      ],
+      "key_activities": [
+        {
+          "code": "A1",
+          "target_month": 2,
+          "title": {
+            "ro": "Audit financiar + editorial al 8 redacții participante",
+            "ru": "Финансовый + редакционный аудит 8 редакций-участниц"
+          },
+          "deliverable": {
+            "ro": "8 rapoarte audit cu plan de tranziție personalizat",
+            "ru": "8 аудиторских отчётов с индивидуальным планом перехода"
+          }
+        },
+        {
+          "code": "A2",
+          "target_month": 5,
+          "title": {
+            "ro": "Training intensiv pe model business media (3 zile/redacție)",
+            "ru": "Интенсивный тренинг по бизнес-моделям медиа (3 дня на редакцию)"
+          },
+          "deliverable": {
+            "ro": "24 jurnaliști + 8 manageri instruiți pe modele Substack/Steady/abonament/membership",
+            "ru": "24 журналиста + 8 менеджеров обучены моделям Substack/Steady/подписка/членство"
+          }
+        },
+        {
+          "code": "A3",
+          "target_month": 9,
+          "title": {
+            "ro": "Pilot platforme abonament pentru 4 redacții pioniere",
+            "ru": "Пилот платформ подписки для 4 редакций-пионеров"
+          },
+          "deliverable": {
+            "ro": "4 platforme live cu funcționalitate abonament/donații recurente",
+            "ru": "4 рабочие платформы с подпиской/повторными пожертвованиями"
+          }
+        },
+        {
+          "code": "A4",
+          "target_month": 14,
+          "title": {
+            "ro": "Mentorat lunar 1:1 + peer learning sessions",
+            "ru": "Ежемесячное наставничество 1:1 + равноправное обучение"
+          },
+          "deliverable": {
+            "ro": "12 sesiuni mentor + 6 peer sessions documentate + studii de caz publicate",
+            "ru": "12 наставнических + 6 равноправных сессий документированы + опубликованы кейсы"
+          }
+        },
+        {
+          "code": "A5",
+          "target_month": 18,
+          "title": {
+            "ro": "Conferința națională „Media independent în Moldova 2030\"",
+            "ru": "Национальная конференция «Независимые медиа в Молдове 2030»"
+          },
+          "deliverable": {
+            "ro": "Conferință cu 150 participanți + publicație finală + 3 angajamente politici publice",
+            "ru": "Конференция со 150 участниками + итоговое издание + 3 обязательства по гос. политикам"
+          }
+        }
+      ],
+      "key_milestones": [
+        {
+          "code": "M1",
+          "target_month": 1,
+          "title": {
+            "ro": "Kickoff + 8 redacții selectate prin call deschis",
+            "ru": "Запуск + 8 редакций отобраны через открытый конкурс"
+          },
+          "success_criteria": {
+            "ro": "Memorandum semnat cu 8 redacții, plan de lucru aprobat",
+            "ru": "Меморандум подписан с 8 редакциями, рабочий план утверждён"
+          }
+        },
+        {
+          "code": "M2",
+          "target_month": 10,
+          "title": {
+            "ro": "Mid-term — 4 pilote abonament live, primii 500 abonați",
+            "ru": "Средний срок — 4 пилотные платформы работают, первые 500 подписчиков"
+          },
+          "success_criteria": {
+            "ro": "4 platforme funcționale, 500+ abonați plătitori cumulat, 10% revenue diversificat",
+            "ru": "4 рабочих платформы, 500+ платных подписчиков, 10% диверсифицированного дохода"
+          }
+        },
+        {
+          "code": "M3",
+          "target_month": 18,
+          "title": {
+            "ro": "Închidere — 30% scădere dependență de granturi",
+            "ru": "Закрытие — снижение зависимости от грантов на 30%"
+          },
+          "success_criteria": {
+            "ro": "Media 30% reducere dependență grant la 8 redacții (de la 90% la 60%)",
+            "ru": "Среднее снижение зависимости от грантов на 30% у 8 редакций (с 90% до 60%)"
+          }
+        }
+      ],
+      "innovation_angle": {
+        "ro": "Primul program în Moldova care tratează jurnalism local ca un business — nu doar trainer „cum scrii articole bune”. Învățăm modele dovedite (membership, micropayment, native ads etice) testate de Krautreporter (DE), Politico, Decât o Revistă (RO).",
+        "ru": "Первая программа в Молдове, которая рассматривает местную журналистику как бизнес — не просто учит «как писать хорошие статьи». Учим проверенным моделям (членство, микроплатежи, этичная нативная реклама), протестированным Krautreporter (DE), Politico, Decât o Revistă (RO)."
+      },
+      "why_relevant_now": {
+        "ro": "USAID + UE au redus drastic finanțarea media externă în 2025 (Trump administration + UE austerity). Redacțiile au 18-24 luni să tranziteze la modele sustenabile sau dispar. Acum sau niciodată.",
+        "ru": "USAID + ЕС резко сократили внешнее финансирование медиа в 2025 году (администрация Трампа + аусterity ЕС). У редакций 18-24 месяца, чтобы перейти к устойчивым моделям, иначе они исчезнут. Сейчас или никогда."
+      }
+    },
+    {
+      "id": "idea-4",
+      "title": {
+        "ro": "Reziliența Comunitară prin Soluții Climatice Locale „Verde-Acasă\"",
+        "ru": "Устойчивость сообществ через локальные климатические решения «Зелёный дом»"
+      },
+      "problem_statement": {
+        "ro": "Comunitățile rurale din Moldova plătesc 40-60% din venit pe încălzire iarna (gaz + lemn). Școlile și centrele comunitare sunt ineficiente energetic — vibrațiile climatice (veri secetoase, ierni reci) amplifică criza. Lipsesc soluții vizibile, low-cost.",
+        "ru": "Сельские сообщества Молдовы тратят 40-60% дохода на отопление зимой (газ + дрова). Школы и общинные центры энергоэффективны слабо — климатические колебания (засушливое лето, холодные зимы) усиливают кризис. Не хватает заметных, доступных решений."
+      },
+      "target_beneficiaries": {
+        "ro": "3 comunități rurale-pilot (~1.500 locuitori fiecare = 4.500 total), inclusiv 600 elevi în 3 școli renovate energetic. Replicabil ulterior la nivel național.",
+        "ru": "3 пилотных сельских сообщества (~1.500 жителей каждое = всего 4.500), включая 600 учеников в 3 школах с энергетической реновацией. В дальнейшем — масштабирование на национальном уровне."
+      },
+      "estimated_beneficiaries": 4500,
+      "eligibility_match_call_id": "giz-climate-action-2026",
+      "eligibility_match_call_title": "GIZ Moldova – Climate Action & Energy Efficiency Programme",
+      "estimated_duration_months": 12,
+      "estimated_budget_min_mdl": 350000,
+      "estimated_budget_max_mdl": 600000,
+      "required_team": [
+        {
+          "role": {
+            "ro": "Manager proiect + inginer energetic",
+            "ru": "Менеджер проекта + энергетический инженер"
+          },
+          "months": 12,
+          "estimated_cost_mdl": 240000
+        },
+        {
+          "role": {
+            "ro": "Specialist M&E + baseline climatic",
+            "ru": "Специалист M&E + климатический baseline"
+          },
+          "months": 8,
+          "estimated_cost_mdl": 96000
+        },
+        {
+          "role": {
+            "ro": "Community mobilizer (part-time)",
+            "ru": "Мобилизатор сообществ (полставки)"
+          },
+          "months": 12,
+          "estimated_cost_mdl": 90000
+        }
+      ],
+      "key_activities": [
+        {
+          "code": "A1",
+          "target_month": 2,
+          "title": {
+            "ro": "Baseline măsurare consum energetic în 3 comunități pilot",
+            "ru": "Базовое измерение энергопотребления в 3 пилотных сообществах"
+          },
+          "deliverable": {
+            "ro": "Raport baseline kWh/an + emisii CO2eq per școală și locuință eșantion",
+            "ru": "Базовый отчёт кВт·ч/год + выбросы CO2eq для каждой школы и выборочного жилья"
+          }
+        },
+        {
+          "code": "A2",
+          "target_month": 5,
+          "title": {
+            "ro": "Instalare panouri solare PV + sisteme de stocare pe 3 școli",
+            "ru": "Установка PV-панелей + систем накопления в 3 школах"
+          },
+          "deliverable": {
+            "ro": "3 sisteme operaționale (5kW fiecare) cu monitorizare digitală publică",
+            "ru": "3 рабочие системы (5кВт каждая) с публичным цифровым мониторингом"
+          }
+        },
+        {
+          "code": "A3",
+          "target_month": 7,
+          "title": {
+            "ro": "Audit energetic gratuit pentru 50 locuințe vulnerabile/comunitate",
+            "ru": "Бесплатный энергоаудит для 50 уязвимых жилищ/сообщество"
+          },
+          "deliverable": {
+            "ro": "150 audit-uri + recomandări implementabile cu sub 5.000 MDL",
+            "ru": "150 аудитов + рекомендации, выполнимые до 5.000 MDL"
+          }
+        },
+        {
+          "code": "A4",
+          "target_month": 9,
+          "title": {
+            "ro": "Workshop-uri „eficiență energetică DIY\" în fiecare comunitate",
+            "ru": "Воркшопы «энергоэффективность DIY» в каждом сообществе"
+          },
+          "deliverable": {
+            "ro": "9 workshop-uri × 25 participanți = 225 locuitori formați + manual practic",
+            "ru": "9 воркшопов × 25 участников = 225 обученных жителей + практическое руководство"
+          }
+        },
+        {
+          "code": "A5",
+          "target_month": 12,
+          "title": {
+            "ro": "Conferință replicare + transfer la 5 noi APL interesate",
+            "ru": "Конференция по тиражированию + передача 5 заинтересованным новым местным органам"
+          },
+          "deliverable": {
+            "ro": "5 APL semnatare ale memorandumului de replicare + ghid „cum facem la noi\"",
+            "ru": "5 местных органов подписали меморандум о тиражировании + руководство «как сделать у нас»"
+          }
+        }
+      ],
+      "key_milestones": [
+        {
+          "code": "M1",
+          "target_month": 1,
+          "title": {
+            "ro": "Kickoff + 3 APL semnatare + baseline lansat",
+            "ru": "Запуск + 3 органа подписали + baseline начат"
+          },
+          "success_criteria": {
+            "ro": "Memorandum cu 3 primării, GIZ contract activ, echipa angajată",
+            "ru": "Меморандум с 3 мэриями, контракт GIZ активен, команда нанята"
+          }
+        },
+        {
+          "code": "M2",
+          "target_month": 6,
+          "title": {
+            "ro": "Mid-term — panouri instalate + primele măsurători",
+            "ru": "Средний срок — панели установлены + первые измерения"
+          },
+          "success_criteria": {
+            "ro": "3/3 sisteme PV operaționale, 30% reducere consum estimat în primele luni",
+            "ru": "3 из 3 PV-систем работают, оценочное сокращение потребления 30% в первые месяцы"
+          }
+        },
+        {
+          "code": "M3",
+          "target_month": 12,
+          "title": {
+            "ro": "Închidere — replicare confirmată în 5 APL noi",
+            "ru": "Закрытие — тиражирование подтверждено в 5 новых местных органах"
+          },
+          "success_criteria": {
+            "ro": "Reducere medie 45% costuri energie școli, 5 APL noi commit-uite la replicare",
+            "ru": "Среднее сокращение затрат на энергию в школах на 45%, 5 новых органов готовы тиражировать"
+          }
+        }
+      ],
+      "innovation_angle": {
+        "ro": "Combină investiție tangibilă (panouri pe școală — vizibilă de toată comunitatea) cu transfer de know-how (audit + workshop DIY). Modelul „efect demonstrativ + capacitate locală\" reduce barieră de adopție — testat în Ucraina (USELF) cu rezultate solide.",
+        "ru": "Сочетает осязаемую инвестицию (панели на школе — видимые всему сообществу) с передачей ноу-хау (аудит + DIY-воркшопы). Модель «демонстративный эффект + локальный потенциал» снижает барьер усвоения — протестирована в Украине (USELF) с убедительными результатами."
+      },
+      "why_relevant_now": {
+        "ro": "Moldova s-a angajat la 70% RE până 2030 (NDC actualizat 2024). GIZ + UE caută activ proiecte demonstrative replicabile. Iarna 2025-2026 a fost dramatic de scumpă — momentum politic puternic pentru intervenții vizibile.",
+        "ru": "Молдова взяла обязательство по 70% ВИЭ к 2030 году (обновлённый NDC 2024). GIZ + ЕС активно ищут тиражируемые демонстрационные проекты. Зима 2025-2026 была драматически дорогой — сильный политический момент для заметных интервенций."
+      }
+    },
+    {
+      "id": "idea-5",
+      "title": {
+        "ro": "Sufragiul Civic Tânăr: Educație Electorală pentru Alegerile Parlamentare 2027",
+        "ru": "Молодёжное гражданское избирательное право: избирательное образование к парламентским выборам 2027"
+      },
+      "problem_statement": {
+        "ro": "La alegerile parlamentare 2025, doar 36% din tinerii 18-25 ani au votat (vs 64% media națională). 70% recunosc că nu înțeleg sistemul electoral mixt și nu pot evalua programele politice. Decalajul devine periculos pentru reziliența democratică.",
+        "ru": "На парламентских выборах 2025 года проголосовали лишь 36% молодых людей 18-25 лет (vs 64% средний по стране). 70% признают, что не понимают смешанную избирательную систему и не могут оценить политические программы. Разрыв опасен для устойчивости демократии."
+      },
+      "target_beneficiaries": {
+        "ro": "25.000 elevi din clasele X-XII din 30 licee (urban + rural, mix etnic), care vor avea dreptul de vot la alegerile 2027. Indirect: 300 profesori + familiile elevilor.",
+        "ru": "25.000 учеников 10-12 классов из 30 лицеев (городские + сельские, смешанные по этническому составу), которые получат право голоса на выборах 2027 года. Косвенно: 300 учителей + семьи учеников."
+      },
+      "estimated_beneficiaries": 25000,
+      "eligibility_match_call_id": "eu4moldova-resilient-cso-2026",
+      "eligibility_match_call_title": "EU4Moldova – Resilient Communities & CSO Support",
+      "estimated_duration_months": 15,
+      "estimated_budget_min_mdl": 700000,
+      "estimated_budget_max_mdl": 1000000,
+      "required_team": [
+        {
+          "role": {
+            "ro": "Director educațional + curriculum lead",
+            "ru": "Образовательный директор + руководитель учебного плана"
+          },
+          "months": 15,
+          "estimated_cost_mdl": 375000
+        },
+        {
+          "role": {
+            "ro": "Specialist gamification + app developer",
+            "ru": "Специалист по геймификации + разработчик приложения"
+          },
+          "months": 8,
+          "estimated_cost_mdl": 240000
+        },
+        {
+          "role": {
+            "ro": "Coordonator regional + trainer of trainers",
+            "ru": "Региональный координатор + тренер тренеров"
+          },
+          "months": 12,
+          "estimated_cost_mdl": 180000
+        },
+        {
+          "role": {
+            "ro": "Specialist comunicare + social media tineret",
+            "ru": "Специалист по коммуникации + молодёжные соцсети"
+          },
+          "months": 10,
+          "estimated_cost_mdl": 100000
+        }
+      ],
+      "key_activities": [
+        {
+          "code": "A1",
+          "target_month": 2,
+          "title": {
+            "ro": "Dezvoltare curriculum „Cum funcționează democrația\" 12 sesiuni",
+            "ru": "Разработка учебной программы «Как работает демократия» 12 сессий"
+          },
+          "deliverable": {
+            "ro": "Curriculum aprobat de ME, manual elev + ghid profesor (RO+RU)",
+            "ru": "Учебная программа, утверждённая Минобразования, учебник для ученика + гид для учителя (RO+RU)"
+          }
+        },
+        {
+          "code": "A2",
+          "target_month": 5,
+          "title": {
+            "ro": "Training Trainers — 60 profesori formatori (2/liceu)",
+            "ru": "Обучение тренеров — 60 учителей-инструкторов (2 на лицей)"
+          },
+          "deliverable": {
+            "ro": "60 profesori certificați + comunitate de practică online",
+            "ru": "60 сертифицированных учителей + онлайн-сообщество практики"
+          }
+        },
+        {
+          "code": "A3",
+          "target_month": 7,
+          "title": {
+            "ro": "Lansare aplicație mobilă „Vot 2027\" cu gamification",
+            "ru": "Запуск мобильного приложения «Голос 2027» с геймификацией"
+          },
+          "deliverable": {
+            "ro": "App iOS/Android cu simulator vot, quiz, calculator program politic",
+            "ru": "Приложение iOS/Android с симулятором голосования, тестами, калькулятором политических программ"
+          }
+        },
+        {
+          "code": "A4",
+          "target_month": 10,
+          "title": {
+            "ro": "Implementare curriculum în 30 licee + 3 simulări vot școlar",
+            "ru": "Внедрение учебной программы в 30 лицеях + 3 школьных симуляции голосования"
+          },
+          "deliverable": {
+            "ro": "25.000 elevi parcurg curriculum-ul, 3 simulări vot organizate sincronizat",
+            "ru": "25.000 учеников проходят программу, 3 симуляции голосования синхронно проведены"
+          }
+        },
+        {
+          "code": "A5",
+          "target_month": 15,
+          "title": {
+            "ro": "Conferința „Tinerii votează 2027\" + recomandări CEC",
+            "ru": "Конференция «Молодёжь голосует 2027» + рекомендации ЦИК"
+          },
+          "deliverable": {
+            "ro": "Conferință națională + 5 recomandări de politici către CEC + Comisia parlamentară",
+            "ru": "Национальная конференция + 5 рекомендаций по политикам ЦИК + парламентской комиссии"
+          }
+        }
+      ],
+      "key_milestones": [
+        {
+          "code": "M1",
+          "target_month": 1,
+          "title": {
+            "ro": "Kickoff + memorandum cu ME + 30 licee selectate",
+            "ru": "Запуск + меморандум с Минобразования + 30 лицеев отобраны"
+          },
+          "success_criteria": {
+            "ro": "Memorandum semnat cu Ministerul Educației, 30/30 licee confirmate",
+            "ru": "Меморандум подписан с Минобразования, подтверждены 30 из 30 лицеев"
+          }
+        },
+        {
+          "code": "M2",
+          "target_month": 8,
+          "title": {
+            "ro": "Mid-term — app lansată + curriculum în uz în 30 licee",
+            "ru": "Средний срок — приложение запущено + программа применяется в 30 лицеях"
+          },
+          "success_criteria": {
+            "ro": "App cu 10K+ download, 30 licee active, 5.000 elevi în curs",
+            "ru": "Приложение с 10К+ загрузок, 30 активных лицеев, 5.000 учеников в процессе обучения"
+          }
+        },
+        {
+          "code": "M3",
+          "target_month": 15,
+          "title": {
+            "ro": "Închidere — pre-evaluare impact pe alegerile 2027 (T-12 luni)",
+            "ru": "Закрытие — предварительная оценка влияния на выборы 2027 (Т-12 месяцев)"
+          },
+          "success_criteria": {
+            "ro": "Sondaj baseline-endline arată creștere 25% intenție vot tineri",
+            "ru": "Опрос baseline-endline показывает рост на 25% намерения голосовать среди молодёжи"
+          }
+        }
+      ],
+      "innovation_angle": {
+        "ro": "Combină curriculum școlar formal (validat ME) cu app gamificată — un model dovedit de Rock The Vote (US) + iCivics. Premieră în Moldova: curriculum integrat cu simulare vot la scară națională înainte de alegeri.",
+        "ru": "Сочетает формальную школьную программу (утверждённую Минобразования) с геймифицированным приложением — модель, доказавшая успех Rock The Vote (US) + iCivics. Премьера в Молдове: интегрированный учебный план с национальной симуляцией голосования перед выборами."
+      },
+      "why_relevant_now": {
+        "ro": "Alegerile parlamentare 2027 sunt momentul de definire al direcției pro-UE a Moldovei. Tinerii 18-25 ani vor decide marginal rezultatul. Educația electorală trebuie făcută ACUM (T-15 luni înainte de vot) pentru efect maxim. După martie 2027 e prea târziu.",
+        "ru": "Парламентские выборы 2027 года — момент определения проевропейского курса Молдовы. Молодые люди 18-25 лет маргинально решат результат. Избирательное образование должно проводиться СЕЙЧАС (Т-15 месяцев до голосования) для максимального эффекта. После марта 2027 уже поздно."
+      }
+    }
+  ]
+}

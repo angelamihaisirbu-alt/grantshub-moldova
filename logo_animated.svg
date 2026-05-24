@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Centrul de Excelență — animat">
+  <title>Logo animat — Centrul de Excelență (loop 2.5s)</title>
+  <defs>
+    <style><![CDATA[
+      /* Toate elementele împart același ciclu de 2.5s pentru loop coerent.
+         Fiecare are propriile keyframes care controlează când apare în ciclu. */
+
+      .c-arc {
+        stroke-dasharray: 160;
+        stroke-dashoffset: 160;
+        animation: draw-c 2.5s ease-in-out infinite;
+      }
+      .e-vert { transform: scaleY(0); transform-origin: 70px 60px; animation: grow-v 2.5s ease-out infinite; }
+      .e-top  { transform: scaleX(0); transform-origin: 66px 36px; animation: grow-h 2.5s ease-out 0s infinite; }
+      .e-mid  { transform: scaleX(0); transform-origin: 66px 60px; animation: grow-h2 2.5s ease-out 0s infinite; }
+      .e-bot  { transform: scaleX(0); transform-origin: 66px 84px; animation: grow-h3 2.5s ease-out 0s infinite; }
+      .accent-yellow { transform: scale(0); transform-origin: 82px 22px; animation: pop-yellow 2.5s ease-out infinite; }
+      .accent-red    { transform: scale(0); transform-origin: 82px 22px; animation: pop-red 2.5s ease-out infinite; }
+
+      @keyframes draw-c {
+        0%   { stroke-dashoffset: 160; }
+        20%  { stroke-dashoffset: 0; }
+        85%  { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: 160; }
+      }
+      @keyframes grow-v {
+        0%, 15%   { transform: scaleY(0); }
+        25%       { transform: scaleY(1); }
+        85%       { transform: scaleY(1); }
+        100%      { transform: scaleY(0); }
+      }
+      @keyframes grow-h {
+        0%, 20%   { transform: scaleX(0); }
+        28%       { transform: scaleX(1); }
+        85%       { transform: scaleX(1); }
+        100%      { transform: scaleX(0); }
+      }
+      @keyframes grow-h2 {
+        0%, 26%   { transform: scaleX(0); }
+        34%       { transform: scaleX(1); }
+        85%       { transform: scaleX(1); }
+        100%      { transform: scaleX(0); }
+      }
+      @keyframes grow-h3 {
+        0%, 32%   { transform: scaleX(0); }
+        40%       { transform: scaleX(1); }
+        85%       { transform: scaleX(1); }
+        100%      { transform: scaleX(0); }
+      }
+      @keyframes pop-yellow {
+        0%, 44%   { transform: scale(0); }
+        52%       { transform: scale(1.4); }
+        58%       { transform: scale(1); }
+        70%       { transform: scale(1.15); }
+        85%       { transform: scale(1); }
+        100%      { transform: scale(0); }
+      }
+      @keyframes pop-red {
+        0%, 50%   { transform: scale(0); opacity: 0; }
+        58%       { transform: scale(1.6); opacity: 1; }
+        65%       { transform: scale(1); }
+        85%       { transform: scale(1); opacity: 1; }
+        100%      { transform: scale(0); opacity: 0; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .c-arc, .e-vert, .e-top, .e-mid, .e-bot, .accent-yellow, .accent-red {
+          animation: none;
+          stroke-dashoffset: 0;
+          transform: none;
+          opacity: 1;
+        }
+      }
+    ]]></style>
+  </defs>
+
+  <path class="c-arc" d="M 56 30 A 32 32 0 1 0 56 90"
+        fill="none" stroke="#003DA5" stroke-width="10" stroke-linecap="round"/>
+  <rect class="e-vert" x="66" y="32" width="8" height="56" rx="2" fill="#003DA5"/>
+  <rect class="e-top"  x="66" y="32" width="32" height="8" rx="2" fill="#003DA5"/>
+  <rect class="e-mid"  x="66" y="56" width="24" height="8" rx="2" fill="#003DA5"/>
+  <rect class="e-bot"  x="66" y="80" width="32" height="8" rx="2" fill="#003DA5"/>
+  <circle class="accent-yellow" cx="82" cy="22" r="6" fill="#FFD200"/>
+  <circle class="accent-red"    cx="82" cy="22" r="2.5" fill="#CE1126"/>
+</svg>

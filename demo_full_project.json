@@ -1,0 +1,1452 @@
+{
+  "_meta": {
+    "demo": true,
+    "for_idea": "idea-1",
+    "generated_by": "Claude Opus 4.7 (cached sample, fără apel API)",
+    "note": "Output realist al endpoint-ului /project/generate-full. Toate textele user-facing bilingue RO+RU."
+  },
+  "project_title": {
+    "ro": "Monitorul Civic Bugetar — Transparență Locală pentru 20 APL",
+    "ru": "Гражданский бюджетный монитор — Местная прозрачность для 20 органов"
+  },
+  "company_name_placeholder": "[Numele organizației tale — se completează din profil]",
+  "call_id": "eu4moldova-resilient-cso-2026",
+  "call_title": "EU4Moldova – Resilient Communities & CSO Support",
+  "methodology": "pm2",
+  "duration_months": 18,
+  "primary_currency": "MDL",
+  "total_budget_mdl": 1450000,
+  "scope": {
+    "in_scope": [
+      {
+        "ro": "Dezvoltare platformă web open-source pentru monitorizare buget local",
+        "ru": "Разработка открытой веб-платформы для мониторинга местного бюджета"
+      },
+      {
+        "ro": "Cartografierea și onboarding-ul a 20 APL țintă",
+        "ru": "Картирование и подключение 20 целевых местных органов"
+      },
+      {
+        "ro": "Training 40 jurnaliști cetățeni + 60 consilieri locali",
+        "ru": "Обучение 40 гражданских журналистов + 60 местных советников"
+      },
+      {
+        "ro": "Audit shadow pe 5 APL eșantion + publicare rapoarte",
+        "ru": "Теневой аудит 5 органов выборочно + публикация отчётов"
+      },
+      {
+        "ro": "Campanie advocacy pentru standard național transparență",
+        "ru": "Адвокационная кампания за национальный стандарт прозрачности"
+      }
+    ],
+    "out_of_scope": [
+      {
+        "ro": "Audit forensic (acuzații specifice de corupție) — sesizare către CNA",
+        "ru": "Форензик-аудит (конкретные обвинения в коррупции) — обращение в НЦБК"
+      },
+      {
+        "ro": "Lobby pentru partide politice — strict neutralitate politică",
+        "ru": "Лоббирование политических партий — строгий политический нейтралитет"
+      },
+      {
+        "ro": "Platformă pentru toate cele 898 APL (doar 20 în pilot)",
+        "ru": "Платформа для всех 898 органов (только 20 в пилоте)"
+      }
+    ],
+    "assumptions": [
+      {
+        "ro": "APL-urile pilot vor coopera și vor furniza date bugetare lunar",
+        "ru": "Пилотные органы будут сотрудничать и предоставлять бюджетные данные ежемесячно"
+      },
+      {
+        "ro": "Ministerul Finanțelor menține portalul deschis pentru integrare API",
+        "ru": "Минфин сохраняет открытый портал для API-интеграции"
+      },
+      {
+        "ro": "Stabilitate politică post-2025 nu va bloca colaborarea APL-ONG",
+        "ru": "Политическая стабильность после 2025 года не заблокирует сотрудничество органов и НКО"
+      }
+    ],
+    "constraints": [
+      {
+        "ro": "Buget total 1.45M MDL — fără overruns acceptate de EU4Moldova",
+        "ru": "Общий бюджет 1.45M MDL — превышения EU4Moldova не принимаются"
+      },
+      {
+        "ro": "Termen rigid 18 luni — closure strict 30 noi 2027",
+        "ru": "Жёсткий срок 18 месяцев — закрытие строго 30 ноября 2027"
+      },
+      {
+        "ro": "Conformitate EU4Moldova ATFA + TIP + Marking obligatorie",
+        "ru": "Соответствие EU4Moldova ATFA + TIP + Marking обязательно"
+      }
+    ],
+    "success_criteria": [
+      {
+        "ro": "20/20 APL au date publicate pe platformă la M12",
+        "ru": "20 из 20 органов публикуют данные на платформе к M12"
+      },
+      {
+        "ro": "100+ jurnaliști/consilieri formați și activi",
+        "ru": "100+ журналистов/советников обучены и активны"
+      },
+      {
+        "ro": "1 proiect de lege depus în Parlament până la închidere",
+        "ru": "1 законопроект подан в Парламент к закрытию"
+      },
+      {
+        "ro": "50.000 cetățeni unici accesează platforma în primii 18 luni",
+        "ru": "50.000 уникальных граждан используют платформу за первые 18 месяцев"
+      }
+    ]
+  },
+  "strategic_objectives": [
+    {
+      "code": "SO1",
+      "title": {
+        "ro": "Creșterea transparenței bugetelor locale în Moldova",
+        "ru": "Повышение прозрачности местных бюджетов в Молдове"
+      },
+      "description": {
+        "ro": "Construirea unei infrastructuri digitale + civice care face datele bugetare APL accesibile, comparabile și acționabile pentru cetățeni.",
+        "ru": "Создание цифровой + гражданской инфраструктуры, делающей бюджетные данные органов доступными, сопоставимыми и пригодными к использованию для граждан."
+      },
+      "contribution_to_donor_priority": {
+        "ro": "Aliniat cu prioritatea EU4Moldova „Democratic Governance & Anti-Corruption\" — pillar 2 din strategia 2025-2029.",
+        "ru": "Соответствует приоритету EU4Moldova «Демократическое управление и антикоррупция» — pillar 2 стратегии 2025-2029."
+      }
+    },
+    {
+      "code": "SO2",
+      "title": {
+        "ro": "Activarea participării cetățenești la nivel local",
+        "ru": "Активация гражданского участия на местном уровне"
+      },
+      "description": {
+        "ro": "Capacitarea cetățenilor, jurnaliștilor locali și consilierilor să folosească datele transparente pentru oversight informat.",
+        "ru": "Расширение возможностей граждан, местных журналистов и советников использовать прозрачные данные для информированного контроля."
+      },
+      "contribution_to_donor_priority": {
+        "ro": "Susține obiectivul EU4Moldova „Civil Society Resilience\" — priorities & power of citizens.",
+        "ru": "Поддерживает цель EU4Moldova «Civil Society Resilience» — приоритеты и власть граждан."
+      }
+    },
+    {
+      "code": "SO3",
+      "title": {
+        "ro": "Schimbare sistemică prin advocacy bazat pe evidență",
+        "ru": "Системные изменения через адвокацию, основанную на доказательствах"
+      },
+      "description": {
+        "ro": "Transformarea evidenței colectate într-un standard național obligatoriu de transparență APL prin propunere legislativă.",
+        "ru": "Преобразование собранных доказательств в обязательный национальный стандарт прозрачности через законопроект."
+      },
+      "contribution_to_donor_priority": {
+        "ro": "Contribuie la „Anti-Corruption Strategy\" + obligatii Moldova-UE Capitolul 23 (Justice & Fundamental Rights).",
+        "ru": "Способствует «Anti-Corruption Strategy» + обязательствам Молдова-ЕС Глава 23 (Юстиция и фундаментальные права)."
+      }
+    }
+  ],
+  "specific_objectives": [
+    {
+      "code": "SpO1.1",
+      "parent_so": "SO1",
+      "title": {
+        "ro": "Platformă funcțională la M8",
+        "ru": "Рабочая платформа к M8"
+      },
+      "smart_formulation": {
+        "ro": "Până la luna 8 (M8), platforma web open-source este live, cu API public funcțional și dashboard pentru cele 20 APL pilot.",
+        "ru": "К месяцу 8 (M8) открытая веб-платформа запущена, с работающим публичным API и дашбордом для 20 пилотных органов."
+      },
+      "target_indicator": {
+        "ro": "Platforma online cu 20/20 APL onboarded; min 500 vizitatori unici/lună",
+        "ru": "Платформа онлайн с 20 из 20 органов; минимум 500 уникальных посетителей/месяц"
+      },
+      "timeframe_months": 8
+    },
+    {
+      "code": "SpO1.2",
+      "parent_so": "SO1",
+      "title": {
+        "ro": "Onboarding 20 APL la M10",
+        "ru": "Подключение 20 органов к M10"
+      },
+      "smart_formulation": {
+        "ro": "Până la M10, 20/20 APL publică lunar pe platformă cel puțin: buget anual, execuție trimestrială, achiziții peste 100K MDL.",
+        "ru": "К M10 все 20 из 20 органов ежемесячно публикуют на платформе минимум: годовой бюджет, квартальное исполнение, закупки свыше 100K MDL."
+      },
+      "target_indicator": {
+        "ro": "20 APL × 3 categorii date × actualizare lunară = 60 fluxuri active",
+        "ru": "20 органов × 3 категории данных × ежемесячное обновление = 60 активных потоков"
+      },
+      "timeframe_months": 10
+    },
+    {
+      "code": "SpO2.1",
+      "parent_so": "SO2",
+      "title": {
+        "ro": "100 cetățeni-jurnaliști formați",
+        "ru": "100 граждан-журналистов обучены"
+      },
+      "smart_formulation": {
+        "ro": "Până la M9, 40 jurnaliști cetățeni + 60 consilieri locali certificați (curs 24h), cu cel puțin 50% activ în publicare materiale.",
+        "ru": "К M9 40 граждан-журналистов + 60 местных советников сертифицированы (24-часовой курс), как минимум 50% активно публикуют материалы."
+      },
+      "target_indicator": {
+        "ro": "100 absolvenți certificați; 50+ publică materiale folosind platforma",
+        "ru": "100 сертифицированных выпускников; 50+ публикуют материалы с использованием платформы"
+      },
+      "timeframe_months": 9
+    },
+    {
+      "code": "SpO2.2",
+      "parent_so": "SO2",
+      "title": {
+        "ro": "50.000 cetățeni accesează platforma",
+        "ru": "50.000 граждан используют платформу"
+      },
+      "smart_formulation": {
+        "ro": "Pe durata proiectului (M1-M18), cumulativ 50.000+ vizitatori unici accesează dashboard-urile APL.",
+        "ru": "За время проекта (M1-M18) кумулятивно 50.000+ уникальных посетителей используют дашборды органов."
+      },
+      "target_indicator": {
+        "ro": "Google Analytics: 50.000 vizitatori unici; bounce rate <60%",
+        "ru": "Google Analytics: 50.000 уникальных посетителей; показатель отказов <60%"
+      },
+      "timeframe_months": 18
+    },
+    {
+      "code": "SpO3.1",
+      "parent_so": "SO3",
+      "title": {
+        "ro": "5 rapoarte audit shadow",
+        "ru": "5 теневых аудит-отчётов"
+      },
+      "smart_formulation": {
+        "ro": "Până la M14, 5 audit-uri shadow ale bugetelor APL publicate, fiecare cu min 10 recomandări validate de Curtea de Conturi sau experți independenți.",
+        "ru": "К M14 опубликовано 5 теневых аудитов бюджетов органов, каждый с минимум 10 рекомендациями, валидированными Счётной палатой или независимыми экспертами."
+      },
+      "target_indicator": {
+        "ro": "5 rapoarte audit publicate + 50+ recomandări validate",
+        "ru": "5 опубликованных аудит-отчётов + 50+ валидированных рекомендаций"
+      },
+      "timeframe_months": 14
+    },
+    {
+      "code": "SpO3.2",
+      "parent_so": "SO3",
+      "title": {
+        "ro": "Propunere legislativă în Parlament",
+        "ru": "Законопроект в Парламенте"
+      },
+      "smart_formulation": {
+        "ro": "Până la M18, proiect de lege „Standard Național Transparență APL\" depus oficial în Parlament cu min 7 deputați co-semnatari + 10.000 semnături petiție.",
+        "ru": "К M18 законопроект «Национальный стандарт прозрачности местных органов» официально подан в Парламент с минимум 7 депутатами-соавторами + 10.000 подписей петиции."
+      },
+      "target_indicator": {
+        "ro": "Proiect lege depus + 7 co-semnatari + 10K semnături",
+        "ru": "Законопроект подан + 7 соавторов + 10K подписей"
+      },
+      "timeframe_months": 18
+    }
+  ],
+  "phases": [
+    {
+      "phase": "initiation",
+      "phase_label": {
+        "ro": "1. Inițiere — Fișa de proiect",
+        "ru": "1. Инициация — Карточка проекта"
+      },
+      "icon": "📋",
+      "duration_months": 1,
+      "description": {
+        "ro": "Fundamentarea oficială a proiectului. Aprobări interne și externe. Constituire steering committee. Plan inițial.",
+        "ru": "Официальное обоснование проекта. Внутренние и внешние утверждения. Формирование руководящего комитета. Первоначальный план."
+      },
+      "key_outputs": [
+        {
+          "ro": "Project Charter semnat de EU4Moldova + organizație",
+          "ru": "Project Charter подписан EU4Moldova + организацией"
+        },
+        {
+          "ro": "Steering Committee constituit (7 membri)",
+          "ru": "Сформирован руководящий комитет (7 членов)"
+        },
+        {
+          "ro": "Stakeholder register baseline",
+          "ru": "Базовый реестр заинтересованных сторон"
+        }
+      ],
+      "documents": [
+        {
+          "code": "DOC-INIT-01",
+          "name": {
+            "ro": "Fișa de proiect (Project Charter)",
+            "ru": "Карточка проекта (Project Charter)"
+          },
+          "format": "docx",
+          "template_source": "pmbok",
+          "purpose": {
+            "ro": "Documentul oficial care autorizează proiectul, definește scope-ul, identifică sponsorul și managerul de proiect.",
+            "ru": "Официальный документ, утверждающий проект, определяющий область, спонсора и менеджера проекта."
+          },
+          "when_due": {
+            "ro": "Primele 30 zile de la semnare contract",
+            "ru": "Первые 30 дней после подписания контракта"
+          },
+          "prefill_fields": [
+            {
+              "placeholder": "{{company_name}}",
+              "label": {
+                "ro": "Numele organizației",
+                "ru": "Название организации"
+              },
+              "source": "applicant_profile.organization_name",
+              "example": "[Numele organizației tale]"
+            },
+            {
+              "placeholder": "{{project_title}}",
+              "label": {
+                "ro": "Titlul proiectului",
+                "ru": "Название проекта"
+              },
+              "source": "project.project_title",
+              "example": "Monitorul Civic Bugetar"
+            },
+            {
+              "placeholder": "{{sponsor}}",
+              "label": {
+                "ro": "Sponsor",
+                "ru": "Спонсор"
+              },
+              "source": "call.funder + organization_director",
+              "example": "EU4Moldova Moldova + Director executiv AO"
+            },
+            {
+              "placeholder": "{{project_manager}}",
+              "label": {
+                "ro": "Manager proiect",
+                "ru": "Менеджер проекта"
+              },
+              "source": "applicant_profile.pm_name",
+              "example": "[Nume PM]"
+            },
+            {
+              "placeholder": "{{scope_summary}}",
+              "label": {
+                "ro": "Sumar scope (in/out)",
+                "ru": "Краткое описание области (in/out)"
+              },
+              "source": "scope.in_scope + scope.out_of_scope",
+              "example": "5 itemi în scope + 3 itemi excluși"
+            },
+            {
+              "placeholder": "{{general_objectives}}",
+              "label": {
+                "ro": "Obiective generale",
+                "ru": "Общие цели"
+              },
+              "source": "strategic_objectives[]",
+              "example": "SO1, SO2, SO3"
+            },
+            {
+              "placeholder": "{{specific_objectives}}",
+              "label": {
+                "ro": "Obiective specifice (SMART)",
+                "ru": "Конкретные цели (SMART)"
+              },
+              "source": "specific_objectives[]",
+              "example": "SpO1.1 ... SpO3.2 (6 obiective)"
+            },
+            {
+              "placeholder": "{{total_budget}}",
+              "label": {
+                "ro": "Buget total",
+                "ru": "Общий бюджет"
+              },
+              "source": "budget.grand_total_mdl",
+              "example": "1.450.000 MDL"
+            },
+            {
+              "placeholder": "{{duration_months}}",
+              "label": {
+                "ro": "Durată",
+                "ru": "Длительность"
+              },
+              "source": "project.duration_months",
+              "example": "18 luni"
+            }
+          ]
+        },
+        {
+          "code": "DOC-INIT-02",
+          "name": {
+            "ro": "Business Case",
+            "ru": "Бизнес-кейс"
+          },
+          "format": "docx",
+          "template_source": "pmbok",
+          "purpose": {
+            "ro": "Justifică valoarea proiectului — costuri vs. beneficii, alternative considerate, ROI social.",
+            "ru": "Обосновывает ценность проекта — затраты против выгод, рассмотренные альтернативы, социальный ROI."
+          },
+          "when_due": {
+            "ro": "Cu Project Charter sau în 14 zile după",
+            "ru": "Вместе с Project Charter или в течение 14 дней"
+          },
+          "prefill_fields": [
+            {
+              "placeholder": "{{company_name}}",
+              "label": {
+                "ro": "Organizația",
+                "ru": "Организация"
+              },
+              "source": "applicant_profile.organization_name",
+              "example": "[Numele organizației]"
+            },
+            {
+              "placeholder": "{{project_title}}",
+              "label": {
+                "ro": "Proiect",
+                "ru": "Проект"
+              },
+              "source": "project.project_title",
+              "example": "Monitorul Civic Bugetar"
+            },
+            {
+              "placeholder": "{{problem_statement}}",
+              "label": {
+                "ro": "Problema abordată",
+                "ru": "Решаемая проблема"
+              },
+              "source": "scope.in_scope[0] + idea.problem_statement",
+              "example": "Lipsa transparenței bugetare în 60% APL rurale..."
+            },
+            {
+              "placeholder": "{{expected_benefits}}",
+              "label": {
+                "ro": "Beneficii estimate",
+                "ru": "Ожидаемые выгоды"
+              },
+              "source": "success_criteria[] + estimated_beneficiaries",
+              "example": "50.000 cetățeni cu acces transparență; 1 lege..."
+            },
+            {
+              "placeholder": "{{total_cost}}",
+              "label": {
+                "ro": "Cost total",
+                "ru": "Общая стоимость"
+              },
+              "source": "budget.grand_total_mdl",
+              "example": "1.450.000 MDL"
+            }
+          ]
+        },
+        {
+          "code": "DOC-INIT-03",
+          "name": {
+            "ro": "Registrul părților interesate",
+            "ru": "Реестр заинтересованных сторон"
+          },
+          "format": "xlsx",
+          "template_source": "pmbok",
+          "purpose": {
+            "ro": "Lista completă a tuturor stakeholder-ilor: EU4Moldova, APL, beneficiari, parteneri, media — cu nivel de influență și strategie de engagement.",
+            "ru": "Полный список заинтересованных сторон: EU4Moldova, органы, бенефициары, партнёры, медиа — с уровнем влияния и стратегией взаимодействия."
+          },
+          "when_due": {
+            "ro": "În 14 zile de la kickoff",
+            "ru": "В течение 14 дней после kickoff"
+          },
+          "prefill_fields": [
+            {
+              "placeholder": "{{company_name}}",
+              "label": {
+                "ro": "Organizația",
+                "ru": "Организация"
+              },
+              "source": "applicant_profile.organization_name",
+              "example": "[Numele organizației]"
+            },
+            {
+              "placeholder": "{{stakeholders[]}}",
+              "label": {
+                "ro": "Lista părților interesate",
+                "ru": "Список заинтересованных сторон"
+              },
+              "source": "auto-generat din call.funder + audiences + work_packages.lead_role",
+              "example": "EU4Moldova + 20 APL + 8 redacții partenere..."
+            }
+          ]
+        },
+        {
+          "code": "DOC-INIT-04",
+          "name": {
+            "ro": "Agenda întâlnire de lansare (Kick-off)",
+            "ru": "Повестка установочной встречи (Kick-off)"
+          },
+          "format": "docx",
+          "template_source": "pmbok",
+          "purpose": {
+            "ro": "Structura formală a primei întâlniri cu echipa + sponsor — prezentare scope, obiective, timeline, responsabilități.",
+            "ru": "Формальная структура первой встречи с командой + спонсором — презентация области, целей, timeline, ответственностей."
+          },
+          "when_due": {
+            "ro": "Cu 5 zile înainte de kickoff meeting",
+            "ru": "За 5 дней до kickoff-встречи"
+          },
+          "prefill_fields": [
+            {
+              "placeholder": "{{project_title}}",
+              "label": {
+                "ro": "Titlu",
+                "ru": "Название"
+              },
+              "source": "project.project_title",
+              "example": "Monitorul Civic Bugetar"
+            },
+            {
+              "placeholder": "{{kickoff_date}}",
+              "label": {
+                "ro": "Data kickoff",
+                "ru": "Дата kickoff"
+              },
+              "source": "manual entry",
+              "example": "[de completat]"
+            },
+            {
+              "placeholder": "{{strategic_objectives_brief}}",
+              "label": {
+                "ro": "Obiective strategice (sumar)",
+                "ru": "Стратегические цели (резюме)"
+              },
+              "source": "strategic_objectives[].title",
+              "example": "SO1, SO2, SO3 (titluri scurte)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "planning",
+      "phase_label": {
+        "ro": "2. Planificare",
+        "ru": "2. Планирование"
+      },
+      "icon": "📅",
+      "duration_months": 2,
+      "description": {
+        "ro": "Detaliere completă plan management proiect: WBS, calendar, buget detaliat, plan resurse, plan riscuri, plan comunicare, plan M&E.",
+        "ru": "Полная детализация плана управления проектом: WBS, календарь, детальный бюджет, план ресурсов, рисков, коммуникации, M&E."
+      },
+      "key_outputs": [
+        {
+          "ro": "PMP (Project Management Plan) aprobat",
+          "ru": "PMP (Project Management Plan) утверждён"
+        },
+        {
+          "ro": "WBS + Gantt detaliat cu 5 work packages",
+          "ru": "WBS + детальный Gantt с 5 рабочими пакетами"
+        },
+        {
+          "ro": "Buget detaliat pe linii (200+ linii)",
+          "ru": "Детальный бюджет по строкам (200+ строк)"
+        }
+      ],
+      "documents": [
+        {
+          "code": "DOC-PLAN-01",
+          "name": {
+            "ro": "Project Management Plan (PMP / Project Handbook PM²)",
+            "ru": "Project Management Plan (PMP / Project Handbook PM²)"
+          },
+          "format": "docx",
+          "template_source": "pmbok",
+          "purpose": {
+            "ro": "Documentul master care integrează toate planurile subsidiare (scope, schedule, cost, quality, resource, communications, risk, procurement, stakeholder).",
+            "ru": "Главный документ, объединяющий все вспомогательные планы (область, расписание, стоимость, качество, ресурсы, коммуникации, риски, закупки, стороны)."
+          },
+          "when_due": {
+            "ro": "Sfârșitul lunii 2 — gate review pentru execuție",
+            "ru": "Конец 2-го месяца — gate review для исполнения"
+          },
+          "prefill_fields": [
+            {
+              "placeholder": "{{company_name}}",
+              "label": {
+                "ro": "Organizația",
+                "ru": "Организация"
+              },
+              "source": "applicant_profile.organization_name",
+              "example": "[Numele organizației]"
+            },
+            {
+              "placeholder": "{{project_title}}",
+              "label": {
+                "ro": "Titlu proiect",
+                "ru": "Название проекта"
+              },
+              "source": "project.project_title",
+              "example": "Monitorul Civic Bugetar"
+            },
+            {
+              "placeholder": "{{scope_full}}",
+              "label": {
+                "ro": "Scope complet (in/out/assumptions/constraints)",
+                "ru": "Полная область (in/out/assumptions/constraints)"
+              },
+              "source": "scope.*",
+              "example": "5 in + 3 out + 3 assumptions + 3 constraints + 4 criteria"
+            },
+            {
+              "placeholder": "{{general_objectives}}",
+              "label": {
+                "ro": "Obiective generale",
+                "ru": "Общие цели"
+              },
+              "source": "strategic_objectives[].full",
+              "example": "3 SO cu descriere completă"
+            },
+            {
+              "placeholder": "{{specific_objectives}}",
+              "label": {
+                "ro": "Obiective specifice SMART",
+                "ru": "Конкретные цели SMART"
+              },
+              "source": "specific_objectives[].smart_formulation",
+              "example": "6 SpO formulate SMART"
+            },
+            {
+              "placeholder": "{{wbs_table}}",
+              "label": {
+                "ro": "Tabel WBS",
+                "ru": "Таблица WBS"
+              },
+              "source": "work_packages[].activities[]",
+              "example": "5 WP × 4-5 activități = ~22 activități"
+            },
+            {
+              "placeholder": "{{gantt_chart}}",
+              "label": {
+                "ro": "Diagrama Gantt",
+                "ru": "Диаграмма Gantt"
+              },
+              "source": "gantt.bars[] + milestones[]",
+              "example": "Imagine PNG generată din gantt.bars"
+            }
+          ]
+        },
+        {
+          "code": "DOC-PLAN-02",
+          "name": {
+            "ro": "Work Breakdown Structure (WBS) — detaliat",
+            "ru": "Work Breakdown Structure (WBS) — детально"
+          },
+          "format": "xlsx",
+          "template_source": "pmbok",
+          "purpose": {
+            "ro": "Descompunerea ierarhică a tuturor livrabilelor proiectului în pachete de lucru (WP) → activități (A) → task-uri (T).",
+            "ru": "Иерархическая декомпозиция всех результатов проекта в рабочие пакеты (WP) → мероприятия (A) → задачи (T)."
+          },
+          "when_due": {
+            "ro": "M1.5 — cu PMP",
+            "ru": "M1.5 — вместе с PMP"
+          },
+          "prefill_fields": [
+            {
+              "placeholder": "{{wbs_full}}",
+              "label": {
+                "ro": "WBS complet",
+                "ru": "Полная WBS"
+              },
+              "source": "work_packages[]",
+              "example": "5 WP cu cod + titlu + durată + responsabil"
+            },
+            {
+              "placeholder": "{{activities[]}}",
+              "label": {
+                "ro": "Activități per WP",
+                "ru": "Мероприятия по WP"
+              },
+              "source": "work_packages[].activities[]",
+              "example": "~22 rânduri cu cod, titlu, durată, livrabil, dependențe"
+            }
+          ]
+        },
+        {
+          "code": "DOC-PLAN-03",
+          "name": {
+            "ro": "Buget detaliat (per categorie & per activitate)",
+            "ru": "Детальный бюджет (по категориям и по мероприятиям)"
+          },
+          "format": "xlsx",
+          "template_source": "pmbok",
+          "purpose": {
+            "ro": "Toate liniile de buget cu cod, descriere, unitate, cantitate, cost unitar, total, % din total, sursa finanțării. Cu cofinanțare evidențiată.",
+            "ru": "Все строки бюджета с кодом, описанием, единицей, количеством, ценой, итогом, % от общего, источником финансирования. С отдельным отображением софинансирования."
+          },
+          "when_due": {
+            "ro": "M2 — gate review",
+            "ru": "M2 — gate review"
+          },
+          "prefill_fields": [
+            {
+              "placeholder": "{{budget_categories[]}}",
+              "label": {
+                "ro": "Categorii buget",
+                "ru": "Категории бюджета"
+              },
+              "source": "budget.categories_summary",
+              "example": "Personal, Echipamente, Servicii, ..."
+            },
+            {
+              "placeholder": "{{budget_lines[]}}",
+              "label": {
+                "ro": "Linii buget",
+                "ru": "Строки бюджета"
+              },
+              "source": "budget.line_items[]",
+              "example": "~50 linii cu activity_ref, cantitate, cost"
+            },
+            {
+              "placeholder": "{{cofinancing_breakdown}}",
+              "label": {
+                "ro": "Defalcare cofinanțare",
+                "ru": "Разбивка софинансирования"
+              },
+              "source": "budget.total_cofinancing_mdl + grand_total",
+              "example": "0 MDL cofinanțare (EU grant cu cofinanțare 10%)"
+            }
+          ]
+        },
+        {
+          "code": "DOC-PLAN-04",
+          "name": {
+            "ro": "Registru riscuri (Risk Register)",
+            "ru": "Реестр рисков (Risk Register)"
+          },
+          "format": "xlsx",
+          "template_source": "pmbok",
+          "purpose": {
+            "ro": "Identificarea + evaluarea riscurilor (probabilitate × impact) + plan de mitigare + responsabil per risc.",
+            "ru": "Идентификация + оценка рисков (вероятность × воздействие) + план митигации + ответственный за каждый риск."
+          },
+          "when_due": {
+            "ro": "M2 + actualizare lunară",
+            "ru": "M2 + ежемесячное обновление"
+          },
+          "prefill_fields": [
+            {
+              "placeholder": "{{risk_items[]}}",
+              "label": {
+                "ro": "Lista riscurilor",
+                "ru": "Список рисков"
+              },
+              "source": "scope.assumptions + scope.constraints + auto-derived from work_packages",
+              "example": "10-15 riscuri inițiale + plan mitigare"
+            },
+            {
+              "placeholder": "{{risk_owner}}",
+              "label": {
+                "ro": "Responsabil risc",
+                "ru": "Ответственный за риск"
+              },
+              "source": "work_packages[].lead_role",
+              "example": "PM, Tech Lead, M&E Specialist..."
+            }
+          ]
+        },
+        {
+          "code": "DOC-PLAN-05",
+          "name": {
+            "ro": "Plan de comunicare",
+            "ru": "План коммуникаций"
+          },
+          "format": "docx",
+          "template_source": "pmbok",
+          "purpose": {
+            "ro": "Cine comunică ce, către cine, când, prin ce canal. Acoperă: rapoarte donator, comunicare echipa, vizibilitate EU4Moldova Branding & Marking.",
+            "ru": "Кто что сообщает, кому, когда, по какому каналу. Охватывает: отчёты донору, коммуникацию команды, видимость EU4Moldova Branding & Marking."
+          },
+          "when_due": {
+            "ro": "M2",
+            "ru": "M2"
+          },
+          "prefill_fields": [
+            {
+              "placeholder": "{{stakeholders[]}}",
+              "label": {
+                "ro": "Stakeholders",
+                "ru": "Стороны"
+              },
+              "source": "DOC-INIT-03.stakeholders",
+              "example": "Din Stakeholder Register"
+            },
+            {
+              "placeholder": "{{communication_matrix}}",
+              "label": {
+                "ro": "Matrice comunicare",
+                "ru": "Матрица коммуникаций"
+              },
+              "source": "manual entry + EU4Moldova requirements",
+              "example": "Rapoarte lunare + comunicate trimestriale"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "execution",
+      "phase_label": {
+        "ro": "3. Execuție",
+        "ru": "3. Исполнение"
+      },
+      "icon": "⚙",
+      "duration_months": 13,
+      "description": {
+        "ro": "Implementarea efectivă a activităților planificate. Cele 5 WP rulează în paralel/secvențial conform Gantt. Generarea livrabilelor.",
+        "ru": "Фактическое выполнение запланированных мероприятий. 5 WP работают параллельно/последовательно по Gantt. Создание результатов."
+      },
+      "key_outputs": [
+        {
+          "ro": "Toate livrabilele activităților produse",
+          "ru": "Все результаты мероприятий созданы"
+        },
+        {
+          "ro": "Status report lunar către donator",
+          "ru": "Ежемесячный отчёт о статусе донору"
+        },
+        {
+          "ro": "Issue log activ + change requests aprobate",
+          "ru": "Активный issue log + утверждённые change requests"
+        }
+      ],
+      "documents": [
+        {
+          "code": "DOC-EXEC-01",
+          "name": {
+            "ro": "Status Report lunar (template recurent)",
+            "ru": "Ежемесячный Status Report (повторяющийся шаблон)"
+          },
+          "format": "docx",
+          "template_source": "pmbok",
+          "purpose": {
+            "ro": "Raport scurt (3-5 pagini) către sponsor + steering committee: progres vs. plan, indicatori, riscuri, decizii necesare.",
+            "ru": "Краткий отчёт (3-5 страниц) спонсору + руководящему комитету: прогресс против плана, индикаторы, риски, необходимые решения."
+          },
+          "when_due": {
+            "ro": "Lunar — în primele 5 zile ale lunii următoare",
+            "ru": "Ежемесячно — в первые 5 дней следующего месяца"
+          },
+          "prefill_fields": [
+            {
+              "placeholder": "{{report_month}}",
+              "label": {
+                "ro": "Luna raportată",
+                "ru": "Отчётный месяц"
+              },
+              "source": "current month",
+              "example": "Septembrie 2026"
+            },
+            {
+              "placeholder": "{{progress_table}}",
+              "label": {
+                "ro": "Tabel progres",
+                "ru": "Таблица прогресса"
+              },
+              "source": "auto-din WBS + activity completion %",
+              "example": "22 activități cu status 🟢/🟡/🔴"
+            },
+            {
+              "placeholder": "{{indicators_actual}}",
+              "label": {
+                "ro": "Indicatori actual",
+                "ru": "Индикаторы фактические"
+              },
+              "source": "M&E system",
+              "example": "Cumulative numbers per KPI"
+            },
+            {
+              "placeholder": "{{budget_burn}}",
+              "label": {
+                "ro": "Buget cheltuit",
+                "ru": "Использованный бюджет"
+              },
+              "source": "finance system",
+              "example": "% per categorie cheltuit"
+            }
+          ]
+        },
+        {
+          "code": "DOC-EXEC-02",
+          "name": {
+            "ro": "Issue Log",
+            "ru": "Issue Log"
+          },
+          "format": "xlsx",
+          "template_source": "pmbok",
+          "purpose": {
+            "ro": "Registrul problemelor apărute pe parcurs (NU planificate ca riscuri). Pentru fiecare: descriere, impact, soluție, status, responsabil.",
+            "ru": "Реестр проблем, возникших по ходу (НЕ запланированных как риски). Для каждой: описание, воздействие, решение, статус, ответственный."
+          },
+          "when_due": {
+            "ro": "Continuu pe durata execuției",
+            "ru": "Непрерывно во время исполнения"
+          },
+          "prefill_fields": [
+            {
+              "placeholder": "{{project_title}}",
+              "label": {
+                "ro": "Proiect",
+                "ru": "Проект"
+              },
+              "source": "project.project_title",
+              "example": "Monitorul Civic Bugetar"
+            }
+          ]
+        },
+        {
+          "code": "DOC-EXEC-03",
+          "name": {
+            "ro": "Change Request Form",
+            "ru": "Форма Change Request"
+          },
+          "format": "docx",
+          "template_source": "pmbok",
+          "purpose": {
+            "ro": "Formular pentru orice modificare la scope/buget/calendar care depășește toleranțele. Cere aprobare Steering Committee + sponsor.",
+            "ru": "Форма для любого изменения области/бюджета/календаря, выходящего за пределы толерансов. Требует утверждения руководящего комитета + спонсора."
+          },
+          "when_due": {
+            "ro": "La nevoie — process formal",
+            "ru": "По необходимости — формальный процесс"
+          },
+          "prefill_fields": [
+            {
+              "placeholder": "{{project_title}}",
+              "label": {
+                "ro": "Proiect",
+                "ru": "Проект"
+              },
+              "source": "project.project_title",
+              "example": "Monitorul Civic Bugetar"
+            },
+            {
+              "placeholder": "{{change_description}}",
+              "label": {
+                "ro": "Descriere modificare",
+                "ru": "Описание изменения"
+              },
+              "source": "manual entry",
+              "example": "[de completat per cerere]"
+            },
+            {
+              "placeholder": "{{impact_analysis}}",
+              "label": {
+                "ro": "Analiză impact",
+                "ru": "Анализ воздействия"
+              },
+              "source": "manual entry — referință scope + budget",
+              "example": "Impact pe SO1: +2 luni, +200K MDL"
+            }
+          ]
+        },
+        {
+          "code": "DOC-EXEC-04",
+          "name": {
+            "ro": "Formular acceptare livrabil",
+            "ru": "Форма приёмки результата"
+          },
+          "format": "docx",
+          "template_source": "pmbok",
+          "purpose": {
+            "ro": "Confirmare formală că un livrabil (deliverable) e gata și acceptat de sponsor/client. Semnătură + dată + observații.",
+            "ru": "Формальное подтверждение, что результат (deliverable) готов и принят спонсором/клиентом. Подпись + дата + замечания."
+          },
+          "when_due": {
+            "ro": "La finalizarea fiecărui livrabil major (15+)",
+            "ru": "По завершении каждого крупного результата (15+)"
+          },
+          "prefill_fields": [
+            {
+              "placeholder": "{{deliverable_name}}",
+              "label": {
+                "ro": "Nume livrabil",
+                "ru": "Название результата"
+              },
+              "source": "work_packages[].deliverables[]",
+              "example": "ex. Platforma web v1.0"
+            },
+            {
+              "placeholder": "{{activity_ref}}",
+              "label": {
+                "ro": "Cod activitate",
+                "ru": "Код мероприятия"
+              },
+              "source": "WBS code",
+              "example": "A2 (din WP2)"
+            },
+            {
+              "placeholder": "{{acceptance_criteria}}",
+              "label": {
+                "ro": "Criterii acceptare",
+                "ru": "Критерии приёмки"
+              },
+              "source": "din PMP / WBS",
+              "example": "Lista din PMP secțiunea Quality"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "monitoring",
+      "phase_label": {
+        "ro": "4. Monitorizare & Control",
+        "ru": "4. Мониторинг и контроль"
+      },
+      "icon": "📊",
+      "duration_months": 13,
+      "description": {
+        "ro": "Activitate paralelă cu execuția. Măsurare KPI, urmărire buget, raportare donator, ajustare plan dacă apar abateri. Steering committee meetings.",
+        "ru": "Параллельная исполнению деятельность. Измерение KPI, отслеживание бюджета, отчётность донору, корректировка плана при отклонениях. Заседания руководящего комитета."
+      },
+      "key_outputs": [
+        {
+          "ro": "12+ rapoarte lunare + 6 trimestriale",
+          "ru": "12+ ежемесячных + 6 квартальных отчётов"
+        },
+        {
+          "ro": "KPI dashboard actualizat săptămânal",
+          "ru": "KPI dashboard обновляется еженедельно"
+        },
+        {
+          "ro": "4 steering committee meetings",
+          "ru": "4 заседания руководящего комитета"
+        }
+      ],
+      "documents": [
+        {
+          "code": "DOC-MON-01",
+          "name": {
+            "ro": "Raport progres lunar (Monthly Progress Report)",
+            "ru": "Ежемесячный отчёт о прогрессе"
+          },
+          "format": "docx",
+          "template_source": "pmbok",
+          "purpose": {
+            "ro": "Raport oficial către EU4Moldova — 5-8 pagini: rezumat executiv, activități, KPI, buget, riscuri, planuri luna următoare.",
+            "ru": "Официальный отчёт EU4Moldova — 5-8 страниц: резюме, мероприятия, KPI, бюджет, риски, планы на следующий месяц."
+          },
+          "when_due": {
+            "ro": "Lunar — 10 zile lucrătoare după finalizarea lunii",
+            "ru": "Ежемесячно — 10 рабочих дней после конца месяца"
+          },
+          "prefill_fields": [
+            {
+              "placeholder": "{{company_name}}",
+              "label": {
+                "ro": "Organizația",
+                "ru": "Организация"
+              },
+              "source": "applicant_profile.organization_name",
+              "example": "[Numele organizației]"
+            },
+            {
+              "placeholder": "{{project_title}}",
+              "label": {
+                "ro": "Proiect",
+                "ru": "Проект"
+              },
+              "source": "project.project_title",
+              "example": "Monitorul Civic Bugetar"
+            },
+            {
+              "placeholder": "{{report_period}}",
+              "label": {
+                "ro": "Perioada raportată",
+                "ru": "Отчётный период"
+              },
+              "source": "current month range",
+              "example": "1-30 septembrie 2026"
+            },
+            {
+              "placeholder": "{{activities_completed}}",
+              "label": {
+                "ro": "Activități realizate",
+                "ru": "Выполненные мероприятия"
+              },
+              "source": "M&E + WBS tracking",
+              "example": "5 activități completed în luna asta"
+            },
+            {
+              "placeholder": "{{kpis_dashboard}}",
+              "label": {
+                "ro": "Dashboard KPI",
+                "ru": "Дашборд KPI"
+              },
+              "source": "auto din indicators tracking",
+              "example": "Toți KPI vs. țintă cu % completion"
+            }
+          ]
+        },
+        {
+          "code": "DOC-MON-02",
+          "name": {
+            "ro": "Dashboard KPI (Excel cu vizualizări)",
+            "ru": "Дашборд KPI (Excel с визуализациями)"
+          },
+          "format": "xlsx",
+          "template_source": "pmbok",
+          "purpose": {
+            "ro": "Vizualizare săptămânală a indicatorilor cheie. Charts + tabele. Sursă pentru rapoartele narative.",
+            "ru": "Еженедельная визуализация ключевых индикаторов. Графики + таблицы. Источник для нарративных отчётов."
+          },
+          "when_due": {
+            "ro": "Săptămânal",
+            "ru": "Еженедельно"
+          },
+          "prefill_fields": [
+            {
+              "placeholder": "{{kpi_definitions}}",
+              "label": {
+                "ro": "Definiții KPI",
+                "ru": "Определения KPI"
+              },
+              "source": "specific_objectives[].target_indicator",
+              "example": "6 indicatori cu țintă și formulă"
+            },
+            {
+              "placeholder": "{{kpi_actuals[]}}",
+              "label": {
+                "ro": "Valori actuale",
+                "ru": "Текущие значения"
+              },
+              "source": "M&E system entry",
+              "example": "Update manual săptămânal"
+            }
+          ]
+        },
+        {
+          "code": "DOC-MON-03",
+          "name": {
+            "ro": "Budget Burn Tracker",
+            "ru": "Budget Burn Tracker"
+          },
+          "format": "xlsx",
+          "template_source": "pmbok",
+          "purpose": {
+            "ro": "Urmărire cheltuieli vs. buget planificat per categorie + per WP. Alarmă la depășire 80% sau under-burn 50% la mid-term.",
+            "ru": "Отслеживание расходов против запланированного бюджета по категориям + по WP. Сигнализация при превышении 80% или under-burn 50% к среднему сроку."
+          },
+          "when_due": {
+            "ro": "Bi-săptămânal",
+            "ru": "Раз в две недели"
+          },
+          "prefill_fields": [
+            {
+              "placeholder": "{{budget_baseline}}",
+              "label": {
+                "ro": "Buget baseline",
+                "ru": "Базовый бюджет"
+              },
+              "source": "DOC-PLAN-03 (baseline approved)",
+              "example": "Buget aprobat în Planning"
+            },
+            {
+              "placeholder": "{{actual_spend[]}}",
+              "label": {
+                "ro": "Cheltuieli actuale",
+                "ru": "Фактические расходы"
+              },
+              "source": "finance system / vouchers",
+              "example": "Update bi-săptămânal"
+            }
+          ]
+        },
+        {
+          "code": "DOC-MON-04",
+          "name": {
+            "ro": "Prezentare Steering Committee (trimestrial)",
+            "ru": "Презентация для руководящего комитета (ежеквартально)"
+          },
+          "format": "pptx",
+          "template_source": "pmbok",
+          "purpose": {
+            "ro": "Slide deck pentru întâlnirile trimestriale Steering Committee — 15-20 slides cu sumar progres, riscuri, decizii cerute.",
+            "ru": "Slide deck для квартальных заседаний руководящего комитета — 15-20 слайдов с резюме прогресса, рисками, требуемыми решениями."
+          },
+          "when_due": {
+            "ro": "Trimestrial — M3, M6, M9, M12, M15",
+            "ru": "Ежеквартально — M3, M6, M9, M12, M15"
+          },
+          "prefill_fields": [
+            {
+              "placeholder": "{{quarter_label}}",
+              "label": {
+                "ro": "Trimestru",
+                "ru": "Квартал"
+              },
+              "source": "current quarter",
+              "example": "Q3 2026 (iulie-sept)"
+            },
+            {
+              "placeholder": "{{kpi_snapshot}}",
+              "label": {
+                "ro": "Snapshot KPI",
+                "ru": "Снимок KPI"
+              },
+              "source": "DOC-MON-02 last week",
+              "example": "Tot dashboardul în slide format"
+            },
+            {
+              "placeholder": "{{decisions_required}}",
+              "label": {
+                "ro": "Decizii cerute",
+                "ru": "Требуемые решения"
+              },
+              "source": "manual + Issue Log open items",
+              "example": "Lista clear cu ownerii"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "phase": "closure",
+      "phase_label": {
+        "ro": "5. Închidere",
+        "ru": "5. Закрытие"
+      },
+      "icon": "🏁",
+      "duration_months": 1,
+      "description": {
+        "ro": "Finalizarea formală: raport narativ final, raport financiar final, audit, transfer livrabile, lessons learned, sustenabilitate.",
+        "ru": "Формальное завершение: итоговый нарративный отчёт, итоговый финансовый отчёт, аудит, передача результатов, извлечённые уроки, устойчивость."
+      },
+      "key_outputs": [
+        {
+          "ro": "Raport final acceptat de EU4Moldova",
+          "ru": "Итоговый отчёт принят EU4Moldova"
+        },
+        {
+          "ro": "Audit financiar extern semnat",
+          "ru": "Внешний финансовый аудит подписан"
+        },
+        {
+          "ro": "Lessons learned publicate + arhivate",
+          "ru": "Извлечённые уроки опубликованы + архивированы"
+        },
+        {
+          "ro": "Plan de sustenabilitate transmis",
+          "ru": "План устойчивости передан"
+        }
+      ],
+      "documents": [
+        {
+          "code": "DOC-CLO-01",
+          "name": {
+            "ro": "Raport final narativ",
+            "ru": "Итоговый нарративный отчёт"
+          },
+          "format": "docx",
+          "template_source": "pmbok",
+          "purpose": {
+            "ro": "Raportul oficial complet (25-40 pagini): realizări vs. obiective, beneficii livrate, lessons learned, sustenabilitate, vizibilitate. Cere semnătură legală reprezentant.",
+            "ru": "Полный официальный отчёт (25-40 страниц): достижения против целей, доставленные выгоды, извлечённые уроки, устойчивость, видимость. Требует юридической подписи представителя."
+          },
+          "when_due": {
+            "ro": "60 zile după sfârșitul tehnic — M18 + 2",
+            "ru": "60 дней после технического окончания — M18 + 2"
+          },
+          "prefill_fields": [
+            {
+              "placeholder": "{{company_name}}",
+              "label": {
+                "ro": "Organizația",
+                "ru": "Организация"
+              },
+              "source": "applicant_profile.organization_name",
+              "example": "[Numele organizației]"
+            },
+            {
+              "placeholder": "{{project_title}}",
+              "label": {
+                "ro": "Proiect",
+                "ru": "Проект"
+              },
+              "source": "project.project_title",
+              "example": "Monitorul Civic Bugetar"
+            },
+            {
+              "placeholder": "{{achievements_vs_objectives}}",
+              "label": {
+                "ro": "Realizări vs. obiective",
+                "ru": "Достижения против целей"
+              },
+              "source": "all SpO + actuals at closure",
+              "example": "6 SpO × atins/parțial/nereușit + justificare"
+            },
+            {
+              "placeholder": "{{beneficiaries_actual}}",
+              "label": {
+                "ro": "Beneficiari atinși",
+                "ru": "Достигнутые бенефициары"
+              },
+              "source": "M&E final count",
+              "example": "Actual vs. 50.000 țintă"
+            },
+            {
+              "placeholder": "{{lessons_learned_summary}}",
+              "label": {
+                "ro": "Lessons learned (sumar)",
+                "ru": "Извлечённые уроки (резюме)"
+              },
+              "source": "DOC-CLO-03",
+              "example": "5-10 lessons principale"
+            },
+            {
+              "placeholder": "{{sustainability_summary}}",
+              "label": {
+                "ro": "Sustenabilitate (sumar)",
+                "ru": "Устойчивость (резюме)"
+              },
+              "source": "DOC-CLO-04",
+              "example": "Cine continuă, cum, cu ce resurse"
+            }
+          ]
+        },
+        {
+          "code": "DOC-CLO-02",
+          "name": {
+            "ro": "Raport financiar final + audit",
+            "ru": "Итоговый финансовый отчёт + аудит"
+          },
+          "format": "xlsx",
+          "template_source": "pmbok",
+          "purpose": {
+            "ro": "Defalcare completă cheltuieli efective vs. buget, cu vouchere atașate, audit extern semnat de firmă autorizată.",
+            "ru": "Полная разбивка фактических расходов против бюджета, с прикреплёнными ваучерами, внешний аудит, подписанный авторизованной фирмой."
+          },
+          "when_due": {
+            "ro": "60 zile după sfârșitul tehnic",
+            "ru": "60 дней после технического окончания"
+          },
+          "prefill_fields": [
+            {
+              "placeholder": "{{budget_final}}",
+              "label": {
+                "ro": "Buget final actual",
+                "ru": "Итоговый фактический бюджет"
+              },
+              "source": "DOC-MON-03 (last update)",
+              "example": "Toate liniile cu actual vs. plan"
+            },
+            {
+              "placeholder": "{{variance_explanation}}",
+              "label": {
+                "ro": "Explicații variațe",
+                "ru": "Объяснения отклонений"
+              },
+              "source": "manual entry pentru variații >5%",
+              "example": "Per linie cu variație >5%"
+            },
+            {
+              "placeholder": "{{auditor_name}}",
+              "label": {
+                "ro": "Auditor",
+                "ru": "Аудитор"
+              },
+              "source": "contracted audit firm",
+              "example": "[Numele firmei de audit]"
+            }
+          ]
+        },
+        {
+          "code": "DOC-CLO-03",
+          "name": {
+            "ro": "Lessons Learned Register",
+            "ru": "Реестр извлечённых уроков"
+          },
+          "format": "docx",
+          "template_source": "pmbok",
+          "purpose": {
+            "ro": "Înregistrarea structurată a lecțiilor — ce a mers bine, ce nu, ce am face diferit, recomandări pentru proiecte similare viitoare.",
+            "ru": "Структурированная запись уроков — что прошло хорошо, что нет, что бы сделали иначе, рекомендации для будущих похожих проектов."
+          },
+          "when_due": {
+            "ro": "Workshop lessons learned cu echipa la M17",
+            "ru": "Воркшоп lessons learned с командой на M17"
+          },
+          "prefill_fields": [
+            {
+              "placeholder": "{{project_title}}",
+              "label": {
+                "ro": "Proiect",
+                "ru": "Проект"
+              },
+              "source": "project.project_title",
+              "example": "Monitorul Civic Bugetar"
+            },
+            {
+              "placeholder": "{{wp_lessons[]}}",
+              "label": {
+                "ro": "Lecții per WP",
+                "ru": "Уроки по WP"
+              },
+              "source": "team workshop notes",
+              "example": "Per fiecare WP: ce/de ce/recomandare"
+            }
+          ]
+        },
+        {
+          "code": "DOC-CLO-04",
+          "name": {
+            "ro": "Plan de sustenabilitate",
+            "ru": "План устойчивости"
+          },
+          "format": "docx",
+          "template_source": "pmbok",
+          "purpose": {
+            "ro": "Cum continuă rezultatele proiectului după închidere: cine deține platforma, finanțare de continuare, transfer la o entitate locală, etc.",
+            "ru": "Как продолжаются результаты проекта после закрытия: кто владеет платформой, дальнейшее финансирование, передача локальной структуре и т.д."
+          },
+          "when_due": {
+            "ro": "M17",
+            "ru": "M17"
+          },
+          "prefill_fields": [
+            {
+              "placeholder": "{{company_name}}",
+              "label": {
+                "ro": "Organizația",
+                "ru": "Организация"
+              },
+              "source": "applicant_profile.organization_name",
+              "example": "[Numele organizației]"
+            },
+            {
+              "placeholder": "{{sustainability_model}}",
+              "label": {
+                "ro": "Model sustenabilitate",
+                "ru": "Модель устойчивости"
+              },
+              "source": "manual entry strategic",
+              "example": "Platforma open-source pe GitHub + comunitate de mentori + funding 50K MDL/an din partenership locale"
+            },
+            {
+              "placeholder": "{{transfer_plan}}",
+              "label": {
+                "ro": "Plan transfer",
+                "ru": "План передачи"
+              },
+              "source": "manual entry",
+              "example": "Transfer platforma la consorțiu 3 ONG + EU4Moldova handover memo"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "_meta": {
+    "demo": true,
+    "generated_by": "Claude Opus 4.7 (cached sample)",
+    "note": "Output realist /calls/{call_id}/ideas/generate pentru EU4Moldova Resilient CSO."
+  },
+  "call_id": "eu4moldova-resilient-cso-2026",
+  "call_title": "EU4Moldova – Resilient Communities & CSO Support",
+  "organization_type": "ngo",
+  "generation_context": {
+    "ro": "5 idei distincte pentru un ONG moldovenesc cu acces la EU4Moldova CSO. Variante de abordări: monitorizare bugetară digitală, paralegali rurali, jurnalism comunitar, mediation digital, advocacy politici publice. Toate aliniate cu prioritățile UE pentru integrare europeană și societate civilă rezilientă.",
+    "ru": "5 различных идей для молдавской НКО с доступом к EU4Moldova CSO. Варианты подходов: цифровой бюджетный мониторинг, сельские параюристы, общинная журналистика, цифровая медиация, адвокация политик. Все соответствуют приоритетам ЕС по евроинтеграции и устойчивому гражданскому обществу."
+  },
+  "ideas": [
+    {
+      "id": "idea-1",
+      "title": {
+        "ro": "Monitorul Civic Bugetar — Transparență Locală în 20 APL Pilot",
+        "ru": "Гражданский бюджетный монитор — Местная прозрачность в 20 пилотных мэриях"
+      },
+      "short_description": {
+        "ro": "Platformă web open-source care agregă datele bugetare a 20 APL rurale, le standardizează în vizualizări accesibile și formează 100 jurnaliști cetățeni să le interpreteze.",
+        "ru": "Открытая веб-платформа, агрегирующая бюджетные данные 20 сельских мэрий, стандартизирующая их в доступных визуализациях, плюс обучение 100 гражданских журналистов их интерпретации."
+      },
+      "target_beneficiaries": {
+        "ro": "Cetățeni adulți din 20 localități (~50.000 persoane), inclusiv comunități marginalizate. Jurnaliști locali, consilieri APL.",
+        "ru": "Взрослые жители 20 населённых пунктов (~50.000 человек), включая маргинализированные сообщества. Местные журналисты, советники мэрий."
+      },
+      "estimated_beneficiaries": 50000,
+      "duration_months": 18,
+      "estimated_budget_min_mdl": 1200000,
+      "estimated_budget_max_mdl": 1800000,
+      "key_innovation": {
+        "ro": "Cod open-source replicabil de orice ONG fără cost. Combinarea automatizării (API → vizualizări) cu capacitare jurnalism cetățenesc.",
+        "ru": "Открытый код, бесплатно тиражируемый любой НКО. Сочетание автоматизации (API → визуализации) с обучением гражданской журналистике."
+      },
+      "why_fits_call": {
+        "ro": "EU4M Resilient CSO prioritizează transparență, anti-corupție, capacitate societate civilă — exact pe ce livrăm. Aliniat cu Capitolul 23 UE.",
+        "ru": "EU4M Resilient CSO ставит приоритетом прозрачность, антикоррупцию, потенциал гражданского общества — именно то, что мы поставляем. Соответствует Главе 23 ЕС."
+      },
+      "risk_level": "mediu",
+      "similar_precedents": {
+        "ro": "siecobywatelska.pl (Polonia) — model dovedit 10 ani. Code for Romania a făcut similar pentru București.",
+        "ru": "siecobywatelska.pl (Польша) — модель проверена 10 лет. Code for Romania сделали аналогично для Бухареста."
+      }
+    },
+    {
+      "id": "idea-2",
+      "title": {
+        "ro": "Rețea de Paralegali Comunitari pentru Drepturile Femeilor din Mediul Rural",
+        "ru": "Сеть общинных параюристов по правам женщин в сельской местности"
+      },
+      "short_description": {
+        "ro": "Formăm 30 paralegale comunitare în 10 raioane defavorizate, oferind consultații juridice gratuite femeilor pe drepturile lor (violență domestică, moștenire, divorț).",
+        "ru": "Обучаем 30 общинных параюристок в 10 неблагополучных районах, предоставляющих женщинам бесплатные юр. консультации по их правам."
+      },
+      "target_beneficiaries": {
+        "ro": "5.000 femei din 10 raioane prioritate (Cahul, Cantemir, Briceni, Ocnița, etc.). Indirect: copii lor + reducere VBG comunitară.",
+        "ru": "5.000 женщин из 10 приоритетных районов. Косвенно: их дети + снижение гендерного насилия в общинах."
+      },
+      "estimated_beneficiaries": 5000,
+      "duration_months": 24,
+      "estimated_budget_min_mdl": 800000,
+      "estimated_budget_max_mdl": 1500000,
+      "key_innovation": {
+        "ro": "Modelul „paralegal comunitar" depășește bariera lipsei avocaților în zone rurale. Femeile rămân în comunitate după proiect = sustenabilitate intrinsecă.",
+        "ru": "Модель «общинного параюриста» преодолевает нехватку адвокатов в сельской местности. Женщины остаются в общине после проекта = врождённая устойчивость."
+      },
+      "why_fits_call": {
+        "ro": "EU4M cere proiecte cu impact măsurabil pentru comunități vulnerabile + dimensiune de gen. Acest model bifează ambele.",
+        "ru": "EU4M требует проектов с измеримым воздействием на уязвимые общины + гендерное измерение. Эта модель отвечает обоим."
+      },
+      "risk_level": "mediu",
+      "similar_precedents": {
+        "ro": "Programul BarefootLawyers din India + Namati în Kenya. În RO: Asociația FILIA pe drepturile femeilor rurale.",
+        "ru": "Программа BarefootLawyers в Индии + Namati в Кении. В Румынии: Ассоциация FILIA по правам сельских женщин."
+      }
+    },
+    {
+      "id": "idea-3",
+      "title": {
+        "ro": "Jurnalismul Local 2.0 — Modele Sustenabile pentru 8 Redacții din Provincie",
+        "ru": "Локальная журналистика 2.0 — Устойчивые модели для 8 редакций из провинции"
+      },
+      "short_description": {
+        "ro": "Capacitare + mentorat pentru 8 redacții locale să tranziteze de la dependența 90% pe granturi la modele de abonament/membership (Substack-style).",
+        "ru": "Обучение + менторство для 8 местных редакций по переходу с 90% грантовой зависимости к моделям подписки/членства."
+      },
+      "target_beneficiaries": {
+        "ro": "8 redacții locale (online + print + radio) din raioanele cu „deșerturi mediatice". Indirect: 200.000 cititori/ascultători.",
+        "ru": "8 местных редакций (онлайн + печать + радио) из районов с «медийными пустынями». Косвенно: 200.000 читателей/слушателей."
+      },
+      "estimated_beneficiaries": 200000,
+      "duration_months": 18,
+      "estimated_budget_min_mdl": 600000,
+      "estimated_budget_max_mdl": 1200000,
+      "key_innovation": {
+        "ro": "Primul program în MD care tratează jurnalismul local ca business — nu doar training „cum scrii articole bune".",
+        "ru": "Первая программа в Молдове, рассматривающая местную журналистику как бизнес — не просто «как писать статьи»."
+      },
+      "why_fits_call": {
+        "ro": "EU4M CSO prioritizează mass-media independentă + sustenabilitate organizațională CSO. Răspuns direct la criza fondurilor media post-2025.",
+        "ru": "EU4M CSO ставит приоритетом независимые СМИ + орг. устойчивость НКО. Прямой ответ на кризис медиа-финансирования после 2025."
+      },
+      "risk_level": "mare",
+      "similar_precedents": {
+        "ro": "Krautreporter (DE), Politico, Decât o Revistă (RO) — toate au demonstrat fezabilitatea modelului membership.",
+        "ru": "Krautreporter (DE), Politico, Decât o Revistă (RO) — все доказали жизнеспособность модели членства."
+      }
+    },
+    {
+      "id": "idea-4",
+      "title": {
+        "ro": "Sufragiul Tânăr 2027 — Educație Electorală în 30 Licee pentru Alegerile Parlamentare",
+        "ru": "Молодёжное голосование 2027 — Избирательное образование в 30 лицеях"
+      },
+      "short_description": {
+        "ro": "Curriculum + aplicație gamificată pentru 25.000 elevi din 30 licee, pregătindu-i pentru primul lor vot la alegerile parlamentare 2027.",
+        "ru": "Учебная программа + геймифицированное приложение для 25.000 учеников 30 лицеев, готовящие их к первому голосованию на парламентских выборах 2027."
+      },
+      "target_beneficiaries": {
+        "ro": "25.000 elevi clasele X-XII din 30 licee mix urban/rural. Indirect: 300 profesori + familii.",
+        "ru": "25.000 учеников 10-12 классов из 30 лицеев городских/сельских. Косвенно: 300 учителей + семьи."
+      },
+      "estimated_beneficiaries": 25000,
+      "duration_months": 15,
+      "estimated_budget_min_mdl": 700000,
+      "estimated_budget_max_mdl": 1000000,
+      "key_innovation": {
+        "ro": "Combinație curriculum școlar formal (validat ME) cu app gamificată — model Rock The Vote (US) + iCivics adaptat MD.",
+        "ru": "Сочетание формальной школьной программы (одобрено Минобразования) с геймифицированным приложением — Rock The Vote (US) + iCivics для МД."
+      },
+      "why_fits_call": {
+        "ro": "EU4M CSO susține educație civică + participare democratică, mai ales tineri. Timing: T-15 luni de alegerile 2027 (impact maxim).",
+        "ru": "EU4M CSO поддерживает гражданское образование + демократическое участие, особенно молодёжи. Тайминг: Т-15 мес. до выборов 2027 (макс. эффект)."
+      },
+      "risk_level": "mediu",
+      "similar_precedents": {
+        "ro": "Rock The Vote (US), iCivics (US), Hoot (UK). În RO: Funky Citizens cu programul SuperLectura.",
+        "ru": "Rock The Vote (US), iCivics (US), Hoot (UK). В Румынии: Funky Citizens с программой SuperLectura."
+      }
+    },
+    {
+      "id": "idea-5",
+      "title": {
+        "ro": "Hub Digital pentru Mediere Comunitară — Soluționare Conflicte Locale Online",
+        "ru": "Цифровой хаб общинной медиации — Онлайн-разрешение местных конфликтов"
+      },
+      "short_description": {
+        "ro": "Platformă online + 40 mediatori comunitari instruiți pentru soluționare conflicte locale (vecini, comunitate, APL) — alternativă rapidă la sistemul judiciar congestionat.",
+        "ru": "Онлайн-платформа + 40 общинных медиаторов для разрешения местных конфликтов (соседи, община, мэрия) — быстрая альтернатива перегруженной судебной системе."
+      },
+      "target_beneficiaries": {
+        "ro": "3.000 cazuri mediate în 18 luni · ~10.000 cetățeni implicați direct · 15 raioane.",
+        "ru": "3.000 медиированных дел за 18 месяцев · ~10.000 граждан напрямую · 15 районов."
+      },
+      "estimated_beneficiaries": 10000,
+      "duration_months": 18,
+      "estimated_budget_min_mdl": 900000,
+      "estimated_budget_max_mdl": 1300000,
+      "key_innovation": {
+        "ro": "Primul hub digital de mediere comunitară din MD. Tehnologie + tradiție — îmbină instrumentele moderne cu rolul vârstnicilor stimați comunitar ca mediatori.",
+        "ru": "Первый цифровой хаб общинной медиации в МД. Технология + традиция — объединяет современные инструменты с ролью уважаемых старейшин как медиаторов."
+      },
+      "why_fits_call": {
+        "ro": "EU4M cere construire reziliență comunitară + acces la justiție. Mediere = ambele. Reducere presiune sistem judiciar (problemă cunoscută MD).",
+        "ru": "EU4M требует устойчивости общин + доступа к правосудию. Медиация = и то, и другое. Снижение нагрузки на судебную систему (известная проблема МД)."
+      },
+      "risk_level": "mare",
+      "similar_precedents": {
+        "ro": "Community Mediation Centers (UK, Canada). În Balcani: Forum ZFD (Germania) lucrează pe mediere conflict.",
+        "ru": "Community Mediation Centers (Великобритания, Канада). На Балканах: Forum ZFD (Германия) работает над медиацией конфликтов."
+      }
+    }
+  ]
+}

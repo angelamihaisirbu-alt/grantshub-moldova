@@ -43,22 +43,42 @@
         else if (target === 'otp') showAuthPanel('otp');
     }
 
-    // ============ Registration ============
+    // ============ Registration (cu validări org_type) ============
     $('#form-register').addEventListener('submit', e => {
         e.preventDefault();
         const fd = new FormData(e.target);
         const email = fd.get('email').toString().toLowerCase().trim();
         const name = fd.get('name').toString().trim();
+        const organization = (fd.get('organization') || '').toString().trim();
+        const orgType = (fd.get('org_type') || '').toString().trim();
 
+        // ── VALIDĂRI ──
+        if (!email || !name || !organization) {
+            alert('Completează toate câmpurile obligatorii (email, nume, organizație).');
+            return;
+        }
+        if (!['ngo', 'public', 'private'].includes(orgType)) {
+            alert('Selectează un tip de organizație (ONG / Autoritate publică / Companie privată).');
+            return;
+        }
         const users = readJSON(STORAGE_USERS, {});
         if (users[email]) {
             alert('Există deja un cont cu acest email. Folosește "Am deja cont".');
             return;
         }
-        users[email] = { name, email, organization: '', phone: '', audience: '', avatar: '👤', createdAt: new Date().toISOString() };
+
+        // Salvăm cu tipul PRIMARY imutabil + audience_types[] extensibil
+        users[email] = {
+            name, email, organization,
+            audience_primary: orgType,                // tipul principal — imutabil
+            audience_types: [orgType],                // listă — extensibilă în profil (până la 3)
+            audience: orgType,                        // legacy compat
+            audience_locked_at: new Date().toISOString(),
+            phone: '', avatar: '👤',
+            createdAt: new Date().toISOString(),
+        };
         writeJSON(STORAGE_USERS, users);
 
-        // Generate OTP
         // SUPABASE: replace with supabase.auth.signInWithOtp({ email })
         const code = genOTP();
         writeJSON(STORAGE_OTP, { email, code, expires: Date.now() + 10 * 60 * 1000 });
@@ -278,13 +298,49 @@
     });
 
     // ============ Profile ============
+    const TIER_PRICES = { 1: 20, 2: 30, 3: 45 };
+
+    function getUserTypes(user) {
+        // Migrare legacy: dacă user are doar `audience` string → convertim la audience_types[]
+        if (Array.isArray(user.audience_types) && user.audience_types.length) {
+            return user.audience_types;
+        }
+        if (user.audience) return [user.audience];
+        return [];
+    }
+
     function renderProfile(user) {
         const form = $('#form-profile');
         form.elements.name.value = user.name || '';
         form.elements.email.value = user.email || '';
         form.elements.organization.value = user.organization || '';
         form.elements.phone.value = user.phone || '';
-        form.elements.audience.value = user.audience || '';
+
+        // Populare multi-checkbox tipuri + lock pe primary
+        const primary = user.audience_primary || user.audience || '';
+        const types = getUserTypes(user);
+        document.querySelectorAll('input[data-typecheck]').forEach(cb => {
+            const v = cb.value;
+            cb.checked = types.includes(v);
+            // Primary type e LOCKED — nu se poate elimina
+            if (v === primary && primary) {
+                cb.disabled = true;
+                cb.checked = true;
+                const status = cb.closest('.profile-type-check').querySelector('.profile-type-status');
+                if (status) status.textContent = '✓ Tip principal — blocat';
+            } else {
+                cb.disabled = false;
+                const status = cb.closest('.profile-type-check').querySelector('.profile-type-status');
+                if (status) status.textContent = cb.checked ? '✓ Activ' : 'Inactiv — bifează pentru a adăuga';
+            }
+        });
+        updateProfileTariff();
+
+        // Bind change listeners pentru tariff live (idempotent)
+        document.querySelectorAll('input[data-typecheck]').forEach(cb => {
+            cb.removeEventListener('change', updateProfileTariff);
+            cb.addEventListener('change', updateProfileTariff);
+        });
 
         // Avatar grid
         const grid = $('#avatar-grid');
@@ -299,6 +355,31 @@
         });
     }
 
+    function updateProfileTariff() {
+        const checked = document.querySelectorAll('input[data-typecheck]:checked').length;
+        const n = Math.max(1, Math.min(3, checked));
+        const price = TIER_PRICES[n];
+
+        const liveEl = document.querySelector('#profile-tariff-live');
+        if (liveEl) {
+            liveEl.querySelector('.tariff-count').textContent = `${n} tip${n > 1 ? 'uri' : ''} selectat${n > 1 ? 'e' : ''}`;
+            liveEl.querySelector('.tariff-amount').innerHTML = `${price} €<small>/lună</small>`;
+        }
+
+        // Highlight active tier step
+        document.querySelectorAll('.tier-step').forEach(step => {
+            step.classList.toggle('active', parseInt(step.dataset.tierStep, 10) === n);
+        });
+
+        // Update inline status per checkbox
+        document.querySelectorAll('input[data-typecheck]').forEach(cb => {
+            const status = cb.closest('.profile-type-check')?.querySelector('.profile-type-status');
+            if (status && !cb.disabled) {
+                status.textContent = cb.checked ? '✓ Activ' : 'Inactiv — bifează pentru a adăuga';
+            }
+        });
+    }
+
     $('#form-profile').addEventListener('submit', e => {
         e.preventDefault();
         const email = localStorage.getItem(STORAGE_SESSION);
@@ -310,7 +391,17 @@
         user.name = fd.get('name').toString().trim();
         user.organization = fd.get('organization').toString().trim();
         user.phone = fd.get('phone').toString().trim();
-        user.audience = fd.get('audience').toString();
+
+        // Salvăm audience_types[] din checkbox-uri
+        const types = fd.getAll('audience_types').map(String);
+        const primary = user.audience_primary || user.audience || types[0];
+        // Asigură că primary e mereu inclus (în caz că s-a debifat cumva)
+        if (primary && !types.includes(primary)) types.unshift(primary);
+        user.audience_types = types.slice(0, 3);
+        user.audience = primary;  // legacy compat
+        user.audience_primary = primary;
+        user.tariff_monthly_eur = TIER_PRICES[Math.max(1, Math.min(3, user.audience_types.length))];
+
         const selectedAv = $('.avatar-option.selected');
         if (selectedAv) user.avatar = selectedAv.dataset.av;
 
@@ -324,6 +415,8 @@
         setTimeout(() => { $('#profile-saved').hidden = true; }, 2500);
 
         renderDashboard(user); // refresh recommendations
+        // Notify dashboard widget să re-fetch
+        document.dispatchEvent(new CustomEvent('grantio:profile-updated', { detail: user }));
     });
 
     // ============ Tabs ============

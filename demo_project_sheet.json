@@ -1,0 +1,1154 @@
+{
+
+  "_meta": {
+
+    "demo": true,
+
+    "from_idea_id": "idea-1",
+
+    "generated_by": "Claude Opus 4.7 (cached sample)",
+
+    "note": "Output realist /project-sheet/generate. Min 5 obiective generale + 5 riscuri + resurse Moldova."
+
+  },
+
+  "project_title": {
+
+    "ro": "Monitorul Civic Bugetar — Transparență Locală în 20 APL Pilot",
+
+    "ru": "Гражданский бюджетный монитор — Местная прозрачность в 20 пилотных мэриях"
+
+  },
+
+  "organization_name": "AO Centrul de Excelență Proiecte și Strategii",
+
+  "organization_type": "ngo",
+
+  "call_id": "eu4moldova-resilient-cso-2026",
+
+  "call_title": "EU4Moldova – Resilient Communities & CSO Support",
+
+  "funder": "EU4Moldova",
+
+  "methodology": "pm2",
+
+  "duration_months": 18,
+
+  "proposed_start_date": "2026-09-01",
+
+  "proposed_end_date": "2028-02-29",
+
+
+
+  "problem_statement": {
+
+    "ro": "În 60% din APL-urile rurale din Moldova, bugetele locale nu sunt accesibile cetățenilor într-un format inteligibil. Lipsa transparenței bugetare alimentează neîncrederea în autorități și deschide spațiu pentru abuzuri în alocarea resurselor publice.",
+
+    "ru": "В 60% сельских мэрий Молдовы местные бюджеты недоступны гражданам в понятной форме. Отсутствие бюджетной прозрачности подрывает доверие к властям и создаёт пространство для злоупотреблений при распределении ресурсов."
+
+  },
+
+  "target_beneficiaries": {
+
+    "ro": "Cetățeni adulți din 20 localități rurale și mici urbane (sub 10.000 locuitori) — total ~50.000 persoane. Include comunități marginalizate (romi, persoane cu dizabilități, vârstnici). Indirect: jurnaliști locali, consilieri APL, ONG-uri comunitare.",
+
+    "ru": "Взрослые жители 20 сельских и малых городских населённых пунктов (до 10.000 жителей) — всего ~50.000 человек. Включает маргинализированные общины. Косвенно: местные журналисты, советники мэрий, общинные НКО."
+
+  },
+
+  "estimated_beneficiaries": 50000,
+
+  "justification": {
+
+    "ro": "După alegerile locale 2025, APL-urile sunt sub presiune pentru reforme de descentralizare — fereastră politică deschisă pentru participare cetățenească. AO are 5+ ani experiență advocacy + tehnologie civică. EU4M caută activ proiecte demonstrabile pentru Capitolul 23 (Justice & Fundamental Rights).",
+
+    "ru": "После местных выборов 2025 года мэрии под давлением реформ децентрализации — открытое политическое окно для гражданского участия. АО имеет 5+ лет опыта в адвокации + гражданских технологиях. EU4M активно ищет демонстрационные проекты для Главы 23."
+
+  },
+
+
+
+  "general_objectives": [
+
+    {
+
+      "code": "OG1",
+
+      "title": {"ro": "Transparență bugetară digitală pe 20 APL", "ru": "Цифровая бюджетная прозрачность в 20 мэриях"},
+
+      "description": {
+
+        "ro": "Construirea infrastructurii digitale + civice care face datele bugetare APL accesibile, comparabile și acționabile pentru cetățeni.",
+
+        "ru": "Создание цифровой и гражданской инфраструктуры, делающей бюджетные данные мэрий доступными, сопоставимыми и применимыми."
+
+      },
+
+      "impact_indicator": {"ro": "20/20 APL publică lunar pe platformă date complete buget", "ru": "20 из 20 мэрий ежемесячно публикуют полные бюджетные данные"},
+
+      "timeframe_months": 18,
+
+      "contribution_to_call_priority": {
+
+        "ro": "Aliniat cu EU4M Strengthening transparency and accountability in local governance.",
+
+        "ru": "Соответствует EU4M Усиление прозрачности и подотчётности местного управления."
+
+      }
+
+    },
+
+    {
+
+      "code": "OG2",
+
+      "title": {"ro": "Capacitate jurnalism cetățenesc local", "ru": "Потенциал местной гражданской журналистики"},
+
+      "description": {
+
+        "ro": "Formarea unei rețele de jurnaliști cetățeni și consilieri capabili să interpreteze date bugetare și să publice analize.",
+
+        "ru": "Формирование сети гражданских журналистов и советников, способных интерпретировать бюджетные данные и публиковать анализы."
+
+      },
+
+      "impact_indicator": {"ro": "100 absolvenți certificați; 50+ activi în publicare materiale", "ru": "100 сертифицированных выпускников; 50+ активны в публикациях"},
+
+      "timeframe_months": 12,
+
+      "contribution_to_call_priority": {
+
+        "ro": "EU4M Empowering civil society and citizen participation.",
+
+        "ru": "EU4M Расширение возможностей гражданского общества."
+
+      }
+
+    },
+
+    {
+
+      "code": "OG3",
+
+      "title": {"ro": "Audit shadow + cultura responsabilizării", "ru": "Теневой аудит + культура подотчётности"},
+
+      "description": {
+
+        "ro": "Implementarea unui mecanism de audit civic independent care identifică ineficiențele și propune recomandări validate.",
+
+        "ru": "Внедрение механизма независимого гражданского аудита, выявляющего неэффективность и предлагающего рекомендации."
+
+      },
+
+      "impact_indicator": {"ro": "5 audituri publicate cu 50+ recomandări validate de Curtea de Conturi", "ru": "5 опубликованных аудитов с 50+ рекомендациями, валидированными Счётной палатой"},
+
+      "timeframe_months": 14,
+
+      "contribution_to_call_priority": {
+
+        "ro": "EU4M Anti-corruption and rule of law.",
+
+        "ru": "EU4M Антикоррупция и верховенство права."
+
+      }
+
+    },
+
+    {
+
+      "code": "OG4",
+
+      "title": {"ro": "Schimbare sistemică prin advocacy bazat pe evidență", "ru": "Системные изменения через адвокацию на основе доказательств"},
+
+      "description": {
+
+        "ro": "Transformarea evidenței colectate într-o propunere legislativă pentru standard național de transparență APL.",
+
+        "ru": "Преобразование собранных доказательств в законопроект о национальном стандарте прозрачности мэрий."
+
+      },
+
+      "impact_indicator": {"ro": "Proiect lege depus în Parlament + 7 deputați co-semnatari + 10K semnături petiție", "ru": "Законопроект подан + 7 депутатов-соавторов + 10К подписей"},
+
+      "timeframe_months": 18,
+
+      "contribution_to_call_priority": {
+
+        "ro": "EU4M Policy reform aligned with EU accession.",
+
+        "ru": "EU4M Реформа политик в соответствии с вступлением в ЕС."
+
+      }
+
+    },
+
+    {
+
+      "code": "OG5",
+
+      "title": {"ro": "Sustenabilitate post-proiect prin open-source și parteneriate", "ru": "Устойчивость после проекта через open-source и партнёрства"},
+
+      "description": {
+
+        "ro": "Asigurarea continuității platformei și replicabilității modelului prin cod deschis, transfer la consorțiu CSO și mentorat alte ONG-uri interesate.",
+
+        "ru": "Обеспечение непрерывности платформы и тиражируемости модели через открытый код, передачу консорциуму НКО и менторство."
+
+      },
+
+      "impact_indicator": {"ro": "Platforma transferată la consorțiu 3 ONG cu funding asigurat 2 ani post-proiect", "ru": "Платформа передана консорциуму 3 НКО с гарантированным финансированием на 2 года"},
+
+      "timeframe_months": 18,
+
+      "contribution_to_call_priority": {
+
+        "ro": "EU4M Sustainable civil society institutions.",
+
+        "ru": "EU4M Устойчивые институты гражданского общества."
+
+      }
+
+    }
+
+  ],
+
+
+
+  "specific_objectives": [
+
+    {
+
+      "code": "OS1.1",
+
+      "parent_general_objective": "OG1",
+
+      "title": {"ro": "Platforma live la M8", "ru": "Платформа запущена к M8"},
+
+      "smart_formulation": {
+
+        "ro": "Până la luna 8, platforma web open-source este publică cu API funcțional și dashboard-uri pentru cele 20 APL pilot.",
+
+        "ru": "К месяцу 8 открытая веб-платформа публично доступна с работающим API и дашбордами для 20 пилотных мэрий."
+
+      },
+
+      "target_value": "Platforma online + 20/20 APL onboarded + 500 vizitatori/lună",
+
+      "verification_source": {"ro": "Google Analytics + checklist intern de onboarding", "ru": "Google Analytics + внутренний чек-лист подключения"},
+
+      "timeframe_months": 8
+
+    },
+
+    {
+
+      "code": "OS1.2",
+
+      "parent_general_objective": "OG1",
+
+      "title": {"ro": "Date bugetare lunare standardizate", "ru": "Стандартизированные ежемесячные бюджетные данные"},
+
+      "smart_formulation": {
+
+        "ro": "Până la M12, toate 20 APL publică lunar: buget anual, execuție trimestrială, achiziții peste 100K MDL — în format machine-readable (CSV/JSON).",
+
+        "ru": "К M12 все 20 мэрий ежемесячно публикуют: годовой бюджет, квартальное исполнение, закупки свыше 100K MDL — в machine-readable формате."
+
+      },
+
+      "target_value": "60 fluxuri active (20 APL × 3 categorii)",
+
+      "verification_source": {"ro": "Auditul automatizat al platformei + verificare manuală lunară", "ru": "Автоматический аудит платформы + ежемесячная ручная проверка"},
+
+      "timeframe_months": 12
+
+    },
+
+    {
+
+      "code": "OS2.1",
+
+      "parent_general_objective": "OG2",
+
+      "title": {"ro": "100 jurnaliști + consilieri certificați", "ru": "100 сертифицированных журналистов и советников"},
+
+      "smart_formulation": {
+
+        "ro": "Până la M9, 40 jurnaliști cetățeni + 60 consilieri locali absolvesc curs 24h cu certificare, dintre care 50%+ devin activi publicare materiale.",
+
+        "ru": "К M9 40 граждан-журналистов + 60 местных советников заканчивают 24-часовой курс с сертификацией, минимум 50% становятся активными авторами."
+
+      },
+
+      "target_value": "100 absolvenți + 50+ publică materiale folosind platforma",
+
+      "verification_source": {"ro": "Liste certificate + monitorizare publicații cu hashtag #MonitorulCivic", "ru": "Списки сертификатов + мониторинг публикаций с хэштегом"},
+
+      "timeframe_months": 9
+
+    },
+
+    {
+
+      "code": "OS2.2",
+
+      "parent_general_objective": "OG2",
+
+      "title": {"ro": "Comunitate de practică online activă", "ru": "Активное онлайн-сообщество практики"},
+
+      "smart_formulation": {
+
+        "ro": "Lansare grup Telegram + forum web cu min 200 membri activi care discută lunar interpretări date bugetare.",
+
+        "ru": "Запуск Telegram-группы + веб-форума с минимум 200 активными участниками."
+
+      },
+
+      "target_value": "200 membri activi + 15 postări lunare medii",
+
+      "verification_source": {"ro": "Analytics platformă + Telegram member stats", "ru": "Аналитика платформы + статистика Telegram"},
+
+      "timeframe_months": 12
+
+    },
+
+    {
+
+      "code": "OS3.1",
+
+      "parent_general_objective": "OG3",
+
+      "title": {"ro": "5 rapoarte audit shadow publicate", "ru": "5 опубликованных теневых аудит-отчётов"},
+
+      "smart_formulation": {
+
+        "ro": "Până la M14, 5 audituri shadow ale bugetelor APL publicate, fiecare cu min 10 recomandări validate de experți independenți / Curtea de Conturi.",
+
+        "ru": "К M14 опубликовано 5 теневых аудитов с минимум 10 рекомендациями каждый, валидированных экспертами."
+
+      },
+
+      "target_value": "5 rapoarte audit + 50+ recomandări",
+
+      "verification_source": {"ro": "Documente publicate pe platformă + comunicate de presă", "ru": "Документы опубликованы на платформе + пресс-релизы"},
+
+      "timeframe_months": 14
+
+    },
+
+    {
+
+      "code": "OS3.2",
+
+      "parent_general_objective": "OG3",
+
+      "title": {"ro": "Reacție APL la recomandări", "ru": "Реакция мэрий на рекомендации"},
+
+      "smart_formulation": {
+
+        "ro": "Min 60% din APL audit-ate emit decizii oficiale de răspuns la recomandări în 90 zile de la publicare.",
+
+        "ru": "Минимум 60% проаудированных мэрий выпускают официальные решения в ответ на рекомендации в течение 90 дней."
+
+      },
+
+      "target_value": "3 din 5 APL răspund oficial",
+
+      "verification_source": {"ro": "Cereri formale + tracking deciziilor Consiliului Local", "ru": "Формальные запросы + отслеживание решений Местных советов"},
+
+      "timeframe_months": 16
+
+    },
+
+    {
+
+      "code": "OS4.1",
+
+      "parent_general_objective": "OG4",
+
+      "title": {"ro": "Proiect lege depus", "ru": "Законопроект подан"},
+
+      "smart_formulation": {
+
+        "ro": "Până la M17, proiect lege Standard Național Transparență APL depus oficial cu min 7 deputați co-semnatari + 10.000 semnături petiție publică.",
+
+        "ru": "К M17 законопроект Национальный стандарт прозрачности мэрий официально подан с минимум 7 депутатами-соавторами + 10.000 подписей."
+
+      },
+
+      "target_value": "Proiect depus + 7 co-semnatari + 10K semnături",
+
+      "verification_source": {"ro": "Registrul Parlamentului + petiție publică pe platforma E-Petiții", "ru": "Реестр Парламента + публичная петиция на E-Petiții"},
+
+      "timeframe_months": 17
+
+    },
+
+    {
+
+      "code": "OS4.2",
+
+      "parent_general_objective": "OG4",
+
+      "title": {"ro": "Audieri publice pe propunere", "ru": "Публичные слушания по предложению"},
+
+      "smart_formulation": {
+
+        "ro": "Min 3 audieri publice organizate cu participare comisie parlamentară + societate civilă pe textul propunerii.",
+
+        "ru": "Минимум 3 публичных слушания с участием парламентской комиссии и гражданского общества по тексту предложения."
+
+      },
+
+      "target_value": "3 audieri × 50+ participanți medii",
+
+      "verification_source": {"ro": "Liste prezență + comunicate de presă + transmisie live", "ru": "Списки участников + пресс-релизы + прямые трансляции"},
+
+      "timeframe_months": 18
+
+    },
+
+    {
+
+      "code": "OS5.1",
+
+      "parent_general_objective": "OG5",
+
+      "title": {"ro": "Cod sursă publicat MIT", "ru": "Исходный код опубликован под MIT"},
+
+      "smart_formulation": {
+
+        "ro": "Repository GitHub public cu cod + documentație tehnică completă (RO+EN) + 2+ contribuții externe în primele 6 luni post-lansare.",
+
+        "ru": "Публичный GitHub-репозиторий с кодом + полной техдокументацией (RO+EN) + 2+ внешними вкладами за первые 6 месяцев."
+
+      },
+
+      "target_value": "Repo public + 100+ stars + 2+ PR-uri externe",
+
+      "verification_source": {"ro": "GitHub Insights + commit log", "ru": "GitHub Insights + журнал коммитов"},
+
+      "timeframe_months": 10
+
+    },
+
+    {
+
+      "code": "OS5.2",
+
+      "parent_general_objective": "OG5",
+
+      "title": {"ro": "Transfer la consorțiu 3 ONG", "ru": "Передача консорциуму 3 НКО"},
+
+      "smart_formulation": {
+
+        "ro": "Memorandum de transfer semnat cu 3 ONG-uri partenere care preiau operarea platformei + funding asigurat min 2 ani.",
+
+        "ru": "Меморандум о передаче с 3 НКО-партнёрами + гарантированное финансирование на 2 года."
+
+      },
+
+      "target_value": "MoU semnat + 100K MDL/an funding angajat",
+
+      "verification_source": {"ro": "Memorandum semnat + acorduri funding cu donatori secundari", "ru": "Подписанный меморандум + соглашения о финансировании"},
+
+      "timeframe_months": 18
+
+    }
+
+  ],
+
+
+
+  "deliverables": [
+
+    {
+
+      "code": "D1",
+
+      "title": {"ro": "Raport baseline cartografiere 20 APL", "ru": "Базовый отчёт картирования 20 мэрий"},
+
+      "description": {"ro": "Studiu 30 pagini cu indicatorii inițiali de transparență per APL", "ru": "Исследование на 30 страниц с базовыми показателями прозрачности"},
+
+      "related_specific_objective": "OS1.1",
+
+      "target_month": 2,
+
+      "acceptance_criteria": {"ro": "PDF publicat + tabel sintetic CSV cu 12+ indicatori per APL", "ru": "Публичный PDF + сводная таблица CSV с 12+ показателями"},
+
+      "format": "raport"
+
+    },
+
+    {
+
+      "code": "D2",
+
+      "title": {"ro": "Platformă web open-source v1.0", "ru": "Открытая веб-платформа v1.0"},
+
+      "description": {"ro": "Aplicație web cu API + dashboard public + admin panel pentru 20 APL", "ru": "Веб-приложение с API + публичным дашбордом + админ-панелью для 20 мэрий"},
+
+      "related_specific_objective": "OS1.1",
+
+      "target_month": 6,
+
+      "acceptance_criteria": {"ro": "Platforma live cu URL public + uptime 99% + cod pe GitHub", "ru": "Платформа работает + публичный URL + uptime 99% + код на GitHub"},
+
+      "format": "platforma_digitala"
+
+    },
+
+    {
+
+      "code": "D3",
+
+      "title": {"ro": "Manual training jurnalism bugetar", "ru": "Учебник по бюджетной журналистике"},
+
+      "description": {"ro": "Manual 80 pagini cu module practice + studii de caz MD + exerciții", "ru": "Учебник 80 страниц с практическими модулями + кейсами + упражнениями"},
+
+      "related_specific_objective": "OS2.1",
+
+      "target_month": 7,
+
+      "acceptance_criteria": {"ro": "PDF + variantă print 200 ex + ghid trainer separat", "ru": "PDF + 200 печатных копий + отдельное руководство тренера"},
+
+      "format": "publicatie"
+
+    },
+
+    {
+
+      "code": "D4",
+
+      "title": {"ro": "100 absolvenți certificați", "ru": "100 сертифицированных выпускников"},
+
+      "description": {"ro": "5 cohorte training × 20 participanți cu certificare validată", "ru": "5 когорт обучения × 20 участников с валидированной сертификацией"},
+
+      "related_specific_objective": "OS2.1",
+
+      "target_month": 9,
+
+      "acceptance_criteria": {"ro": "Lista absolvenți cu certificate semnate + test final ≥70%", "ru": "Список с подписанными сертификатами + итоговый тест ≥70%"},
+
+      "format": "training"
+
+    },
+
+    {
+
+      "code": "D5",
+
+      "title": {"ro": "5 rapoarte audit shadow publicate", "ru": "5 опубликованных теневых аудитов"},
+
+      "description": {"ro": "Audituri detaliate ale bugetelor pe 5 APL eșantion cu recomandări validate", "ru": "Детальные аудиты бюджетов 5 мэрий с валидированными рекомендациями"},
+
+      "related_specific_objective": "OS3.1",
+
+      "target_month": 14,
+
+      "acceptance_criteria": {"ro": "5 PDF-uri publicate + 5 comunicate presă + minim 1 articol top 3 publicații MD", "ru": "5 публичных PDF + 5 пресс-релизов + минимум 1 статья в топ-3 СМИ МД"},
+
+      "format": "raport"
+
+    },
+
+    {
+
+      "code": "D6",
+
+      "title": {"ro": "Proiect lege + memorandum motivare", "ru": "Законопроект + пояснительная записка"},
+
+      "description": {"ro": "Text complet proiect lege Standard Național Transparență APL + analiză impact + comparație internațională", "ru": "Полный текст законопроекта + анализ воздействия + международное сравнение"},
+
+      "related_specific_objective": "OS4.1",
+
+      "target_month": 17,
+
+      "acceptance_criteria": {"ro": "Proiect depus oficial în Parlament + min 7 deputați semnatari", "ru": "Законопроект официально подан + минимум 7 депутатов-соавторов"},
+
+      "format": "document"
+
+    },
+
+    {
+
+      "code": "D7",
+
+      "title": {"ro": "Petiție publică 10K semnături", "ru": "Публичная петиция 10К подписей"},
+
+      "description": {"ro": "Campanie online + offline pentru susținere proiect lege", "ru": "Онлайн + офлайн кампания за поддержку законопроекта"},
+
+      "related_specific_objective": "OS4.1",
+
+      "target_month": 17,
+
+      "acceptance_criteria": {"ro": "10.000 semnături verificate pe platforma E-Petiții", "ru": "10.000 верифицированных подписей на E-Petiții"},
+
+      "format": "campanie"
+
+    },
+
+    {
+
+      "code": "D8",
+
+      "title": {"ro": "3 audieri publice organizate", "ru": "3 публичных слушания"},
+
+      "description": {"ro": "Evenimente cu participare comisii parlamentare, APL, CSO, media", "ru": "События с участием парламентских комиссий, мэрий, НКО, СМИ"},
+
+      "related_specific_objective": "OS4.2",
+
+      "target_month": 18,
+
+      "acceptance_criteria": {"ro": "Lista prezență + minuta + transmisie live archived", "ru": "Списки участников + протоколы + архив прямых трансляций"},
+
+      "format": "eveniment"
+
+    },
+
+    {
+
+      "code": "D9",
+
+      "title": {"ro": "Memorandum de transfer platformă", "ru": "Меморандум о передаче платформы"},
+
+      "description": {"ro": "Acord semnat cu consorțiu 3 ONG pentru operare post-proiect", "ru": "Соглашение с консорциумом 3 НКО на постпроектное управление"},
+
+      "related_specific_objective": "OS5.2",
+
+      "target_month": 18,
+
+      "acceptance_criteria": {"ro": "MoU semnat + acord funding cu donatori secundari pe 24 luni", "ru": "Подписан MoU + соглашение о финансировании на 24 месяца"},
+
+      "format": "document"
+
+    },
+
+    {
+
+      "code": "D10",
+
+      "title": {"ro": "Video documentar 15 min", "ru": "Документальный фильм 15 мин"},
+
+      "description": {"ro": "Film documentar despre impact proiect + povești beneficiari", "ru": "Документальный фильм о влиянии + истории бенефициаров"},
+
+      "related_specific_objective": "OS2.2",
+
+      "target_month": 17,
+
+      "acceptance_criteria": {"ro": "Video publicat YouTube + minim 10K vizualizări în 3 luni", "ru": "Видео опубликовано на YouTube + минимум 10К просмотров за 3 месяца"},
+
+      "format": "video"
+
+    }
+
+  ],
+
+
+
+  "milestones": [
+
+    {
+
+      "code": "M1",
+
+      "title": {"ro": "Kickoff + 20 APL semnatare", "ru": "Запуск + 20 мэрий подписали"},
+
+      "target_month": 2,
+
+      "related_deliverables": ["D1"],
+
+      "success_criteria": {"ro": "Steering committee constituit + 20/20 APL memorandum semnat + baseline finalizat", "ru": "Сформирован руководящий комитет + 20/20 мэрий + baseline завершён"},
+
+      "is_payment_milestone": true
+
+    },
+
+    {
+
+      "code": "M2",
+
+      "title": {"ro": "Mid-term: platformă live + onboarding", "ru": "Mid-term: платформа + подключения"},
+
+      "target_month": 8,
+
+      "related_deliverables": ["D2", "D3"],
+
+      "success_criteria": {"ro": "Platforma cu 10/20 APL onboarded + manual training distribuit", "ru": "Платформа с 10 из 20 мэрий + учебник распространён"},
+
+      "is_payment_milestone": true
+
+    },
+
+    {
+
+      "code": "M3",
+
+      "title": {"ro": "100 absolvenți + audit prim ciclu", "ru": "100 выпускников + первый аудит"},
+
+      "target_month": 10,
+
+      "related_deliverables": ["D4"],
+
+      "success_criteria": {"ro": "100 certificate emise + primul audit shadow în derulare", "ru": "100 сертификатов + первый теневой аудит в работе"},
+
+      "is_payment_milestone": false
+
+    },
+
+    {
+
+      "code": "M4",
+
+      "title": {"ro": "5 audituri + propunere legislativă finalizate", "ru": "5 аудитов + законопроект готов"},
+
+      "target_month": 17,
+
+      "related_deliverables": ["D5", "D6", "D7", "D10"],
+
+      "success_criteria": {"ro": "5 audituri publicate + proiect lege depus + 10K semnături + video lansat", "ru": "5 аудитов опубликованы + законопроект подан + 10К подписей + видео запущено"},
+
+      "is_payment_milestone": true
+
+    },
+
+    {
+
+      "code": "M5",
+
+      "title": {"ro": "Closure + transfer platformă", "ru": "Закрытие + передача платформы"},
+
+      "target_month": 18,
+
+      "related_deliverables": ["D8", "D9"],
+
+      "success_criteria": {"ro": "3 audieri publice realizate + MoU transfer semnat cu consorțiu", "ru": "Проведены 3 публичных слушания + MoU о передаче подписан"},
+
+      "is_payment_milestone": true
+
+    }
+
+  ],
+
+
+
+  "team": [
+
+    {
+
+      "role": {"ro": "Manager proiect", "ru": "Менеджер проекта"},
+
+      "seniority": "senior",
+
+      "monthly_salary_mdl": 30000,
+
+      "months_allocated": 18,
+
+      "fte": 1.0,
+
+      "total_cost_mdl": 675000,
+
+      "responsibilities": {"ro": "Coordonare strategică, raportare donator, gestiune steering committee, escalări", "ru": "Стратегическая координация, отчётность донору, управление руководящим комитетом"},
+
+      "required_skills": {"ro": "PM certificat (PRINCE2/PMP), 5+ ani experiență proiecte UE, RO+EN fluent", "ru": "Сертифицированный PM, 5+ лет опыта проектов ЕС, RO+EN свободно"}
+
+    },
+
+    {
+
+      "role": {"ro": "Web developer senior (open-source)", "ru": "Старший веб-разработчик (open-source)"},
+
+      "seniority": "senior",
+
+      "monthly_salary_mdl": 35000,
+
+      "months_allocated": 8,
+
+      "fte": 1.0,
+
+      "total_cost_mdl": 350000,
+
+      "responsibilities": {"ro": "Arhitectură + dezvoltare platformă, API design, deployment, mentorat junior", "ru": "Архитектура + разработка платформы, API, deployment, менторство"},
+
+      "required_skills": {"ro": "Python/FastAPI sau Node, PostgreSQL, Docker, Git, experiență open-source", "ru": "Python/FastAPI или Node, PostgreSQL, Docker, опыт open-source"}
+
+    },
+
+    {
+
+      "role": {"ro": "Trainer civic + community organizer", "ru": "Гражданский тренер + организатор сообществ"},
+
+      "seniority": "mid",
+
+      "monthly_salary_mdl": 22000,
+
+      "months_allocated": 12,
+
+      "fte": 0.8,
+
+      "total_cost_mdl": 264000,
+
+      "responsibilities": {"ro": "Curriculum design, livrare 5 cohorte training, comunitate de practică, mentorat absolvenți", "ru": "Дизайн программы, проведение 5 когорт, сообщество практики, менторство"},
+
+      "required_skills": {"ro": "Experiență jurnalism civic + facilitare grupuri, RO obligatoriu, RU bonus", "ru": "Опыт гражданской журналистики + фасилитации, RO обязательно"}
+
+    },
+
+    {
+
+      "role": {"ro": "Specialist comunicare & advocacy", "ru": "Специалист по коммуникации и адвокации"},
+
+      "seniority": "mid",
+
+      "monthly_salary_mdl": 18000,
+
+      "months_allocated": 12,
+
+      "fte": 1.0,
+
+      "total_cost_mdl": 270000,
+
+      "responsibilities": {"ro": "Strategie comunicare, gestiune social media, comunicate presă, campanie petiție", "ru": "Коммуникационная стратегия, соцсети, пресс-релизы, кампания петиции"},
+
+      "required_skills": {"ro": "PR experiență 3+ ani, advocacy politici publice, design grafic Canva/Figma", "ru": "PR опыт 3+ года, адвокация политик, графический дизайн Canva/Figma"}
+
+    },
+
+    {
+
+      "role": {"ro": "Specialist M&E + audit shadow", "ru": "Специалист M&E + теневой аудит"},
+
+      "seniority": "senior",
+
+      "monthly_salary_mdl": 28000,
+
+      "months_allocated": 18,
+
+      "fte": 0.7,
+
+      "total_cost_mdl": 441000,
+
+      "responsibilities": {"ro": "Cadru M&E, indicatori KPI, coordonare 5 audituri shadow, raportare lunară donator", "ru": "M&E фреймворк, KPI, координация 5 теневых аудитов, ежемесячная отчётность"},
+
+      "required_skills": {"ro": "Auditor financiar / contabil autorizat + experiență M&E proiecte UE", "ru": "Финансовый аудитор + опыт M&E проектов ЕС"}
+
+    }
+
+  ],
+
+
+
+  "technical_resources": [
+
+    {
+
+      "category": "hardware",
+
+      "name": {"ro": "Laptopuri business pentru echipă (5 buc)", "ru": "Бизнес-ноутбуки для команды (5 шт)"},
+
+      "quantity": 5,
+
+      "unit_cost_mdl": 22000,
+
+      "total_cost_mdl": 110000,
+
+      "justification": {"ro": "5 membri echipă lucrând remote + Chișinău, laptopuri certificate min Core i5 / 16GB RAM", "ru": "5 членов команды работают удалённо + Кишинёв, ноутбуки минимум Core i5 / 16GB RAM"}
+
+    },
+
+    {
+
+      "category": "infrastructura",
+
+      "name": {"ro": "Cloud server (Hetzner Frankfurt) + backup", "ru": "Облачный сервер (Hetzner Франкфурт) + бэкап"},
+
+      "quantity": 18,
+
+      "unit_cost_mdl": 1500,
+
+      "total_cost_mdl": 27000,
+
+      "justification": {"ro": "Hosting platformă în UE (GDPR compliant), 8GB RAM / 80GB SSD, backup S3", "ru": "Хостинг платформы в ЕС (GDPR), 8GB RAM / 80GB SSD, бэкап S3"}
+
+    },
+
+    {
+
+      "category": "software",
+
+      "name": {"ro": "Microsoft 365 (5 useri × 18 luni)", "ru": "Microsoft 365 (5 пользователей × 18 мес.)"},
+
+      "quantity": 90,
+
+      "unit_cost_mdl": 350,
+
+      "total_cost_mdl": 31500,
+
+      "justification": {"ro": "Outlook, Teams, Word/Excel pentru documentație + colaborare echipa + APL", "ru": "Outlook, Teams, Word/Excel для документации + коллаборации"}
+
+    },
+
+    {
+
+      "category": "software",
+
+      "name": {"ro": "Domain + GitHub Team + monitoring tools", "ru": "Домен + GitHub Team + мониторинг"},
+
+      "quantity": 1,
+
+      "unit_cost_mdl": 15000,
+
+      "total_cost_mdl": 15000,
+
+      "justification": {"ro": "Domain monitorulcivic.md + GitHub Team plan + Sentry + Plausible Analytics", "ru": "Домен monitorulcivic.md + GitHub Team + Sentry + Plausible"}
+
+    },
+
+    {
+
+      "category": "evenimente",
+
+      "name": {"ro": "5 cohorte training (40 pers × 3 zile/cohortă)", "ru": "5 когорт обучения (40 чел × 3 дня)"},
+
+      "quantity": 5,
+
+      "unit_cost_mdl": 45000,
+
+      "total_cost_mdl": 225000,
+
+      "justification": {"ro": "Sală conferință + cazare 40 participanți × 2 nopți + meal × 3 zile + materiale", "ru": "Конференц-зал + проживание 40 × 2 ночи + питание × 3 дня + материалы"}
+
+    },
+
+    {
+
+      "category": "evenimente",
+
+      "name": {"ro": "3 audieri publice (Parlament + 2 regiuni)", "ru": "3 публичных слушания"},
+
+      "quantity": 3,
+
+      "unit_cost_mdl": 25000,
+
+      "total_cost_mdl": 75000,
+
+      "justification": {"ro": "Sală + transmisie live + traducere RO-EN-RU + 50 participanți medii × 3 evenimente", "ru": "Зал + прямая трансляция + перевод + 50 участников × 3 события"}
+
+    },
+
+    {
+
+      "category": "deplasari",
+
+      "name": {"ro": "Vizite teren 20 APL (cartografiere + onboarding)", "ru": "Поездки в 20 мэрий"},
+
+      "quantity": 40,
+
+      "unit_cost_mdl": 1200,
+
+      "total_cost_mdl": 48000,
+
+      "justification": {"ro": "2 vizite per APL × 20 APL × cost mediu transport + per diem 1 zi (500 MDL/zi)", "ru": "2 визита × 20 мэрий × средний транспорт + per diem"}
+
+    },
+
+    {
+
+      "category": "comunicare",
+
+      "name": {"ro": "Designer DOCX/social + producție video documentar", "ru": "Дизайнер + видеопроизводство"},
+
+      "quantity": 1,
+
+      "unit_cost_mdl": 35000,
+
+      "total_cost_mdl": 35000,
+
+      "justification": {"ro": "Pachet template-uri brand + 5 infografice rapoarte audit + video 15 min producție", "ru": "Брендовые шаблоны + 5 инфографик + видео 15 мин"}
+
+    }
+
+  ],
+
+
+
+  "budget_lines": [
+
+    {"category": "Personal", "subcategory": {"ro": "Salarii echipă (5 roluri × luni alocate)", "ru": "Зарплаты команды"}, "quantity": 1, "unit": {"ro": "pachet", "ru": "пакет"}, "unit_cost_mdl": 2000000, "total_mdl": 2000000, "funding_source": "grant", "notes": {"ro": "Suma totală echipă inclusiv contribuții sociale 25%", "ru": "Общая сумма команды включая соц. отчисления 25%"}},
+
+    {"category": "Echipamente", "subcategory": {"ro": "Hardware (laptops + camere + proiector)", "ru": "Оборудование"}, "quantity": 1, "unit": {"ro": "pachet", "ru": "пакет"}, "unit_cost_mdl": 125000, "total_mdl": 125000, "funding_source": "grant", "notes": null},
+
+    {"category": "Servicii", "subcategory": {"ro": "Cloud + software + domain", "ru": "Облако + ПО + домен"}, "quantity": 1, "unit": {"ro": "pachet", "ru": "пакет"}, "unit_cost_mdl": 73500, "total_mdl": 73500, "funding_source": "grant", "notes": null},
+
+    {"category": "Servicii", "subcategory": {"ro": "Designer + producție video", "ru": "Дизайн + видеопроизводство"}, "quantity": 1, "unit": {"ro": "pachet", "ru": "пакет"}, "unit_cost_mdl": 35000, "total_mdl": 35000, "funding_source": "grant", "notes": null},
+
+    {"category": "Servicii", "subcategory": {"ro": "Audit financiar extern proiect", "ru": "Внешний финансовый аудит"}, "quantity": 1, "unit": {"ro": "audit", "ru": "аудит"}, "unit_cost_mdl": 40000, "total_mdl": 40000, "funding_source": "grant", "notes": {"ro": "Cerință EU4M obligatorie", "ru": "Обязательное требование EU4M"}},
+
+    {"category": "Activitati", "subcategory": {"ro": "5 cohorte training", "ru": "5 когорт обучения"}, "quantity": 5, "unit": {"ro": "cohorta", "ru": "когорта"}, "unit_cost_mdl": 45000, "total_mdl": 225000, "funding_source": "grant", "notes": null},
+
+    {"category": "Activitati", "subcategory": {"ro": "3 audieri publice", "ru": "3 публичных слушания"}, "quantity": 3, "unit": {"ro": "eveniment", "ru": "событие"}, "unit_cost_mdl": 25000, "total_mdl": 75000, "funding_source": "grant", "notes": null},
+
+    {"category": "Activitati", "subcategory": {"ro": "5 audituri shadow (experți externi)", "ru": "5 теневых аудитов"}, "quantity": 5, "unit": {"ro": "audit", "ru": "аудит"}, "unit_cost_mdl": 20000, "total_mdl": 100000, "funding_source": "grant", "notes": null},
+
+    {"category": "Activitati", "subcategory": {"ro": "Manual training tipărit 200 ex", "ru": "Печать 200 учебников"}, "quantity": 200, "unit": {"ro": "exemplar", "ru": "экземпляр"}, "unit_cost_mdl": 80, "total_mdl": 16000, "funding_source": "grant", "notes": null},
+
+    {"category": "Calatorii", "subcategory": {"ro": "Vizite teren 20 APL", "ru": "Поездки в 20 мэрий"}, "quantity": 40, "unit": {"ro": "vizita", "ru": "поездка"}, "unit_cost_mdl": 1200, "total_mdl": 48000, "funding_source": "grant", "notes": null},
+
+    {"category": "Indirecte", "subcategory": {"ro": "Costuri administrative (7% din direct)", "ru": "Административные расходы (7%)"}, "quantity": 1, "unit": {"ro": "pachet", "ru": "пакет"}, "unit_cost_mdl": 195000, "total_mdl": 195000, "funding_source": "grant", "notes": {"ro": "Office, utilități, comunicații", "ru": "Офис, коммуналка, связь"}},
+
+    {"category": "Indirecte", "subcategory": {"ro": "Vizibilitate UE (logo, comunicare, evenimente vizibilitate)", "ru": "Видимость ЕС"}, "quantity": 1, "unit": {"ro": "pachet", "ru": "пакет"}, "unit_cost_mdl": 50000, "total_mdl": 50000, "funding_source": "grant", "notes": {"ro": "Cerință EU4M Branding Guidelines", "ru": "Требование EU4M Branding Guidelines"}}
+
+  ],
+
+  "total_budget_mdl": 2982500,
+
+  "grant_amount_mdl": 2684250,
+
+  "cofinancing_amount_mdl": 298250,
+
+  "cofinancing_percent": 10,
+
+
+
+  "risk_register": [
+
+    {
+
+      "code": "R1",
+
+      "title": {"ro": "Refuz cooperare 5+ APL pilot", "ru": "Отказ от сотрудничества 5+ пилотных мэрий"},
+
+      "category": "parteneri",
+
+      "probability": "medie",
+
+      "impact": "mare",
+
+      "description": {"ro": "Primari nou aleși post-2025 pot refuza cooperare cu ONG-uri civice. Risc concret: 5-7 din 20 APL țintă nu semnează memorandum în M1.", "ru": "Новоизбранные мэры после 2025 могут отказаться сотрудничать с НКО. Конкретный риск: 5-7 из 20 не подпишут меморандум в M1."},
+
+      "mitigation_plan": {"ro": "Engagement preliminar M-1 cu top 30 APL candidate + lista de rezervă 10 APL. Memorandum simplificat fără cerințe excesive.", "ru": "Предварительная работа в M-1 с топ-30 кандидатами + резервный список 10. Упрощённый меморандум."},
+
+      "contingency_plan": {"ro": "Activare 5-7 APL din rezervă + extindere timeline onboarding cu 1-2 luni.", "ru": "Активация 5-7 из резерва + продление timeline на 1-2 месяца."},
+
+      "owner_role": "PM"
+
+    },
+
+    {
+
+      "code": "R2",
+
+      "title": {"ro": "Întârziere dezvoltare platformă (cyber/dev)", "ru": "Задержка разработки платформы"},
+
+      "category": "tehnic",
+
+      "probability": "medie",
+
+      "impact": "critic",
+
+      "description": {"ro": "Web developer senior poate să plece (rotation mare în IT MD), bug-uri securitate critice, downtime cloud provider.", "ru": "Старший разработчик может уйти (высокая ротация в IT МД), критические уязвимости, простой облака."},
+
+      "mitigation_plan": {"ro": "Cod open-source de la început (alt dev poate prelua rapid), penetration test în M5, SLA cu Hetzner. Budget rezervă 15% pe technical.", "ru": "Открытый код с начала, pen-test в M5, SLA с Hetzner. Резерв 15% бюджета на технику."},
+
+      "contingency_plan": {"ro": "Contract rapid cu Endava sau StartLab (firme MD) pentru contingency dev 1-2 luni.", "ru": "Быстрый контракт с Endava или StartLab для contingency."},
+
+      "owner_role": "Lead Tehnic"
+
+    },
+
+    {
+
+      "code": "R3",
+
+      "title": {"ro": "Sub-țintă petiție 10K semnături", "ru": "Недостижение цели 10К подписей"},
+
+      "category": "extern",
+
+      "probability": "medie",
+
+      "impact": "mare",
+
+      "description": {"ro": "Petițiile digitale MD au rate variabile de adopție. Risc: max 6-8K semnături strânse în M17.", "ru": "Цифровые петиции МД имеют переменные показатели усвоения. Риск: максимум 6-8К к M17."},
+
+      "mitigation_plan": {"ro": "Parteneriate cu 5+ ONG-uri partenere distribuție + campanie social media plătită (Meta + TikTok) + comunicate cu rate de conversie măsurate.", "ru": "Партнёрства с 5+ НКО для распространения + платная кампания в соцсетях."},
+
+      "contingency_plan": {"ro": "Extensie campanie cu 2 luni + buget suplimentar 30K MDL ads. Argument calitatea (cine semnează) > cantitate.", "ru": "Продление кампании на 2 месяца + дополнительный бюджет 30K MDL на рекламу."},
+
+      "owner_role": "Specialist Comunicare"
+
+    },
+
+    {
+
+      "code": "R4",
+
+      "title": {"ro": "Schimbare politică majoră post-alegeri 2027", "ru": "Серьёзная политическая перемена после выборов 2027"},
+
+      "category": "politic",
+
+      "probability": "medie",
+
+      "impact": "mare",
+
+      "description": {"ro": "Alegerile parlamentare 2027 pot schimba complet apetitul Parlamentului pentru reformă transparență. Risc concret: proiectul lege blocat în Comisia juridică.", "ru": "Парламентские выборы 2027 могут полностью изменить аппетит Парламента. Конкретный риск: блокировка законопроекта в юр. комиссии."},
+
+      "mitigation_plan": {"ro": "Engagement cu deputați din TOATE partidele majore din M3, NU doar putere actuală. Argumente tehnice depolitizate (efficiency, anti-corupție).", "ru": "Работа с депутатами ВСЕХ крупных партий с M3, не только текущей власти. Технические аполитичные аргументы."},
+
+      "contingency_plan": {"ro": "Refocus pe nivel APL — propunere ca recomandare către CALM (Congresul Autorităților Locale) cu adoptare voluntară.", "ru": "Перефокус на местный уровень — предложение CALM с добровольным принятием."},
+
+      "owner_role": "PM + Specialist Advocacy"
+
+    },
+
+    {
+
+      "code": "R5",
+
+      "title": {"ro": "Non-compliance audit EU4M (vizibilitate, raportare, achiziții)", "ru": "Несоответствие аудиту EU4M"},
+
+      "category": "financiar",
+
+      "probability": "mica",
+
+      "impact": "critic",
+
+      "description": {"ro": "Aplicarea incorectă a EU Branding Guidelines, achiziții fără 3 oferte, întârzieri raportare lunară — pot rezulta în returnare fonduri.", "ru": "Неправильное применение EU Branding Guidelines, закупки без 3 предложений, задержки отчётности — возврат средств."},
+
+      "mitigation_plan": {"ro": "Onboarding obligatoriu echipa pe EU4M Operational Manual în M1. Audit intern lunar. Auditor extern certificat pentru raportare financiară.", "ru": "Обязательное обучение команды EU4M Operational Manual в M1. Ежемесячный внутренний аудит. Сертифицированный внешний аудитор."},
+
+      "contingency_plan": {"ro": "Buget rezervă audit extern 40K MDL. Linie comunicare directă cu Project Officer EU4M pentru clarificări rapide.", "ru": "Резерв 40K MDL на внешний аудит. Прямая связь с Project Officer EU4M."},
+
+      "owner_role": "PM + Specialist M&E"
+
+    },
+
+    {
+
+      "code": "R6",
+
+      "title": {"ro": "Concurență cu altă organizație pe aceeași temă", "ru": "Конкуренция с другой организацией"},
+
+      "category": "reputational",
+
+      "probability": "mica",
+
+      "impact": "mediu",
+
+      "description": {"ro": "AO Inovație Civică are deja un proiect similar înregistrat în registry (Monitor Cetățean rezervat). Risc: percepție de competiție directă cu altă ONG MD.", "ru": "АО Инновация Гражданская уже зарегистрировал похожий проект. Риск: восприятие прямой конкуренции."},
+
+      "mitigation_plan": {"ro": "Outreach formal cu AO Inovație Civică în M0 pentru aliniere — ofertă parteneriat sau diferențiere geografică clară (noi: 20 APL rural, ei: orașe).", "ru": "Формальный outreach с AO в M0 для согласования — партнёрство или географическая дифференциация."},
+
+      "contingency_plan": {"ro": "Pivot la focus tematic diferit (audit achiziții publice specifice) păstrând infrastructura tehnică.", "ru": "Поворот к иной тематике (аудит публичных закупок) с сохранением технической инфраструктуры."},
+
+      "owner_role": "PM"
+
+    }
+
+  ],
+
+
+
+  "notes_for_user": "VALIDĂRI MANUALE necesare: 1) Lista celor 20 APL pilot — trebuie identificați cu nume + contact înainte de semnarea contractului EU4M; 2) Identitate Project Officer EU4M Moldova pentru cerințe specifice de raportare; 3) Auditor extern certificat pentru bugetul de 40K MDL audit — recomand contractare în M2; 4) Outreach cu AO Inovație Civică (registry rezervare) — esențial pentru evitarea percepției de competiție. 5) Confirmare cofinanțare 10% (298K MDL) — trebuie identificată sursa (rezervă proprie, alt grant complementar, in-kind)."
+
+}
+

@@ -1,11 +1,21 @@
 :root {
+    /* === Drapel Moldova — paletă echilibrată albastru / galben / roșu === */
+    --md-blue: #003DA5;       /* Albastru — autoritate, încredere, instituțional */
+    --md-yellow: #FFD200;     /* Galben — vizibilitate, optimism, energie */
+    --md-red: #CE1126;        /* Roșu — urgență, accent critic, premium */
+    --md-blue-soft: #E7EEF9;
+    --md-yellow-soft: #FFF6CC;
+    --md-red-soft: #FDECEE;
+
+    /* Legacy aliases pentru backward compat */
     --navy: #0B2545;
     --navy-2: #13315C;
-    --blue: #003DA5;
-    --blue-soft: #E7EEF9;
-    --yellow: #FFD200;
-    --red: #CE1126;
+    --blue: var(--md-blue);
+    --blue-soft: var(--md-blue-soft);
+    --yellow: var(--md-yellow);
+    --red: var(--md-red);
     --green: #0E8A56;
+
     --ink: #1A1F2B;
     --ink-2: #4A5468;
     --ink-3: #6B7280;
@@ -13,9 +23,15 @@
     --line-2: #EEF1F5;
     --bg: #FAFBFC;
     --white: #FFFFFF;
+
     --shadow-sm: 0 1px 2px rgba(11,37,69,.06);
     --shadow-md: 0 4px 16px rgba(11,37,69,.08);
     --shadow-lg: 0 12px 32px rgba(11,37,69,.12);
+
+    /* Gradient drapel — folosibil pe headere/accentuări */
+    --md-flag-gradient: linear-gradient(90deg, var(--md-blue) 0%, var(--md-blue) 33%, var(--md-yellow) 33%, var(--md-yellow) 66%, var(--md-red) 66%, var(--md-red) 100%);
+    --md-flag-stripe-h: 4px;
+
     --radius: 14px;
     --radius-sm: 10px;
 }

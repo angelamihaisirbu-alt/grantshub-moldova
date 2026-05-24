@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cabinet personal — GrantsHub Moldova</title>
     <meta name="description" content="Cabinet personal beneficiar: dashboard consultații, mesagerie cu echipa, profil avatar.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css?v=5">
+    <link rel="stylesheet" href="loading.css">
     <link rel="stylesheet" href="services.css?v=5">
     <link rel="stylesheet" href="cabinet.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
@@ -22,10 +24,14 @@
         <div class="container header-inner">
             <div class="brand">
                 <div class="brand-mark" aria-hidden="true">
-                    <svg viewBox="0 0 40 40" width="40" height="40">
-                        <rect x="2" y="2" width="36" height="36" rx="6" fill="#003DA5"/>
-                        <path d="M10 28 L20 12 L30 28 Z" fill="#FFD200"/>
-                        <circle cx="20" cy="24" r="3" fill="#CE1126"/>
+                    <svg viewBox="0 0 120 120" width="40" height="40" aria-hidden="true">
+                        <path d="M 56 30 A 32 32 0 1 0 56 90" fill="none" stroke="#003DA5" stroke-width="10" stroke-linecap="round"/>
+                        <rect x="66" y="32" width="8" height="56" rx="2" fill="#003DA5"/>
+                        <rect x="66" y="32" width="32" height="8" rx="2" fill="#003DA5"/>
+                        <rect x="66" y="56" width="24" height="8" rx="2" fill="#003DA5"/>
+                        <rect x="66" y="80" width="32" height="8" rx="2" fill="#003DA5"/>
+                        <circle cx="82" cy="22" r="6" fill="#FFD200"/>
+                        <circle cx="82" cy="22" r="2.5" fill="#CE1126"/>
                     </svg>
                 </div>
                 <div class="brand-text">
@@ -56,19 +62,54 @@
                 </div>
             </div>
 
-            <!-- Register: email -->
+            <!-- Register: email + org_type OBLIGATORIU -->
             <div id="auth-register" class="auth-panel" hidden>
                 <h1>Înregistrare</h1>
-                <p>Introdu adresa de email. Vei primi un cod de acces de 6 cifre.</p>
+                <p>Completează datele de bază. Vei primi un cod de acces de 6 cifre.</p>
                 <form id="form-register">
                     <label class="form-row full">
-                        <span>Email</span>
+                        <span>Email *</span>
                         <input type="email" name="email" required autofocus placeholder="numele.tau@example.com">
                     </label>
                     <label class="form-row full">
-                        <span>Nume complet</span>
+                        <span>Nume complet *</span>
                         <input type="text" name="name" required placeholder="ex. Ion Popescu">
                     </label>
+                    <label class="form-row full">
+                        <span>Numele organizației *</span>
+                        <input type="text" name="organization" required placeholder="ex. AO Inovație Civică SRL">
+                    </label>
+
+                    <fieldset class="org-type-fieldset">
+                        <legend>Tipul organizației * <small>(se alege o singură dată — nu se poate schimba ulterior)</small></legend>
+                        <div class="org-type-radios">
+                            <label class="org-type-radio" data-tier="ngo">
+                                <input type="radio" name="org_type" value="ngo" required>
+                                <div class="org-type-content">
+                                    <strong>🌱 ONG / Societate civilă</strong>
+                                    <small>Asociație obștească, fundație, mass-media, think-tank</small>
+                                    <span class="org-type-fee">25 €/lună per organizație</span>
+                                </div>
+                            </label>
+                            <label class="org-type-radio" data-tier="public">
+                                <input type="radio" name="org_type" value="public" required>
+                                <div class="org-type-content">
+                                    <strong>🏛 Autoritate publică</strong>
+                                    <small>APL, primării, consilii raionale, ministere, instituții publice</small>
+                                    <span class="org-type-fee">25 €/lună per utilizator</span>
+                                </div>
+                            </label>
+                            <label class="org-type-radio" data-tier="private">
+                                <input type="radio" name="org_type" value="private" required>
+                                <div class="org-type-content">
+                                    <strong>💼 Companie privată / IMM</strong>
+                                    <small>IMM, microîntreprindere, ÎI, GȚ, startup, antreprenor</small>
+                                    <span class="org-type-fee">30 €/lună per organizație</span>
+                                </div>
+                            </label>
+                        </div>
+                    </fieldset>
+
                     <div class="form-actions">
                         <button type="submit" class="btn btn-primary">Continuă →</button>
                         <button type="button" class="btn btn-ghost" data-goto="welcome">← Înapoi</button>
@@ -134,6 +175,8 @@
                 <nav class="cabinet-tabs">
                     <button class="tab tab-active" data-tab="dashboard">📊 Dashboard</button>
                     <button class="tab" data-tab="messages">💬 Mesaje <span class="badge" id="msg-badge" hidden>0</span></button>
+                    <button class="tab" data-tab="eligibility">🎯 Eligibilitate</button>
+                    <button class="tab" data-tab="ideas">💡 Idei Proiect</button>
                     <button class="tab" data-tab="profile">👤 Profil</button>
                 </nav>
             </div>
@@ -153,10 +196,27 @@
                             <p class="dash-empty">Niciun mesaj încă.</p>
                         </div>
                     </div>
-                    <div class="dash-card">
-                        <h3>🎯 Apeluri recomandate</h3>
+                    <div class="dash-card dash-card-wide">
+                        <h3>🎯 Apeluri eligibile pentru tine</h3>
+                        <div class="dash-org-context" id="dash-org-context">
+                            <span class="badge-org" id="badge-org-type">—</span>
+                        </div>
                         <div id="recommended-calls">
-                            <p class="dash-empty">Configurează profilul pentru recomandări personalizate.</p>
+                            <p class="dash-empty">Se încarcă apelurile eligibile…</p>
+                        </div>
+                        <p class="dash-footer-link"><a href="#" id="dash-see-all-calls">Vezi toate apelurile pentru tipul tău →</a></p>
+                    </div>
+                    <div class="dash-card">
+                        <h3>💳 Plan & tarif</h3>
+                        <div id="dash-pricing" class="dash-pricing-box">
+                            <p class="dash-empty">Se încarcă…</p>
+                        </div>
+                    </div>
+                    <div class="dash-card dash-card-wide">
+                        <h3>🏷 Apeluri pe domenii — pentru profilul tău</h3>
+                        <p class="dash-subtle">Click pe un domeniu pentru a filtra lista de apeluri eligibile din cardul de mai sus.</p>
+                        <div id="dash-topic-chips" class="dash-topic-chips">
+                            <p class="dash-empty">Se încarcă…</p>
                         </div>
                     </div>
                     <div class="dash-card">
@@ -196,6 +256,345 @@
                 </div>
             </div>
 
+            <!-- Eligibility tab — Grantio Agent integration -->
+            <div class="tab-panel" id="panel-eligibility" hidden>
+                <div class="elig-intro">
+                    <h2>🎯 Verificare eligibilitate Grantio</h2>
+                    <p class="elig-lead">Completează profilul de mai jos. Agentul verifică instant la care apeluri active din Moldova ești eligibil — fără a citi 50 de ghiduri.</p>
+                    <div class="elig-api-status" id="elig-api-status">⏳ Se verifică conexiunea cu Grantio Eligibility API…</div>
+                </div>
+
+                <form id="form-eligibility" class="elig-form">
+
+                    <fieldset class="elig-section identity-section">
+                        <legend>
+                            <span class="legend-number">1</span>
+                            <span class="legend-text">Identitate organizație</span>
+                        </legend>
+                        <p class="section-hint">🇲🇩 Platforma e dedicată entităților din Republica Moldova. Forme juridice acceptate conform legislației MD.</p>
+
+                        <!-- Hidden inputs: country always MD (no choice) -->
+                        <input type="hidden" name="country_registration" value="MD">
+                        <input type="hidden" name="country_citizenship" value="MD">
+
+                        <div class="identity-grid">
+                            <label class="form-row">
+                                <span>Forma juridică *</span>
+                                <select name="entity_type" required>
+                                    <option value="">— alege forma juridică —</option>
+                                    <optgroup label="Sector privat (IMM)">
+                                        <option value="IMM">IMM (SRL / SA — generic)</option>
+                                        <option value="Microintreprindere">Microîntreprindere</option>
+                                        <option value="II">Întreprindere Individuală (ÎI)</option>
+                                        <option value="GT">Gospodărie Țărănească (GȚ)</option>
+                                    </optgroup>
+                                    <optgroup label="Societate civilă">
+                                        <option value="ONG">ONG / Asociație obștească / Fundație</option>
+                                    </optgroup>
+                                    <optgroup label="Sector public">
+                                        <option value="APL">APL — primărie, consiliu raional</option>
+                                        <option value="Public">Instituție publică — minister, agenție</option>
+                                    </optgroup>
+                                    <optgroup label="Persoană fizică">
+                                        <option value="Persoana fizica">Persoană fizică (cetățean MD)</option>
+                                    </optgroup>
+                                </select>
+                            </label>
+                            <label class="form-row">
+                                <span>Luni de la înființare <small>(0 dacă e nou)</small></span>
+                                <input type="number" name="months_since_founding" min="0" placeholder="ex. 18">
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="elig-section">
+                        <legend>2. Fondator <small>(pentru apeluri ca Femei în Afaceri, START Tineri)</small></legend>
+                        <div class="elig-grid">
+                            <label class="form-row">
+                                <span>Vârsta fondatorului</span>
+                                <input type="number" name="founder_age" min="16" max="100" placeholder="ex. 29">
+                            </label>
+                            <label class="form-row">
+                                <span>Gen fondator</span>
+                                <select name="founder_gender">
+                                    <option value="">— neselectat —</option>
+                                    <option value="F">Feminin</option>
+                                    <option value="M">Masculin</option>
+                                </select>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="elig-section">
+                        <legend>3. Diaspora & remitențe <small>(pentru PARE 1+1)</small></legend>
+                        <div class="elig-checkboxes">
+                            <label class="elig-check"><input type="checkbox" name="is_diaspora_returnee"> Sunt din diaspora returnată cu experiență de muncă în străinătate</label>
+                            <label class="elig-check"><input type="checkbox" name="has_remittance_experience"> Beneficiez de remitențe în familie</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="elig-section">
+                        <legend>4. Proiect propus</legend>
+                        <div class="elig-grid">
+                            <label class="form-row">
+                                <span>Tip activitate</span>
+                                <select name="activity_type">
+                                    <option value="">— neselectat —</option>
+                                    <option value="productie_bunuri">Producție de bunuri</option>
+                                    <option value="agricultura">Agricultură</option>
+                                    <option value="zootehnie">Zootehnie</option>
+                                    <option value="horticultura">Horticultură</option>
+                                    <option value="viticultura">Viticultură</option>
+                                    <option value="servicii">Servicii</option>
+                                    <option value="IT">IT / digital</option>
+                                    <option value="comert">Comerț</option>
+                                </select>
+                            </label>
+                            <label class="form-row">
+                                <span>Sub-categorie proiect</span>
+                                <select name="project_subcategory">
+                                    <option value="">— neselectat —</option>
+                                    <option value="modernizare_tehnologica">Modernizare tehnologică</option>
+                                    <option value="transformare_digitala">Transformare digitală</option>
+                                    <option value="tranzitie_ecologica">Tranziție ecologică</option>
+                                    <option value="energie_solara">Energie solară</option>
+                                    <option value="biomasa">Biomasă</option>
+                                    <option value="energie_eoliana">Energie eoliană</option>
+                                    <option value="eficienta_energetica">Eficiență energetică</option>
+                                    <option value="climat">Acțiune climatică</option>
+                                    <option value="biodiversitate">Biodiversitate</option>
+                                    <option value="mediu">Mediu</option>
+                                </select>
+                            </label>
+                        </div>
+                        <label class="form-row full">
+                            <span>Sectoare relevante <small>(separate prin virgulă: agribusiness, IT, mediu, dezvoltare_locala, societate_civila, guvernare_democratica…)</small></span>
+                            <input type="text" name="sectors" placeholder="ex. agribusiness, IT, eficienta_energetica">
+                        </label>
+                    </fieldset>
+
+                    <fieldset class="elig-section">
+                        <legend>5. Capacitate financiară</legend>
+                        <div class="elig-grid">
+                            <label class="form-row">
+                                <span>Cifră afaceri anuală (MDL)</span>
+                                <input type="number" name="annual_turnover_mdl" min="0" placeholder="ex. 850000">
+                            </label>
+                            <label class="form-row">
+                                <span>Număr angajați</span>
+                                <input type="number" name="staff_count" min="0" placeholder="ex. 4">
+                            </label>
+                            <label class="form-row">
+                                <span>Investiție proprie disponibilă (MDL)</span>
+                                <input type="number" name="own_investment_mdl" min="0" placeholder="ex. 120000">
+                            </label>
+                            <label class="form-row">
+                                <span>Proiecte UE anterioare implementate</span>
+                                <input type="number" name="prior_eu_projects" min="0" value="0">
+                            </label>
+                        </div>
+                        <div class="elig-checkboxes">
+                            <label class="elig-check"><input type="checkbox" name="can_cofinance"> Am capacitate de cofinanțare a proiectului</label>
+                            <label class="elig-check"><input type="checkbox" name="accepts_mandatory_training"> Accept participarea la instruirea antreprenorială obligatorie (pentru START Tineri)</label>
+                        </div>
+                    </fieldset>
+
+                    <details class="elig-section elig-advanced">
+                        <summary>6. Detalii avansate (pentru programe specializate — click pentru a extinde)</summary>
+                        <div class="elig-advanced-body">
+
+                            <h4 class="elig-subsection">Agricultură (AIPA Subprogramele 1.1, 1.2A, 1.7)</h4>
+                            <div class="elig-grid">
+                                <label class="form-row">
+                                    <span>Suprafață agricolă în folosință (hectare)</span>
+                                    <input type="number" name="agricultural_land_ha" min="0" step="0.1" placeholder="ex. 2.5">
+                                </label>
+                                <label class="form-row">
+                                    <span>Drept folosință teren confirmat (ani)</span>
+                                    <input type="number" name="land_tenure_years_secured" min="0" placeholder="ex. 10">
+                                </label>
+                                <label class="form-row">
+                                    <span>Sub-măsură AIPA țintă</span>
+                                    <select name="subprogram_target">
+                                        <option value="">— neselectat —</option>
+                                        <option value="aipa-1.1A">1.1A — Culturi de câmp</option>
+                                        <option value="aipa-1.1B">1.1B — Livezi</option>
+                                        <option value="aipa-1.1C">1.1C — Vii</option>
+                                        <option value="aipa-1.1D">1.1D — Zootehnie</option>
+                                        <option value="aipa-1.1E">1.1E — Irigații</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div class="elig-checkboxes">
+                                <label class="elig-check"><input type="checkbox" name="has_ansa_registration"> Am înregistrare ANSA (sanitar-veterinar)</label>
+                                <label class="elig-check"><input type="checkbox" name="is_first_time_farmer"> Primă instalare — fără activitate agricolă anterior (pentru START Tineri Fermieri)</label>
+                                <label class="elig-check"><input type="checkbox" name="has_agricultural_education"> Am studii agricole formale (diplomă)</label>
+                            </div>
+
+                            <h4 class="elig-subsection">APL / Autoritate publică (EU4Moldova Local Development)</h4>
+                            <div class="elig-checkboxes">
+                                <label class="elig-check"><input type="checkbox" name="has_strategic_local_dev_plan"> Plan Strategic de Dezvoltare APL în vigoare (aprobat de Consiliul Local)</label>
+                                <label class="elig-check"><input type="checkbox" name="has_local_council_decision"> Am Decizia Consiliului Local pentru aplicare</label>
+                                <label class="elig-check"><input type="checkbox" name="prior_eu_audit_findings"> Am constatări neînchise de la audite UE anterioare (BLOCKER dacă e bifat)</label>
+                            </div>
+
+                            <h4 class="elig-subsection">Startup / Inovație (EU4Moldova Innovation)</h4>
+                            <div class="elig-grid">
+                                <label class="form-row">
+                                    <span>Mărime echipă fondatoare</span>
+                                    <input type="number" name="team_size_founders" min="1" max="20" placeholder="ex. 3">
+                                </label>
+                                <label class="form-row">
+                                    <span>Status proprietate intelectuală</span>
+                                    <select name="ip_protection_status">
+                                        <option value="">— neselectat —</option>
+                                        <option value="none">Niciuna</option>
+                                        <option value="trade_secret">Trade secret / know-how</option>
+                                        <option value="patent_pending">Patent în depunere</option>
+                                        <option value="patent_granted">Patent acordat</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div class="elig-checkboxes">
+                                <label class="elig-check"><input type="checkbox" name="has_mvp_or_validation"> Am MVP funcțional SAU validare piață (pilot, scrisori intenție, clienți)</label>
+                            </div>
+
+                            <h4 class="elig-subsection">Maturitate organizațională (CSO, USAID Governance)</h4>
+                            <div class="elig-grid">
+                                <label class="form-row">
+                                    <span>Granturi complet implementate anterior</span>
+                                    <input type="number" name="prior_grant_completed_count" min="0" value="0">
+                                </label>
+                                <label class="form-row">
+                                    <span>Număr donatori diferiți (cu granturi gestionate)</span>
+                                    <input type="number" name="prior_donor_count" min="0" value="0">
+                                </label>
+                                <label class="form-row">
+                                    <span>Ani cu situații financiare auditate</span>
+                                    <input type="number" name="audited_financials_years" min="0" value="0">
+                                </label>
+                            </div>
+
+                            <h4 class="elig-subsection">Compliance USAID (Future Growth, Democratic Governance)</h4>
+                            <div class="elig-checkboxes">
+                                <label class="elig-check"><input type="checkbox" name="has_duns_number"> Am număr DUNS/UEI activ (sam.gov)</label>
+                                <label class="elig-check"><input type="checkbox" name="usaid_compliance_signed"> Accept semnarea declarațiilor compliance USAID (ATFA, TIP, Marking)</label>
+                                <label class="elig-check"><input type="checkbox" name="is_export_oriented"> Am potențial de export / scale-up regional</label>
+                            </div>
+
+                            <h4 class="elig-subsection">Community & Climate (UNDP SGP, GIZ)</h4>
+                            <div class="elig-grid">
+                                <label class="form-row">
+                                    <span>Durata proiectului propus (luni)</span>
+                                    <input type="number" name="project_duration_months" min="1" max="60" placeholder="ex. 18">
+                                </label>
+                            </div>
+                            <div class="elig-checkboxes">
+                                <label class="elig-check"><input type="checkbox" name="has_apl_support_letter"> Am scrisoare suport de la APL local</label>
+                                <label class="elig-check"><input type="checkbox" name="community_engagement_plan"> Am plan explicit de implicare comunitară</label>
+                                <label class="elig-check"><input type="checkbox" name="has_baseline_measurement_plan"> Am plan de baseline measurement pentru indicatori (GIZ Climate)</label>
+                                <label class="elig-check"><input type="checkbox" name="climate_indicator_smart"> Am indicatori climatici SMART (CO2eq, MWh, ha restaurate)</label>
+                            </div>
+
+                        </div>
+                    </details>
+
+                    <fieldset class="elig-section">
+                        <legend>7. Documente pe care le ai deja pregătite</legend>
+                        <p class="elig-hint">Bifează ce documente sunt deja gata. Pentru cele lipsă, agentul îți va spune ce trebuie să pregătești.</p>
+                        <div class="elig-doc-grid" id="elig-doc-grid">
+                            <!-- populat din JS — listă centralizată de documente comune -->
+                        </div>
+                    </fieldset>
+
+                    <div class="elig-actions">
+                        <button type="submit" class="btn btn-primary btn-lg">🔍 Verifică eligibilitatea pe toate apelurile</button>
+                        <button type="button" class="btn btn-ghost" id="elig-reset">⟲ Resetează formularul</button>
+                    </div>
+                </form>
+
+                <div id="elig-results" class="elig-results" hidden>
+                    <div class="elig-summary" id="elig-summary"></div>
+                    <div class="elig-verdicts" id="elig-verdicts"></div>
+                </div>
+            </div>
+
+            <!-- Ideas Project Wizard tab (bilingv RO+RU) -->
+            <div class="tab-panel" id="panel-ideas" hidden>
+                <div class="ideas-head">
+                    <div>
+                        <h2 class="ideas-title" data-i18n-ro="💡 Idei concept note pentru tine" data-i18n-ru="💡 Идеи концепт-нот для вас"></h2>
+                        <p class="ideas-lead" data-i18n-ro="Alegi tipul organizației + domeniul → primești 4-6 idei concept note bilingue, fiecare aliniată la un apel activ unde ești eligibil — cu buget estimat, echipă, activități, jaloane." data-i18n-ru="Выберите тип организации + сферу → получите 4-6 двуязычных идей концепт-нот, каждая привязана к активному конкурсу — с бюджетом, командой, мероприятиями, контрольными точками."></p>
+                    </div>
+                    <div class="lang-toggle" role="radiogroup" aria-label="Limba conținutului">
+                        <button class="lang-btn lang-active" data-lang="ro">RO</button>
+                        <button class="lang-btn" data-lang="ru">RU</button>
+                    </div>
+                </div>
+
+                <!-- STEP 1: Org category -->
+                <section class="wiz-step" id="ideas-step-1">
+                    <h3 class="wiz-step-title" data-i18n-ro="1. Selectează tipul organizației" data-i18n-ru="1. Выберите тип организации"></h3>
+                    <div class="org-cat-grid">
+                        <button type="button" class="org-cat-card" data-cat="ngo">
+                            <div class="org-cat-icon">🌱</div>
+                            <div class="org-cat-name" data-i18n-ro="ONG" data-i18n-ru="НКО"></div>
+                            <div class="org-cat-desc" data-i18n-ro="Asociație obștească, fundație, mass-media, think-tank" data-i18n-ru="Общественная ассоциация, фонд, СМИ, аналитический центр"></div>
+                            <div class="org-cat-count" id="cat-count-ngo">—</div>
+                        </button>
+                        <button type="button" class="org-cat-card" data-cat="public">
+                            <div class="org-cat-icon">🏛</div>
+                            <div class="org-cat-name" data-i18n-ro="Sector public" data-i18n-ru="Гос. сектор"></div>
+                            <div class="org-cat-desc" data-i18n-ro="APL, primării, consilii raionale, ministere, agenții, instituții publice" data-i18n-ru="Местные органы, мэрии, районные советы, министерства, агентства, гос. учреждения"></div>
+                            <div class="org-cat-count" id="cat-count-public">—</div>
+                        </button>
+                        <button type="button" class="org-cat-card" data-cat="private">
+                            <div class="org-cat-icon">💼</div>
+                            <div class="org-cat-name" data-i18n-ro="Sector privat" data-i18n-ru="Частный сектор"></div>
+                            <div class="org-cat-desc" data-i18n-ro="IMM, microîntreprindere, ÎI, GȚ, startup, antreprenor" data-i18n-ru="МСП, микропредприятие, ИП, стартап, предприниматель"></div>
+                            <div class="org-cat-count" id="cat-count-private">—</div>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- STEP 2: Domain + brief -->
+                <section class="wiz-step" id="ideas-step-2" hidden>
+                    <div class="wiz-step-head">
+                        <h3 class="wiz-step-title" data-i18n-ro="2. Domeniul de interes" data-i18n-ru="2. Сфера интересов"></h3>
+                        <button type="button" class="wiz-back" id="ideas-back-to-1">← <span data-i18n-ro="Înapoi" data-i18n-ru="Назад"></span></button>
+                    </div>
+                    <div class="wiz-elig-summary" id="ideas-elig-summary"></div>
+                    <p class="wiz-label" data-i18n-ro="Alege un domeniu preset sau scrie propriul:" data-i18n-ru="Выберите готовый или впишите свой:"></p>
+                    <div class="domain-chips" id="ideas-domain-chips"></div>
+                    <label class="wiz-field">
+                        <span data-i18n-ro="Sau scrie domeniul tău:" data-i18n-ru="Или впишите свою сферу:"></span>
+                        <input type="text" id="ideas-domain-custom" placeholder="ex. educație incluzivă, energie regenerabilă, etc.">
+                    </label>
+                    <label class="wiz-field">
+                        <span data-i18n-ro="Opțional — 1-3 propoziții context (ce vrei să rezolvi, cine sunt beneficiarii):" data-i18n-ru="Опционально — 1-3 предложения о контексте (что хотите решить, кто бенефициары):"></span>
+                        <textarea id="ideas-brief" rows="3" placeholder="ex. Vreau să sprijin femeile din mediul rural să acceseze servicii financiare digitale..."></textarea>
+                    </label>
+                    <div class="ideas-actions-row">
+                        <button type="button" class="btn btn-primary btn-lg" id="ideas-generate-btn">
+                            <span data-i18n-ro="🪄 Generează 5 idei (necesită API key)" data-i18n-ru="🪄 Сгенерировать 5 идей (нужен API ключ)"></span>
+                        </button>
+                        <button type="button" class="btn btn-ghost" id="ideas-demo-btn">
+                            <span data-i18n-ro="👁 Vezi demo (fără API)" data-i18n-ru="👁 Демо (без API)"></span>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- STEP 3: Results -->
+                <section class="wiz-step" id="ideas-step-3" hidden>
+                    <div class="wiz-step-head">
+                        <h3 class="wiz-step-title" data-i18n-ro="3. Idei generate pentru tine" data-i18n-ru="3. Сгенерированные идеи"></h3>
+                        <button type="button" class="wiz-back" id="ideas-restart">⟲ <span data-i18n-ro="Caută alte idei" data-i18n-ru="Искать другие идеи"></span></button>
+                    </div>
+                    <div class="wiz-context" id="ideas-context"></div>
+                    <div id="ideas-cards"></div>
+                </section>
+            </div>
+
             <!-- Profile tab -->
             <div class="tab-panel" id="panel-profile" hidden>
                 <h2>Profilul tău</h2>
@@ -219,16 +618,43 @@
                                 <span>Telefon (opțional)</span>
                                 <input type="tel" name="phone" placeholder="+373 ...">
                             </label>
-                            <label class="form-row full">
-                                <span>Tip beneficiar</span>
-                                <select name="audience">
-                                    <option value="">— alege —</option>
-                                    <option value="ONG">ONG / Societate civilă</option>
-                                    <option value="IMM">IMM / Companie privată</option>
-                                    <option value="Public">Instituție publică</option>
-                                    <option value="APL">APL (primărie, consiliu raional)</option>
-                                </select>
-                            </label>
+                            <fieldset class="profile-types-fieldset">
+                                <legend>Tipuri de organizație cu acces la finanțări</legend>
+                                <p class="profile-types-hint">Tipul ales la înregistrare e blocat. Poți ADĂUGA acces și pentru alte tipuri — tariful crește în trepte (20 € → 30 € → 45 €).</p>
+                                <div class="profile-types-list">
+                                    <label class="profile-type-check" data-tier="ngo">
+                                        <input type="checkbox" name="audience_types" value="ngo" data-typecheck>
+                                        <div class="profile-type-info">
+                                            <strong>🌱 ONG / Societate civilă</strong>
+                                            <small class="profile-type-status"></small>
+                                        </div>
+                                    </label>
+                                    <label class="profile-type-check" data-tier="public">
+                                        <input type="checkbox" name="audience_types" value="public" data-typecheck>
+                                        <div class="profile-type-info">
+                                            <strong>🏛 Autoritate publică</strong>
+                                            <small class="profile-type-status"></small>
+                                        </div>
+                                    </label>
+                                    <label class="profile-type-check" data-tier="private">
+                                        <input type="checkbox" name="audience_types" value="private" data-typecheck>
+                                        <div class="profile-type-info">
+                                            <strong>💼 Companie privată / IMM</strong>
+                                            <small class="profile-type-status"></small>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="profile-tariff-live" id="profile-tariff-live">
+                                    <span class="tariff-count">1 tip selectat</span>
+                                    <span class="tariff-amount">20 €<small>/lună</small></span>
+                                </div>
+                                <div class="profile-tariff-tiers">
+                                    <span>📊 Trepte:</span>
+                                    <span class="tier-step active" data-tier-step="1">1 tip = 20 €</span>
+                                    <span class="tier-step" data-tier-step="2">2 tipuri = 30 €</span>
+                                    <span class="tier-step" data-tier-step="3">3 tipuri = 45 €</span>
+                                </div>
+                            </fieldset>
                         </div>
                         <div>
                             <h3>Avatar</h3>
@@ -263,6 +689,20 @@
         </div>
     </footer>
 
-    <script src="cabinet.js?v=5"></script>
+    <script>window.GRANTIO_API_BASE = 'http://localhost:8002';</script>
+    <script src="cabinet.js?v=6"></script>
+    <script src="cabinet-eligibility.js?v=1"></script>
+    <script src="cabinet-ideas.js?v=1"></script>
+    <script src="cabinet-dashboard.js?v=1"></script>
+    <script src="cabinet-call-flow.js?v=1"></script>
 </body>
+
+<!-- Loading overlay (controlled by loading.js + cabinet-ideas.js for LLM calls) -->
+<div class="grantio-loading hidden" id="grantio-loading">
+  <object class="gl-mark" data="logo_animated.svg" type="image/svg+xml" aria-hidden="true"></object>
+  <div class="gl-title">Centrul de Excelență</div>
+  <div class="gl-subtitle">Se încarcă…</div>
+  <div class="gl-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+</div>
+<script src="loading.js"></script>
 </html>
