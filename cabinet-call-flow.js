@@ -5,7 +5,8 @@
 (function() {
     'use strict';
 
-    const API_BASE = (window.GRANTIO_API_BASE || 'http://localhost:8001').replace(/\/$/, '');
+    const API_BASE = (window.GRANTIO_API_BASE || '').replace(/\/$/, '');
+    const DEMO_MODE = !API_BASE;
     const LANG_KEY = 'grantio-lang';
     const STORAGE_USERS = 'grantshub_cabinet_users_v1';
     const STORAGE_SESSION = 'grantshub_cabinet_session_v1';
@@ -164,6 +165,12 @@
 
     async function downloadFisaDocx(sheet) {
         const lang = getLang();
+        if (DEMO_MODE) {
+            alert(lang === 'ru'
+                ? 'DOCX доступен только при активированном backend (нужен Anthropic API). В демо-режиме можно просмотреть карточку онлайн.'
+                : 'DOCX disponibil doar cu backend activ (necesită Anthropic API). În modul demo poți vedea fișa online.');
+            return;
+        }
         const loadingMsg = lang === 'ru' ? '⏳ Генерация DOCX…' : '⏳ Generez DOCX…';
         if (window.GrantioLoading) window.GrantioLoading.show(loadingMsg);
         try {
@@ -193,10 +200,13 @@
 
     async function saveSheetToAccount(sheet) {
         const lang = getLang();
+        if (DEMO_MODE) {
+            alert(lang === 'ru'
+                ? 'Сохранение требует backend (PostgreSQL). В демо-режиме сохранение в браузер только.'
+                : 'Salvarea în cont necesită backend (PostgreSQL). În demo, doar previzualizare.');
+            return;
+        }
         const user = currentUser();
-        // Pentru save real avem nevoie de org_id în DB. Aici demo — folosim nume org din profil.
-        // În producție: prima dată creezi org via /organizations POST (cu numele user.organization),
-        // apoi POST /projects/from-sheet cu org_id returnat.
         const orgName = user?.organization || prompt(lang === 'ru' ? 'Название организации:' : 'Numele organizației:');
         if (!orgName) return;
         if (window.GrantioLoading) window.GrantioLoading.show(lang === 'ru' ? '⏳ Сохраняем…' : '⏳ Salvez…');

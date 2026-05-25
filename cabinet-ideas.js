@@ -8,7 +8,8 @@
 (function() {
     'use strict';
 
-    const API_BASE = (window.GRANTIO_API_BASE || 'http://localhost:8001').replace(/\/$/, '');
+    const API_BASE = (window.GRANTIO_API_BASE || '').replace(/\/$/, '');
+    const DEMO_MODE = !API_BASE;
     const LANG_KEY = 'grantio-lang';
     const ORG_KEY = 'grantio-my-org';  // numele organizației curente (din localStorage)
     const STATE = {
@@ -80,14 +81,25 @@
     };
 
     // ── Step 1 — Counters per categorie ─────────────────────────────────────
+    function countDemoForCat(cat) {
+        const audMap = { ngo: ['ONG'], public: ['APL', 'Public'], private: ['IMM'] };
+        const wanted = new Set(audMap[cat] || []);
+        return (window.CALLS || []).filter(c => (c.audiences || []).some(a => wanted.has(a))).length;
+    }
     async function loadCategoryCounts() {
         for (const cat of ['ngo', 'public', 'private']) {
             try {
-                const res = await fetch(`${API_BASE}/calls/for-category/${cat}`);
-                if (!res.ok) throw new Error();
-                const data = await res.json();
+                let count;
+                if (DEMO_MODE) {
+                    count = countDemoForCat(cat);
+                } else {
+                    const res = await fetch(`${API_BASE}/calls/for-category/${cat}`);
+                    if (!res.ok) throw new Error();
+                    const data = await res.json();
+                    count = data.count;
+                }
                 const el = $('#cat-count-' + cat);
-                if (el) el.textContent = `${data.count} ${getLang() === 'ru' ? 'конкурс.' : 'apeluri'}`;
+                if (el) el.textContent = `${count} ${getLang() === 'ru' ? 'конкурс.' : 'apeluri'}`;
             } catch {
                 const el = $('#cat-count-' + cat);
                 if (el) el.textContent = '—';
@@ -145,6 +157,24 @@
             return;
         }
         const brief = ($('#ideas-brief').value || '').trim() || null;
+
+        // Demo mode: încarcă ideile pre-cached din demo_call_ideas.json
+        if (DEMO_MODE) {
+            try {
+                const r = await fetch('demo_call_ideas.json');
+                const data = await r.json();
+                STATE.ideas = data.ideas || [];
+                STATE.domain = domain;
+                STATE.brief = brief;
+                STATE.expanded.clear();
+                STATE.registry = [];
+                showStep(3);
+                renderIdeas();
+            } catch (err) {
+                alert((getLang() === 'ru' ? 'Демо данные недоступны.' : 'Date demo indisponibile.'));
+            }
+            return;
+        }
 
         const loadingMsg = getLang() === 'ru'
             ? 'Генерируем 5 идей на двух языках… ~30 сек'

@@ -8,7 +8,8 @@
     // Configure once per deployment:
     //   local dev → http://localhost:8001
     //   production → https://api.grantio.io
-    const API_BASE = (window.GRANTIO_API_BASE || 'http://localhost:8001').replace(/\/$/, '');
+    const API_BASE = (window.GRANTIO_API_BASE || '').replace(/\/$/, '');
+    const DEMO_MODE = !API_BASE;
 
     // Centralized doc catalog — IDs match calls.json `required_documents.id`.
     // Adding a new document here makes it selectable in the form.
@@ -78,6 +79,12 @@
     async function checkApiHealth() {
         const statusEl = $('#elig-api-status');
         if (!statusEl) return;
+        if (DEMO_MODE) {
+            const callCount = (window.CALLS || []).length;
+            statusEl.innerHTML = `🟡 <strong>Mod DEMO</strong> — catalog local cu <strong>${callCount} apeluri</strong>. Backend Anthropic indisponibil; verificarea eligibilității folosește reguli simplificate.`;
+            statusEl.classList.add('elig-api-demo');
+            return;
+        }
         try {
             const res = await fetch(`${API_BASE}/`, { method: 'GET' });
             if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -85,7 +92,7 @@
             statusEl.innerHTML = `✅ Conectat la Grantio API · ${data.calls_loaded} apeluri în catalog · <a href="${API_BASE}/docs" target="_blank">Swagger UI</a>`;
             statusEl.classList.add('elig-api-ok');
         } catch (err) {
-            statusEl.innerHTML = `⚠️ Grantio API nu răspunde la <code>${API_BASE}</code>. Pornește local cu: <code>uvicorn api.main:app --reload --port 8001</code> din folder-ul <code>grantio-eligibility/</code>.`;
+            statusEl.innerHTML = `⚠️ Grantio API nu răspunde la <code>${API_BASE}</code>. Conectează backend-ul sau reîncarcă pagina pentru mod DEMO.`;
             statusEl.classList.add('elig-api-error');
         }
     }
@@ -248,6 +255,32 @@
         const originalText = submitBtn.textContent;
         submitBtn.disabled = true;
         submitBtn.textContent = '⏳ Se verifică…';
+
+        if (DEMO_MODE) {
+            // Demo: derivare simplificată din data.js — toate apelurile pentru audience match = "eligibil"
+            const audMap = { ONG: ['ONG'], IMM: ['IMM'], APL: ['APL', 'Public'], II: ['IMM'], GT: ['IMM'] };
+            const wanted = new Set(audMap[profile.entity_type] || []);
+            const results = (window.CALLS || []).slice(0, 10).map(c => {
+                const matches = (c.audiences || []).some(a => wanted.has(a));
+                return {
+                    call_id: c.id,
+                    call_title: c.title,
+                    funder: c.funderId,
+                    status: matches ? 'eligible' : 'ineligible',
+                    score: matches ? 95 : 10,
+                    reasons: matches
+                        ? [`Tipul ${profile.entity_type} este în lista eligibilă: ${(c.audiences || []).join(', ')}`]
+                        : [`Tipul ${profile.entity_type} NU este în lista eligibilă (${(c.audiences || []).join(', ')})`],
+                    blocking_issues: [],
+                    missing_documents: [],
+                    notes: 'Verificare demo simplificată (audiences match). Pentru evaluare completă a regulilor → activează backend.',
+                };
+            });
+            renderResults(results);
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+            return;
+        }
 
         try {
             const res = await fetch(`${API_BASE}/eligibility/scan`, {

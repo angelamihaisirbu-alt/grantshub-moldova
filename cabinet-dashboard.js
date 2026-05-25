@@ -5,9 +5,44 @@
 (function() {
     'use strict';
 
-    const API_BASE = (window.GRANTIO_API_BASE || 'http://localhost:8001').replace(/\/$/, '');
+    const API_BASE = (window.GRANTIO_API_BASE || '').replace(/\/$/, '');
+    const DEMO_MODE = !API_BASE;
     const STORAGE_USERS = 'grantshub_cabinet_users_v1';
     const STORAGE_SESSION = 'grantshub_cabinet_session_v1';
+
+    // Map cabinet org_type → data.js audience codes
+    const AUDIENCE_MAP = {
+        ngo:     ['ONG'],
+        public:  ['APL', 'Public'],
+        private: ['IMM'],
+    };
+
+    // ── Demo fallback: filter window.CALLS by org types ─────────────────────
+    function demoCallsForTypes(types) {
+        if (!window.CALLS) return [];
+        const wantedAudiences = new Set();
+        types.forEach(t => (AUDIENCE_MAP[t] || []).forEach(a => wantedAudiences.add(a)));
+        const today = new Date();
+        return window.CALLS
+            .filter(c => (c.audiences || []).some(a => wantedAudiences.has(a)))
+            .map(c => {
+                const matchedTypes = types.filter(t =>
+                    (AUDIENCE_MAP[t] || []).some(a => (c.audiences || []).includes(a))
+                );
+                const isExpired = c.deadline && new Date(c.deadline) < today && c.deadlineType !== 'rolling';
+                return {
+                    id: c.id,
+                    title: c.title,
+                    funder_id: c.funderId,
+                    deadline: c.deadline,
+                    url: c.url,
+                    topics: c.topics || [],
+                    is_active_2026: !isExpired,
+                    status_note_ro: isExpired ? 'Apel încheiat' : '',
+                    _matched_types: matchedTypes,
+                };
+            });
+    }
 
     const ORG_TYPE_LABELS = {
         ngo:     { ro: 'ONG / Societate civilă', icon: '🌱' },
@@ -117,27 +152,36 @@
 
         container.innerHTML = '<p class="dash-empty">Se încarcă…</p>';
         try {
-            // Fetch în paralel pentru fiecare tip — cu param include_inactive
-            const qs = includeInactive() ? '?include_inactive=true' : '';
-            const allResults = await Promise.all(types.map(async cat => {
-                const res = await fetch(`${API_BASE}/calls/for-category/${cat}${qs}`);
-                if (!res.ok) return { calls: [], count: 0, inactive_hidden: 0 };
-                return res.json();
-            }));
+            let merged;
+            let totalInactiveHidden = 0;
 
-            // Merge & dedupe (un apel poate fi eligibil pentru multiple tipuri)
-            const callMap = new Map();
-            allResults.forEach((data, idx) => {
-                (data.calls || []).forEach(c => {
-                    if (!callMap.has(c.id)) {
-                        callMap.set(c.id, { ...c, _matched_types: [types[idx]] });
-                    } else {
-                        callMap.get(c.id)._matched_types.push(types[idx]);
-                    }
+            if (DEMO_MODE) {
+                // ── Demo mode: filter window.CALLS local ────────────────────
+                const all = demoCallsForTypes(types);
+                const active = all.filter(c => c.is_active_2026);
+                totalInactiveHidden = all.length - active.length;
+                merged = includeInactive() ? all : active;
+            } else {
+                // ── API mode ────────────────────────────────────────────────
+                const qs = includeInactive() ? '?include_inactive=true' : '';
+                const allResults = await Promise.all(types.map(async cat => {
+                    const res = await fetch(`${API_BASE}/calls/for-category/${cat}${qs}`);
+                    if (!res.ok) return { calls: [], count: 0, inactive_hidden: 0 };
+                    return res.json();
+                }));
+                const callMap = new Map();
+                allResults.forEach((data, idx) => {
+                    (data.calls || []).forEach(c => {
+                        if (!callMap.has(c.id)) {
+                            callMap.set(c.id, { ...c, _matched_types: [types[idx]] });
+                        } else {
+                            callMap.get(c.id)._matched_types.push(types[idx]);
+                        }
+                    });
                 });
-            });
-
-            let merged = Array.from(callMap.values());
+                merged = Array.from(callMap.values());
+                totalInactiveHidden = allResults.reduce((sum, r) => sum + (r.inactive_hidden || 0), 0);
+            }
 
             // Filter pe topic dacă selectat
             const activeTopic = selectedTopic();
@@ -159,9 +203,6 @@
                 const db = daysUntil(b.deadline) ?? 99999;
                 return da - db;
             }).slice(0, 5);
-
-            // Sum inactive hidden across all type fetches (unique count approximation)
-            const totalInactiveHidden = allResults.reduce((sum, r) => sum + (r.inactive_hidden || 0), 0);
 
             const toggleHtml = `
                 <div class="active-filter-toggle">
@@ -230,8 +271,93 @@
                 });
             }
         } catch (err) {
-            container.innerHTML = `<p class="dash-empty">⚠️ Eroare la încărcare. Pornește API-ul: <code>uvicorn api.main:app --port 8002</code></p>`;
+            console.warn('[Grantio] API offline — falling back to demo catalog', err);
+            // Forțează demo mode pentru următoarele apeluri
+            window.__GRANTIO_DEMO_FALLBACK = true;
+            // Retry cu demo path
+            const all = demoCallsForTypes(types);
+            const active = all.filter(c => c.is_active_2026);
+            const merged = (includeInactive() ? all : active).slice(0, 5);
+            if (merged.length === 0) {
+                container.innerHTML = '<p class="dash-empty">⚠️ Catalog demo indisponibil. Verifică <code>data.js</code>.</p>';
+                return;
+            }
+            container.innerHTML = `
+                <div class="demo-mode-banner">🟡 Mod DEMO — catalog local din <code>data.js</code>. Pentru date live conectează backend-ul.</div>
+                <ul class="dash-call-list">
+                    ${merged.map(c => {
+                        const days = daysUntil(c.deadline);
+                        const urgentCls = days != null && days < 30 ? 'urgent' : (days != null && days < 90 ? 'soon' : '');
+                        const deadlineLabel = days != null ? (days < 0 ? 'EXPIRAT' : `${days} zile`) : c.deadline;
+                        const matchedIcons = (c._matched_types || []).map(t => ORG_TYPE_LABELS[t]?.icon || '').join('');
+                        return `
+                            <li class="dash-call-item ${urgentCls}">
+                                <div class="dash-call-title">${escapeHtml(c.title)}
+                                    <span class="dash-call-icons">${matchedIcons}</span>
+                                </div>
+                                <div class="dash-call-meta">
+                                    <span>📍 ${escapeHtml((c.funder_id || '').toUpperCase() || '—')}</span>
+                                    <span>⏰ ${escapeHtml(deadlineLabel)}</span>
+                                    ${c.url ? `<a href="${escapeHtml(c.url)}" target="_blank" rel="noopener">Detalii oficiale →</a>` : ''}
+                                </div>
+                            </li>
+                        `;
+                    }).join('')}
+                </ul>
+            `;
         }
+    }
+
+    // ── Compute pricing local (matches backend tier formula) ───────────────
+    function computePricingLocal(types) {
+        const tiers = { 1: 20, 2: 30, 3: 45 };
+        const count = Math.min(Math.max(types.length, 1), 3);
+        const monthly = tiers[count];
+        const labelByCount = { 1: 'Solo', 2: 'Dual', 3: 'Trio' };
+        const annual = monthly * 12;
+        return {
+            entity_count: count,
+            entity_types: types,
+            monthly_eur: monthly,
+            annual_eur: annual,
+            annual_with_17pct_discount_eur: Math.round(annual * 0.83),
+            label_ro: `Plan ${labelByCount[count]}`,
+            description_ro: `${count} ${count === 1 ? 'tip' : 'tipuri'} de organizație activate`,
+            savings_vs_separate: count > 1 ? {
+                savings_monthly_eur: count * 20 - monthly,
+                savings_pct: Math.round((1 - monthly / (count * 20)) * 100),
+            } : null,
+        };
+    }
+
+    function renderPricingHtml(container, plan) {
+        const savings = plan.savings_vs_separate;
+        const savingsHtml = savings && savings.savings_monthly_eur > 0
+            ? `<div class="pricing-savings">💰 Economisești <strong>${savings.savings_monthly_eur} €/lună</strong> (${savings.savings_pct}%) vs. abonament separat pentru fiecare tip</div>`
+            : '';
+        container.innerHTML = `
+            <div class="pricing-row">
+                <span class="pricing-label">Plan:</span>
+                <strong>${escapeHtml(plan.label_ro)}</strong>
+            </div>
+            <div class="pricing-amount">${plan.monthly_eur} <small>€/lună</small></div>
+            <div class="pricing-basis">${escapeHtml(plan.description_ro)}</div>
+            <div class="pricing-types">${plan.entity_types.map(t => {
+                const m = ORG_TYPE_LABELS[t] || { ro: t, icon: '📋' };
+                return `<span class="pricing-type-pill">${m.icon} ${m.ro}</span>`;
+            }).join('')}</div>
+            ${savingsHtml}
+            <div class="pricing-tier-ladder">
+                <strong>Trepte:</strong>
+                <span class="tier-step ${plan.entity_count === 1 ? 'active' : ''}">1 tip = 20€</span>
+                <span class="tier-step ${plan.entity_count === 2 ? 'active' : ''}">2 tipuri = 30€</span>
+                <span class="tier-step ${plan.entity_count === 3 ? 'active' : ''}">3 tipuri = 45€</span>
+            </div>
+            <div class="pricing-annual">Anual: ${plan.annual_eur} € · cu reducere 17% = <strong>${plan.annual_with_17pct_discount_eur} €</strong></div>
+            <div class="pricing-actions">
+                <button class="btn btn-primary btn-sm" disabled title="Stripe checkout — TODO">💳 Activează abonament ${plan.monthly_eur}€/lună</button>
+            </div>
+        `;
     }
 
     // ── Pricing din NUMĂR de tipuri activate ────────────────────────────────
@@ -245,6 +371,10 @@
             container.innerHTML = '<p class="dash-empty">Tipul organizației nu e setat.</p>';
             return;
         }
+        if (DEMO_MODE) {
+            renderPricingHtml(container, computePricingLocal(types));
+            return;
+        }
         try {
             const res = await fetch(`${API_BASE}/pricing/compute`, {
                 method: 'POST',
@@ -253,35 +383,9 @@
             });
             if (!res.ok) throw new Error('HTTP ' + res.status);
             const plan = await res.json();
-            const savings = plan.savings_vs_separate;
-            const savingsHtml = savings && savings.savings_monthly_eur > 0
-                ? `<div class="pricing-savings">💰 Economisești <strong>${savings.savings_monthly_eur} €/lună</strong> (${savings.savings_pct}%) vs. abonament separat pentru fiecare tip</div>`
-                : '';
-            container.innerHTML = `
-                <div class="pricing-row">
-                    <span class="pricing-label">Plan:</span>
-                    <strong>${escapeHtml(plan.label_ro)}</strong>
-                </div>
-                <div class="pricing-amount">${plan.monthly_eur} <small>€/lună</small></div>
-                <div class="pricing-basis">${escapeHtml(plan.description_ro)}</div>
-                <div class="pricing-types">${plan.entity_types.map(t => {
-                    const m = ORG_TYPE_LABELS[t] || { ro: t, icon: '📋' };
-                    return `<span class="pricing-type-pill">${m.icon} ${m.ro}</span>`;
-                }).join('')}</div>
-                ${savingsHtml}
-                <div class="pricing-tier-ladder">
-                    <strong>Trepte:</strong>
-                    <span class="tier-step ${plan.entity_count === 1 ? 'active' : ''}">1 tip = 20€</span>
-                    <span class="tier-step ${plan.entity_count === 2 ? 'active' : ''}">2 tipuri = 30€</span>
-                    <span class="tier-step ${plan.entity_count === 3 ? 'active' : ''}">3 tipuri = 45€</span>
-                </div>
-                <div class="pricing-annual">Anual: ${plan.annual_eur} € · cu reducere 17% = <strong>${plan.annual_with_17pct_discount_eur} €</strong></div>
-                <div class="pricing-actions">
-                    <button class="btn btn-primary btn-sm" disabled title="Stripe checkout — TODO">💳 Activează abonament ${plan.monthly_eur}€/lună</button>
-                </div>
-            `;
+            renderPricingHtml(container, plan);
         } catch (err) {
-            container.innerHTML = `<p class="dash-empty">⚠️ Tarif nedisponibil offline.</p>`;
+            renderPricingHtml(container, computePricingLocal(types));
         }
     }
 
@@ -291,6 +395,15 @@
     function setSelectedTopic(t) {
         if (t) localStorage.setItem(SELECTED_TOPIC_KEY, t);
         else localStorage.removeItem(SELECTED_TOPIC_KEY);
+    }
+
+    function demoTopicCounts(types) {
+        const matched = demoCallsForTypes(types).filter(c => includeInactive() ? true : c.is_active_2026);
+        const counter = new Map();
+        matched.forEach(c => (c.topics || []).forEach(t => counter.set(t, (counter.get(t) || 0) + 1)));
+        return Array.from(counter.entries())
+            .map(([name, count]) => ({ name, count }))
+            .sort((a, b) => b.count - a.count);
     }
 
     async function renderTopicChips() {
@@ -306,10 +419,19 @@
             org_categories: types.join(','),
             include_inactive: includeInactive() ? 'true' : 'false',
         });
+        let data;
         try {
-            const res = await fetch(`${API_BASE}/calls/topics/counts?${qs}`);
-            if (!res.ok) throw new Error('HTTP ' + res.status);
-            const data = await res.json();
+            if (DEMO_MODE) {
+                data = { topics: demoTopicCounts(types) };
+            } else {
+                const res = await fetch(`${API_BASE}/calls/topics/counts?${qs}`);
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                data = await res.json();
+            }
+        } catch (err) {
+            data = { topics: demoTopicCounts(types) };
+        }
+        try {
             if (!data.topics || data.topics.length === 0) {
                 container.innerHTML = '<p class="dash-empty">Niciun domeniu disponibil.</p>';
                 return;

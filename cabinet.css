@@ -2546,3 +2546,32 @@
     .fp-tabs { overflow-x: auto; flex-wrap: nowrap; }
     .fp-prefill-table { font-size: 11px; }
 }
+
+/* ── Demo mode banners (when backend is offline on GitHub Pages) ── */
+.demo-mode-banner {
+    background: linear-gradient(90deg, #fff8d6 0%, #fff2a8 100%);
+    border: 1px solid #FFD200;
+    border-left: 4px solid #CE1126;
+    color: #663d00;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-bottom: 14px;
+    line-height: 1.4;
+}
+.demo-mode-banner code {
+    background: rgba(0, 61, 165, 0.08);
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 11px;
+}
+.elig-api-demo {
+    background: linear-gradient(90deg, #fff8d6 0%, #fff2a8 100%);
+    border: 1px solid #FFD200;
+    border-left: 4px solid #003DA5;
+    color: #663d00;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+}
