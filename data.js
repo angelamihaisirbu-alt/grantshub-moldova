@@ -80,7 +80,9 @@ const CALLS = [
         description: "Suport pentru tineri antreprenori: instruire + grant pentru lansarea afacerii. Apel anual recurent.",
         url: "https://www.oda.md/ro/granturi",
         verified: "2026-05-22",
-        verifiedSource: "oda.md comunicat oficial 2026"
+        verifiedSource: "oda.md comunicat oficial 2026",
+        manuallyClosed: true,
+        closedDetectedOn: "2026-09-07"
     },
     {
         id: "oda-pare-2026",
@@ -103,7 +105,9 @@ const CALLS = [
         description: "Programul flagship de diasporă al ODA. Bani din străinătate dublati cu grant ODA pentru afaceri lansate în Moldova.",
         url: "https://www.oda.md/ro/granturi",
         verified: "2026-05-22",
-        verifiedSource: "oda.md comunicat oficial 2026"
+        verifiedSource: "oda.md comunicat oficial 2026",
+        manuallyClosed: true,
+        closedDetectedOn: "2026-09-07"
     },
     {
         id: "oda-producatori-mici-2026",
@@ -126,7 +130,9 @@ const CALLS = [
         description: "Sprijin pentru producători mici de bunuri – echipamente, materii prime, dezvoltare capacitate de producție.",
         url: "https://www.oda.md/ro/granturi",
         verified: "2026-05-22",
-        verifiedSource: "oda.md comunicat oficial 2026"
+        verifiedSource: "oda.md comunicat oficial 2026",
+        manuallyClosed: true,
+        closedDetectedOn: "2026-09-07"
     },
     {
         id: "oda-digital-startups-2026",
@@ -149,7 +155,9 @@ const CALLS = [
         description: "Susținere pentru startup-uri tech și soluții digitale inovative. Implementat cu suportul UE și GIZ.",
         url: "https://www.oda.md/ro/granturi",
         verified: "2026-05-22",
-        verifiedSource: "oda.md comunicat oficial 2026"
+        verifiedSource: "oda.md comunicat oficial 2026",
+        manuallyClosed: true,
+        closedDetectedOn: "2026-09-07"
     },
 
     // ============ AIPA – Subvenții 2026 ============
