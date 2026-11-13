@@ -1026,10 +1026,95 @@ const CALLS = [
         verified: "2026-05-22",
         verifiedSource: "moldova.um.dk + ipn.md (ambasadă deschisă oficial ian 2024)"
     }
+,
+
+    // ===== AUTO-DETECTED 2026-11-13 =====
+    {
+        "id": "auto-soros-la-soroca-o-intalnire-despre-deportarile-sovietice-2026-11-13",
+        "title": "[soros.md] La Soroca, o întâlnire despre deportările sovietice și memoria istorică, în cadrul proiectului „Moldova – acasă pentru fiecare”",
+        "funderId": "soros",
+        "type": "Grant",
+        "opensOn": "2026-11-13",
+        "deadline": "2026-12-13",
+        "deadlineType": "expected",
+        "deadlineNote": "AUTO-DETECTAT din soros.md — verifică deadline-ul real pe pagina sursei",
+        "audiences": [
+            "ONG"
+        ],
+        "topics": [],
+        "url": "https://soros.md/la-soroca-o-intalnire-despre-deportarile-sovietice-si-memoria-istorica-in-cadrul-proiectului-moldova-acasa-pentru-fiecare/",
+        "description": "Auto-detectat de pe soros.md la 2026-11-13. Necesită revizuire manuală în admin (deadline real, eligibilitate, beneficiari).",
+        "budgetTotal": "",
+        "budgetPerProject": "",
+        "eligibility": [
+            "AUTO-DETECTAT din soros.md — completează criteriile din pagina sursei"
+        ],
+        "verified": "2026-11-13",
+        "verifiedSource": ".github/workflows/update-grants.yml (soros.md)",
+        "autoDetected": true
+    },
+    {
+        "id": "auto-soros-programul-national-de-incluziune-prevede-trecerea-2026-11-13",
+        "title": "[soros.md] Programul național de incluziune prevede trecerea a 300 de persoane cu dizabilități din instituții rezidențiale în comunitate",
+        "funderId": "soros",
+        "type": "Grant",
+        "opensOn": "2026-11-13",
+        "deadline": "2026-12-13",
+        "deadlineType": "expected",
+        "deadlineNote": "AUTO-DETECTAT din soros.md — verifică deadline-ul real pe pagina sursei",
+        "audiences": [
+            "ONG"
+        ],
+        "topics": [],
+        "url": "https://soros.md/programul-national-de-incluziune-prevede-trecerea-a-300-de-persoane-cu-dizabilitati-din-institutii-rezidentiale-in-comunitate/",
+        "description": "Auto-detectat de pe soros.md la 2026-11-13. Necesită revizuire manuală în admin (deadline real, eligibilitate, beneficiari).",
+        "budgetTotal": "",
+        "budgetPerProject": "",
+        "eligibility": [
+            "AUTO-DETECTAT din soros.md — completează criteriile din pagina sursei"
+        ],
+        "verified": "2026-11-13",
+        "verifiedSource": ".github/workflows/update-grants.yml (soros.md)",
+        "autoDetected": true
+    },
+    {
+        "id": "auto-soros-inmanarea-certificatelor-de-grant-in-cadrul-proiec-2026-11-13",
+        "title": "[soros.md] Înmânarea certificatelor de grant în cadrul proiectului „Oportunități sporite de angajare la nivel local și acces la creșe pentru părinții în situații de vulnerabilitate”",
+        "funderId": "soros",
+        "type": "Grant",
+        "opensOn": "2026-11-13",
+        "deadline": "2026-12-13",
+        "deadlineType": "expected",
+        "deadlineNote": "AUTO-DETECTAT din soros.md — verifică deadline-ul real pe pagina sursei",
+        "audiences": [
+            "ONG"
+        ],
+        "topics": [],
+        "url": "https://soros.md/inmanarea-certificatelor-de-grant-in-cadrul-proiectului-oportunitati-sporite-de-angajare-la-nivel-local-si-acces-la-crese-pentru-parintii-in-situatii-de-vulnerabilitate/",
+        "description": "Auto-detectat de pe soros.md la 2026-11-13. Necesită revizuire manuală în admin (deadline real, eligibilitate, beneficiari).",
+        "budgetTotal": "",
+        "budgetPerProject": "",
+        "eligibility": [
+            "AUTO-DETECTAT din soros.md — completează criteriile din pagina sursei"
+        ],
+        "verified": "2026-11-13",
+        "verifiedSource": ".github/workflows/update-grants.yml (soros.md)",
+        "autoDetected": true
+    }
 ];
 
 // ============ FUNDERS – Catalog finanțatori activi ============
 const FUNDERS = {
+    auto: {
+        id: "auto",
+        name: "Auto-detectat (necesită clasificare)",
+        short: "AUTO",
+        logoColor: "yellow",
+        origin: "Fundatie",
+        originLabel: "Sursă: civic.md auto-scraper",
+        description: "Apel detectat automat. Clasifică finanțatorul real în admin.",
+        website: "https://civic.md"
+    },
     oda: {
         id: "oda",
         name: "ODA – Organizația pentru Dezvoltarea Antreprenoriatului",
